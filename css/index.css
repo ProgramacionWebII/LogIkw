@@ -1,0 +1,11 @@
+body{
+	text-align: center;
+}
+
+img{
+	magin: 0 auto;
+}
+
+.beneficios img{
+	width: 100px;
+}
