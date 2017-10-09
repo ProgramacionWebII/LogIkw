@@ -7,28 +7,51 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">LogIkw</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"  data-toggle="modal" data-target="#registro"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-      <li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">LogIkw</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="#">Page 1</a></li>
+	      <li><a href="#">Page 2</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a href="#"  data-toggle="modal" data-target="#registro"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+	      <li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+	    </ul>
+	  </div>
+	</nav>
 
+	<header class="col-sm-offset-2 col-sm-8">
+		<h1 class="col-sm-offset-4 col-sm-4">LogIkw</h1>
+		<h3 class="col-sm-offset-4 col-sm-4">Logística de primer nivel</h3>		
+	</header>
 
+	<section class="col-sm-12">
+		<div class="col-sm-12 beneficios">
+			<h3>Beneficios LogIkw</h3>
+			<div class="col-sm-4">
+				<h3>Geolocalizacion<img src="image/geo-icon.png"></h3>
+			</div>
+			<div class="col-sm-4">
+				<h3>Gestion de carga<img src="image/gestion-icon.png"></h3>
+			</div>
+			<div class="col-sm-4">
+				<h3>Reputacion de usuario <img src="image/users-icon.png"></h3>
+			</div>
+		</div>
+
+		<div>
+		<img src="image/camion.jpg">
+		<img src="image/camion2.jpg">
+		</div>
+	</section>
 
 	<!-- Modal -->
 	<form action="/registro">
