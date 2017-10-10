@@ -12,16 +12,20 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-     <img src="image/logo.png" width="10%">
+  <div class="container-fluid col-sm-12">
+    <div class="navbar-header col-sm-1">
+     <img src="image/logo.png">
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav col-sm-8">
       <li class="active"><a href="#">HOME</a></li>
 	  <li><a href="#">LA EMPRESA</a></li>
       <li><a href="#">SERVICIOS</a></li>
       <li><a href="#">CONTACTO</a></li>
     </ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="#"  data-toggle="modal" data-target="#registro"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+		<li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+	</ul>
   </div>
 </nav>
   
