@@ -169,25 +169,25 @@
 	<form action="/registro">
 	<div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header col-sm-12">
+	        <h2 class="modal-title" id="exampleModalLabel">Registro</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
-	      <div class="modal-body">
-	        <input type="text" name="nombre" placeholder="Juan Roman"><br>
-	        <input type="text" name="apellido" placeholder="Fernandez"><br>
-	        <input type="text" name="DNI" placeholder="12345678"><br>
-	        <input type="text" name="Razon Social" placeholder="Sociedad Log S.A"><br>
-	        <input type="text" name="Usuario" placeholder="socsa1234"><br>
-	        <input type="text" name="Password1" placeholder="**********"><br>
-	        <input type="text" name="Password2" placeholder="**********">
+	      <div class="modal-body col-sm-12">
+	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre: Juan Roman"><br>
+	        <input type="text" name="apellido" class="col-sm-10 col-sm-offset-1" placeholder="Apellido: Fernandez"><br>
+	        <input type="text" name="DNI" class="col-sm-10 col-sm-offset-1" placeholder="DNI: 12345678"><br>
+	        <input type="text" name="Razon Social" class="col-sm-10 col-sm-offset-1" placeholder="Razon social: Sociedad Log S.A"><br>
+	        <input type="text" name="Usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario: socsa1234"><br>
+	        <input type="text" name="Password1" class="col-sm-10 col-sm-offset-1" placeholder="**********"><br>
+	        <input type="text" name="Password2" class="col-sm-10 col-sm-offset-1" placeholder="**********">
 	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	      <div class="modal-footer col-sm-12">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+	        <button type="button" class="btn btn-primary">Enviar</button>
 	      </div>
 	    </div>
 	  </div>
@@ -198,20 +198,21 @@
 	<form action="/Login">
 	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header col-sm-12">
+	        <h2 class="modal-title" id="exampleModalLabel">Login</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
-	      <div class="modal-body">
-	        <input type="text" name="Usuario" placeholder="socsa1234"><br>
-	        <input type="text" name="Password1" placeholder="**********">
+	      <div class="modal-body col-sm-12">
+	        <input type="text" name="Usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario socsa1234"><br>
+	        <input type="text" name="Password1" class="col-sm-10 col-sm-offset-1" placeholder="**********">
 	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	      <div class="modal-footer col-sm-12">
+	      	<a href="" data-toggle="modal" data-target="#registro" data-dismiss="modal">¿No estás registrado? </a>
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+	        <button type="button" class="btn btn-primary">Logearse</button>
 	      </div>
 	    </div>
 	  </div>
