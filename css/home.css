@@ -6,6 +6,7 @@ img{
 	magin: 0 auto;
 }
 
-.beneficios img{
-	width: 100px;
+.carousel-inner img{
+	width: 100%;
+	max-height: 600px;
 }
