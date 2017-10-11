@@ -5,7 +5,7 @@ include "/modelo/cliente.php";
 include "/modelo/conexion.php";
 include "/modelo/mantenimiento.php";
 include "/modelo/mecanico.php";
-include "/modelo/supervisor.php";
+include "/modelo/administrador.php";
 include "/modelo/viaje.php";
 include "/modelo/usuario.php";
 ?>

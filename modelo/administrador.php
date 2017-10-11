@@ -1,11 +1,11 @@
 <?php
 include "/modelo/conexion.php";
-public class Supervisor{
+public class Administrador{
 
 	Conexion::conexion();
 
 	public static function getId($id){
-		$query = "SELECT id FROM supervisor WHERE id = $id";
+		$query = "SELECT id_administrador FROM administrador WHERE id_administrador = $id";
 		$result = Conexion::getQuery($query);
 		return $result;
 	}
