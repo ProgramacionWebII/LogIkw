@@ -1,18 +1,29 @@
 use LogIkw;
 
+INSERT into usuario(user,pass,rol) values
+('manu32','123','administrador'),
+('nachoC','111','administrador'),
+('diasa', '123','cliente'),
+('mob', '123','cliente'),
+('hectord','1234','chofer'),
+('pepe1970','1234','chofer'),
+('marcequespe','1234','mecanico'),
+('mauris','1234','mecanico'),
+('carbu','1234','empresa'),
+('ceroc','1234','empresa');
 
-INSERT into administrador(dni_administrador,usuario,pass,nombre,apellido,telefono,domicilio,email) values
-(36555123,'manu32','123','manuel','dominguez',4522215,'laferrere 5667','manu_lafe@gmail.com'),
-(38555123,'nachoC','111','ignacio','perez',444455,'salta 5367','nachoC10@gmail.com');
+INSERT into administrador(dni_administrador,rol,nombre,apellido,telefono,domicilio,email) values
+(36555123,'administrador','manuel','dominguez',4522215,'laferrere 5667','manu_lafe@gmail.com'),
+(38555123,'administrador','ignacio','perez',444455,'salta 5367','nachoC10@gmail.com');
 
 
-INSERT into cliente(razon_social, usuario, pass, nombre,telefono,domicilio,email) values
-('Dia S.A','diasa', '123','juan',451215,'donizeti 5847','jp15@gmail.com'),
-('Easy S.A','mob', '123','pedro',444215,'san jose 452','san_jose@gmail.com');
+INSERT into cliente(razon_social, rol, nombre,telefono,domicilio,email) values
+('Dia S.A','cliente','juan',451215,'donizeti 5847','jp15@gmail.com'),
+('Easy S.A','cliente','pedro',444215,'san jose 452','san_jose@gmail.com');
 
-INSERT into chofer(dni_chofer, usuario, pass, nombre, apellido,fecha_de_nacimiento,tipo_licencia_de_conducir) values
-(222222222,'hectord','1234','hector','diaz','1980-05-06','a5'),
-(333333333,'pepe1970','1234','pepe','castañeda','1970-05-07','a5');
+INSERT into chofer(dni_chofer,rol, nombre, apellido,fecha_de_nacimiento,tipo_licencia_de_conducir) values
+(222222222,'chofer','hector','diaz','1980-05-06','a5'),
+(333333333,'chofer','pepe','castañeda','1970-05-07','a5');
 
 INSERT into viaje(id_administrador,origen,destino,tipo_de_carga,fecha_de_salida_prevista,fecha_de_llegada_prevista,tiempo_estimado,
 fecha_de_salida_real,fecha_de_llegada_real,tiempo_real,km_recorridos_previstos,desviacion_km,combustible_consumido_estimado,combustible_consumido_real) values
@@ -27,9 +38,13 @@ INSERT into vehiculo(patente,nro_chasis,nro_motor,marca,modelo,año_fabricacion)
 ('ik 456 pl','25',55,'chevrolet','h201',2002);
 
 
-INSERT into mecanico(dni_mecanico,usuario, pass,nombre,apellido) values
-(111111112,'marcequespe','1234','marcelo','quispe'),
-(222222221,'mauris','1234','mauricio','santillan');
+INSERT into mecanico(dni_mecanico,rol,nombre,apellido) values
+(111111112,'mecanico','marcelo','quispe'),
+(222222221,'mecanico','mauricio','santillan');
+
+INSERT into empresa(nombre,rol,telefono,domicilio) values
+('Carburando','empresa',123456,'antoño machado'),
+('Cero Carburo','empresa',123456,'Cañada de gomez');
 
 
 INSERT into viaje_chofer(id_viaje,id_chofer) values

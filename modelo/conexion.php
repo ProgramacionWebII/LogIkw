@@ -2,22 +2,25 @@
 
   class Conexion{
 
-    private $con;
-	  private $datos;
-
-    public static function conexion(){
-      $this-> $con = new mysqli("localhost","root","123456","LogIkw");
+    public static function conectar(){
+      $con = mysqli_connect("localhost","root","","logikw");
+      return $con;
     }
 
     public static function setQuery($sql){
-      $this->con->query($sql);
+      mysqli_query($con, $sql);
     }
 
     public static function getQuery($sql){
-      $datos = $this->con->query($sql);
-      return $datos;
-    }
+      $con = mysqli_connect("localhost","root","","logikw");
+      $datos = mysqli_query($con, $sql);
+    $i = 0;
+    while($rs = mysqli_fetch_assoc($datos)){
+      echo $rs[$i];
+      $i++;
   }
 
-	$con->close();
+      return $datos;
+  }
+}
 ?>

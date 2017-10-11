@@ -1,15 +1,17 @@
-drop database if exists LogIkw;
+drop database if exists logikw;
 
-create database if not exists LogIkw;
+create database if not exists logikw;
 
-use LogIkw;
-
+create table usuario(
+user varchar(20) primary key,
+pass varchar(20),
+rol varchar(10)
+);
 
 create table administrador(
 id_administrador int AUTO_INCREMENT primary key,
 dni_administrador int unique,
-usuario varchar(20) unique,
-pass varchar(20),
+rol varchar(10),
 nombre varchar(20),
 apellido varchar(20),
 telefono int (10),
@@ -21,8 +23,7 @@ email varchar(30)
 create table cliente(
 id_cliente int AUTO_INCREMENT primary key,
 razon_social varchar(30) unique, 
-usuario varchar(20) unique,
-pass varchar(20),
+rol varchar(10),
 nombre varchar(20),
 telefono int (10),
 domicilio varchar (20),
@@ -32,8 +33,7 @@ email varchar(30)
 create table chofer(
 id_chofer int AUTO_INCREMENT primary key,
 dni_chofer int unique, 
-usuario varchar(20) unique,
-pass varchar(20),
+rol varchar(10),
 nombre varchar(20),
 apellido varchar(20),
 fecha_de_nacimiento date,
@@ -44,8 +44,7 @@ tipo_licencia_de_conducir varchar(20)
 create table mecanico(
 id_mecanico int AUTO_INCREMENT primary key,
 dni_mecanico int unique,
-usuario varchar(20) unique,
-pass varchar(20),
+rol varchar(10),
 nombre varchar(20),
 apellido varchar(20)
 );
@@ -97,6 +96,7 @@ primary key(id_viaje,id_vehiculo)
 create table empresa(
 id_empresa int AUTO_INCREMENT primary key,
 nombre varchar(20),
+rol varchar(10),
 telefono varchar(20),
 domicilio varchar(20)
 );

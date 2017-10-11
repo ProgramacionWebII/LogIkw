@@ -23,7 +23,7 @@
       <li><a href="#">CONTACTO</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+		<li><a data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
 	</ul>
   </div>
 </nav>
@@ -158,14 +158,14 @@
 					<textarea name="message" placeholder="Mensaje"></textarea>
 					<br><button>Send</button>
 
-
+				</form>
 			
 
 		</footer>
 
 
 	<!-- Modal -->
-	<form action="/Login">
+	<form action="modelo/login.php" method="POST">
 	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
@@ -176,12 +176,12 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-	        <input type="text" name="Usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI"><br>
-	        <input type="text" name="Password1" class="col-sm-10 col-sm-offset-1" placeholder="**********">
+	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI"><br>
+	        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********">
 	      </div>
 	      <div class="modal-footer col-sm-12">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	        <button type="button" class="btn btn-primary">Logearse</button>
+	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Logearse">
 	      </div>
 	    </div>
 	  </div>
