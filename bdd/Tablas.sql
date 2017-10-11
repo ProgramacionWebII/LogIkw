@@ -1,15 +1,15 @@
-drop database if exists TP_empresa_logistica;
+drop database if exists LogIkw;
 
-create database if not exists TP_empresa_logistica;
+create database if not exists LogIkw;
 
-use TP_empresa_logistica;
+use LogIkw;
 
 
 create table administrador(
 id_administrador int AUTO_INCREMENT primary key,
 dni_administrador int unique,
 usuario varchar(20) unique,
-contraseña varchar(20),
+pass varchar(20),
 nombre varchar(20),
 apellido varchar(20),
 telefono int (10),
@@ -20,9 +20,10 @@ email varchar(30)
 
 create table cliente(
 id_cliente int AUTO_INCREMENT primary key,
-dni_cliente int unique, 
+razon_social varchar(30) unique, 
+usuario varchar(20) unique,
+pass varchar(20),
 nombre varchar(20),
-apellido varchar(20),
 telefono int (10),
 domicilio varchar (20),
 email varchar(30)
@@ -31,24 +32,28 @@ email varchar(30)
 create table chofer(
 id_chofer int AUTO_INCREMENT primary key,
 dni_chofer int unique, 
+usuario varchar(20) unique,
+pass varchar(20),
 nombre varchar(20),
 apellido varchar(20),
 fecha_de_nacimiento date,
 tipo_licencia_de_conducir varchar(20)
 );
 
-create table supervisor(
-id_supervisor int AUTO_INCREMENT primary key,
-dni_supervisor int unique,
+
+create table mecanico(
+id_mecanico int AUTO_INCREMENT primary key,
+dni_mecanico int unique,
+usuario varchar(20) unique,
+pass varchar(20),
 nombre varchar(20),
-apellido varchar(20),
-fecha_de_nacimiento date
+apellido varchar(20)
 );
 
 
 create table viaje(
 id_viaje int AUTO_INCREMENT  primary key,
-id_supervisor int,
+id_administrador int,
 origen varchar(20),
 destino varchar(20),
 tipo_de_carga varchar(20),
@@ -72,7 +77,6 @@ nro_motor int unique,
 marca varchar(20),
 modelo varchar(20),
 año_fabricacion int
-
 );
 
 
@@ -87,14 +91,6 @@ create table viaje_vehiculo(
 id_vehiculo int,
 id_viaje int ,
 primary key(id_viaje,id_vehiculo)
-);
-
-
-create table mecanico(
-id_mecanico int AUTO_INCREMENT primary key,
-dni_mecanico int unique,
-nombre varchar(20),
-apellido varchar(20)
 );
 
 
@@ -131,6 +127,3 @@ ubicacion varchar(20),
 km_unidad int
 
 );
-
-
-

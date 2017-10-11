@@ -6,9 +6,9 @@ INSERT into administrador(dni_administrador,usuario,pass,nombre,apellido,telefon
 (38555123,'nachoC','111','ignacio','perez',444455,'salta 5367','nachoC10@gmail.com');
 
 
-INSERT into cliente(razon_social, usuario, pass, nombre,apellido,telefono,domicilio,email) values
-('Dia S.A','diasa', '123','juan','perez',451215,'donizeti 5847','jp15@gmail.com'),
-('Easy S.A','mob', '123','pedro','olivera',444215,'san jose 452','san_jose@gmail.com');
+INSERT into cliente(razon_social, usuario, pass, nombre,telefono,domicilio,email) values
+('Dia S.A','diasa', '123','juan',451215,'donizeti 5847','jp15@gmail.com'),
+('Easy S.A','mob', '123','pedro',444215,'san jose 452','san_jose@gmail.com');
 
 INSERT into chofer(dni_chofer, usuario, pass, nombre, apellido,fecha_de_nacimiento,tipo_licencia_de_conducir) values
 (222222222,'hectord','1234','hector','diaz','1980-05-06','a5'),
