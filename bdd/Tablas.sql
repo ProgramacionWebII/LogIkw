@@ -3,55 +3,60 @@ drop database if exists logikw;
 create database if not exists logikw;
 
 create table usuario(
-user varchar(20) primary key,
+id_usuario int AUTO_INCREMENT primary key,
+user varchar(20) unique,
 pass varchar(20),
 rol varchar(10)
 );
 
 create table administrador(
-id_administrador int AUTO_INCREMENT primary key,
+id int AUTO_INCREMENT primary key,
 dni_administrador int unique,
 rol varchar(10),
 nombre varchar(20),
 apellido varchar(20),
 telefono int (10),
 domicilio varchar (30),
-email varchar(30)
+email varchar(30),
+id_usuario int
 );
 
 
 create table cliente(
-id_cliente int AUTO_INCREMENT primary key,
+id int AUTO_INCREMENT primary key,
 razon_social varchar(30) unique, 
 rol varchar(10),
 nombre varchar(20),
 telefono int (10),
 domicilio varchar (20),
-email varchar(30)
+email varchar(30),
+id_usuario int
 );
 
 create table chofer(
-id_chofer int AUTO_INCREMENT primary key,
+id int AUTO_INCREMENT primary key,
 dni_chofer int unique, 
 rol varchar(10),
 nombre varchar(20),
 apellido varchar(20),
 fecha_de_nacimiento date,
-tipo_licencia_de_conducir varchar(20)
+tipo_licencia_de_conducir varchar(20),
+id_usuario int
 );
 
 
 create table mecanico(
-id_mecanico int AUTO_INCREMENT primary key,
+id int AUTO_INCREMENT primary key,
 dni_mecanico int unique,
 rol varchar(10),
 nombre varchar(20),
-apellido varchar(20)
+apellido varchar(20),
+id_usuario int
 );
 
 
 create table viaje(
-id_viaje int AUTO_INCREMENT  primary key,
+id int AUTO_INCREMENT  primary key,
 id_administrador int,
 origen varchar(20),
 destino varchar(20),
@@ -69,7 +74,7 @@ combustible_consumido_real int
 );
 
 create table vehiculo(
-id_vehiculo int AUTO_INCREMENT  primary key,
+id int AUTO_INCREMENT  primary key,
 patente varchar(20) unique,
 nro_chasis int unique,
 nro_motor int unique,
@@ -94,15 +99,16 @@ primary key(id_viaje,id_vehiculo)
 
 
 create table empresa(
-id_empresa int AUTO_INCREMENT primary key,
+id int AUTO_INCREMENT primary key,
 nombre varchar(20),
-rol varchar(10),
+rol varchar(20),
 telefono varchar(20),
-domicilio varchar(20)
+domicilio varchar(20),
+id_usuario int
 );
 
 create table mantenimiento(
-id_mantenimiento int  AUTO_INCREMENT primary key,
+id int  AUTO_INCREMENT primary key,
 id_empresa int,
 id_mecanico int,
 patente varchar(20),
@@ -117,7 +123,7 @@ repuestos_cambiados varchar(50)
 
 
 create table reporte_chofer(
-id_reporte int auto_increment primary key,
+id int auto_increment primary key,
 id_chofer int ,
 id_viaje int ,
 fecha date,

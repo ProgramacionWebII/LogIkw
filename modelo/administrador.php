@@ -1,12 +1,7 @@
 <?php
-include "/modelo/conexion.php";
+include "include.php";
  class Administrador{
-	public function logearse($usuario, $password){
-		Conexion::conexion();
-		$query = "SELECT * FROM administrador WHERE usuario =  $usuario AND pass = $password";
-		$con = mysqli_query($query);
-		return $con;
-	}
+
 	public static function getId($id){
 		$query = "SELECT id_administrador FROM administrador WHERE id_administrador = $id";
 		$result = Conexion::getQuery($query);

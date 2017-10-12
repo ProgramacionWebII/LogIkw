@@ -1,11 +1,11 @@
 <?php
-include "/modelo/camion.php";
-include "/modelo/chofer.php";
-include "/modelo/cliente.php";
-include "/modelo/conexion.php";
-include "/modelo/mantenimiento.php";
-include "/modelo/mecanico.php";
-include "/modelo/administrador.php";
-include "/modelo/viaje.php";
-include "/modelo/usuario.php";
+include "camion.php";
+include "chofer.php";
+include "cliente.php";
+include "conexion.php";
+include "mantenimiento.php";
+include "mecanico.php";
+include "administrador.php";
+include "viaje.php";
+include "usuario.php";
 ?>
