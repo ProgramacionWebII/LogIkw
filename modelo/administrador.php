@@ -1,10 +1,6 @@
 <?php
 include "/modelo/conexion.php";
  class Administrador{
-
-	public $usuario = $_POST["usuario"];
-	public $password = $_POST["password"];
-
 	public function logearse($usuario, $password){
 		Conexion::conexion();
 		$query = "SELECT * FROM administrador WHERE usuario =  $usuario AND pass = $password";

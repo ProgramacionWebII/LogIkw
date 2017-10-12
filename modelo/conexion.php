@@ -19,12 +19,6 @@
     public static function getQuery($sql){
       $con = mysqli_connect("localhost","root","","logikw");
       $datos = mysqli_query($con, $sql);
-      $i = 0;
-      while($rs = mysqli_fetch_assoc($datos)){
-        echo $rs[$i];
-        $i++;
-      }
-
       return $datos;
     }
 }
