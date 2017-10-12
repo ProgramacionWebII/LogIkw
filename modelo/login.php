@@ -25,5 +25,6 @@ include 'conexion.php';
 	    echo 'Rol: '.$rs['rol'];
     }
 
+    Conexion::cerrar();
 	session_destroy();
 ?>

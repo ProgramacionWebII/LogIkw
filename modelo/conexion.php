@@ -17,9 +17,14 @@
     SELECT * FROM administrador WHERE id_administrador = 1
     */
     public static function getQuery($sql){
-      $con = mysqli_connect("localhost","root","","logikw");
+      $con = Conexion::conectar();
       $datos = mysqli_query($con, $sql);
       return $datos;
+    }
+
+    public static function cerrar(){
+      $con = Conexion::conectar();
+      mysqli_close($con);
     }
 }
 ?>
