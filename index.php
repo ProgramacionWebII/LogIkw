@@ -63,28 +63,28 @@
 </div>
 
 <!--  Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">SERVICIOS</h3><br>
-  <div class="row">
+<div class="container-fluid col-sm-12">    
+  <h3 class="margin col-sm-2 col-sm-offset-5">SERVICIOS</h3><br>
+  <div class="col-sm-10 col-sm-offset-1">
     <div class="col-sm-3">
 
-      <img src="image/caja.png" class="img-responsive margin" style="width:25%" alt="Image">
+      <img src="image/caja.png" class="img-responsive margin" alt="Image">
 	        <br><p>Depósito Central con playón exclusivo para la recepción de carga</p>
     </div>
     <div class="col-sm-3"> 
 
-      <img src="image/cajas.png" class="img-responsive margin" style="width:25%" alt="Image">
+      <img src="image/cajas.png" class="img-responsive margin"  alt="Image">
 	       <br> <p>Preparación de pedidos para despachos a todo el país</p>
     </div>
     <div class="col-sm-3"> 
       
-      <img src="image/camion2.png" class="img-responsive margin" style="width:25%" alt="Image">
+      <img src="image/camion2.png" class="img-responsive margin" alt="Image">
 	        <br><p>Entregas en Capital y GBA con móviles exclusivos. Envíos a todo el País a través de Expresos de primera línea.</p>
     </div>
 	
 	<div class="col-sm-3"> 
       
-      <img src="image/auriculares.png" class="img-responsive margin" style="width:25%" alt="Image">
+      <img src="image/auriculares.png" class="img-responsive margin" alt="Image">
 	       <br> <p>Ejecutivos de cuenta en constante comunicación con cada cliente.</p>
     </div>
   </div>
@@ -150,13 +150,13 @@
 			
 			
 
-				<p>Contáctenos</p>
+				<p class="glyphicon glyphicon-envelope">Contáctenos</p>
 
 				<form action="#" method="post">
 
-					<input type="text" name="email" placeholder="Email" /> <br><br>
-					<textarea name="message" placeholder="Mensaje"></textarea>
-					<br><button>Send</button>
+					<input type="text" name="email" placeholder="Email" required /> <br><br>
+					<textarea name="message" placeholder="Mensaje" required></textarea>
+					<br><button class="btn btn-primary">Send</button>
 
 				</form>
 			
@@ -190,4 +190,3 @@
 
 </body>
 </html>
-
