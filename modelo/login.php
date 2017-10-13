@@ -23,12 +23,6 @@ include 'include.php';
     $rol = $usuarioTraido['rol'];
     $id = $usuarioTraido['id_usuario'];
 
-    /*Por alguna extraña razón no me trae la palabra "administrador" sino "administra", porque
-    me veo obligado a agregarle las letras que faltan para que pueda realizar la búsqueda correctamente dentro del SELECT del 'query2'*/
-	if($rol == 'administra'){
-		$rol = 'administrador';
-	}    
-
     /*Busco por ID la clase a la que le corresponde este usuario*/
     $query2 = "SELECT * FROM $rol WHERE id = '$id'";
     $buscarRolCorrespondiente = Conexion::getQuery($query2);

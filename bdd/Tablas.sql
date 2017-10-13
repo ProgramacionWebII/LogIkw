@@ -6,7 +6,7 @@ create table usuario(
 id_usuario int AUTO_INCREMENT primary key,
 user varchar(20) unique,
 pass varchar(20),
-rol varchar(10)
+rol varchar(20)
 );
 
 create table administrador(
