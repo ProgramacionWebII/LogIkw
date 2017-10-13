@@ -12,7 +12,7 @@ rol varchar(10)
 create table administrador(
 id int AUTO_INCREMENT primary key,
 dni_administrador int unique,
-rol varchar(10),
+rol varchar(30),
 nombre varchar(20),
 apellido varchar(20),
 telefono int (10),
@@ -25,7 +25,7 @@ id_usuario int
 create table cliente(
 id int AUTO_INCREMENT primary key,
 razon_social varchar(30) unique, 
-rol varchar(10),
+rol varchar(20),
 nombre varchar(20),
 telefono int (10),
 domicilio varchar (20),
@@ -36,7 +36,7 @@ id_usuario int
 create table chofer(
 id int AUTO_INCREMENT primary key,
 dni_chofer int unique, 
-rol varchar(10),
+rol varchar(20),
 nombre varchar(20),
 apellido varchar(20),
 fecha_de_nacimiento date,
@@ -48,7 +48,7 @@ id_usuario int
 create table mecanico(
 id int AUTO_INCREMENT primary key,
 dni_mecanico int unique,
-rol varchar(10),
+rol varchar(20),
 nombre varchar(20),
 apellido varchar(20),
 id_usuario int
@@ -80,7 +80,7 @@ nro_chasis int unique,
 nro_motor int unique,
 marca varchar(20),
 modelo varchar(20),
-año_fabricacion int
+anio_fabricacion int
 );
 
 
