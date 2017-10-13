@@ -17,20 +17,60 @@ include 'include.php';
 	$resultado = Conexion::getQuery($query);
 
 	/*Muestro el objeto traido por mysqli_fetch_assoc*/
-    $usuario = mysqli_fetch_assoc($resultado)
-    $user = $usuario['user'];
-    $pass = $usuario['pass'];
-    $rol = $usuario['rol'];
-    $id = $usuario['id'];
+    $usuarioTraido = mysqli_fetch_assoc($resultado);
+    $user = $usuarioTraido['user'];
+    $pass = $usuarioTraido['pass'];
+    $rol = $usuarioTraido['rol'];
+    $id = $usuarioTraido['id_usuario'];
+
+    /*Por alguna extraña razón no me trae la palabra "administrador" sino "administra", porque
+    me veo obligado a agregarle las letras que faltan para que pueda realizar la búsqueda correctamente dentro del SELECT del 'query2'*/
+	if($rol == 'administra'){
+		$rol = 'administrador';
+	}    
 
     /*Busco por ID la clase a la que le corresponde este usuario*/
-    $query2 = "SELECT id FROM $rol WHERE id = '$id'";
+    $query2 = "SELECT * FROM $rol WHERE id = '$id'";
     $buscarRolCorrespondiente = Conexion::getQuery($query2);
 
     $clase = mysqli_fetch_assoc($buscarRolCorrespondiente);
+ 
+    switch ($clase['rol']) {
+    	case 'administrador':
 
-    $_SESSION["miUsuario"] = $clase['id'];
+		    $_SESSION["administrador"] = true;	
+		    header("Location: ../vistas/adminLogeado.php");
+		    Conexion::cerrar();
+    		break;
 
+    	case 'chofer':
+
+		    $_SESSION["chofer"] = true;	
+		    header("Location: ../vistas/choferLogeado.php");
+		    Conexion::cerrar();
+    		break;
+
+    	case 'cliente':
+
+		    $_SESSION["cliente"] = true;	
+		    header("Location: ../vistas/clienteLogeado.php");
+		    Conexion::cerrar();
+    		break;
+
+    	case 'mecanico':
+
+		    $_SESSION["mecanico"] = true;	
+		    header("Location: ../vistas/mecanicoLogeado.php");
+		    Conexion::cerrar();
+    		break;
+
+    	case 'empresa':
+
+		    $_SESSION["empresa"] = true;	
+		    header("Location: ../vistas/empresaLogeado.php");
+		    Conexion::cerrar();
+    		break;
+    }
 
     Conexion::cerrar();
 ?>
