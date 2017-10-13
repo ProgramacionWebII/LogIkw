@@ -1,5 +1,4 @@
 <?php
-include "include.php";
  class Administrador{
 
 	public static function getId($id){
