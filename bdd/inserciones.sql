@@ -33,7 +33,7 @@ fecha_de_salida_real,fecha_de_llegada_real,tiempo_real,km_recorridos_previstos,d
 '2017-11-05','2017-11-09',105,1000,1,400,380);
 
 
-INSERT into vehiculo(patente,nro_chasis,nro_motor,marca,modelo,año_fabricacion) values
+INSERT into vehiculo(patente,nro_chasis,nro_motor,marca,modelo,anio_fabricacion) values
 ('ab 123 cd','10',20,'ford','j2001',2000),
 ('ik 456 pl','25',55,'chevrolet','h201',2002);
 
