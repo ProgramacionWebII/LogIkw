@@ -63,37 +63,58 @@
 </div>
 
 <!--  Container (Grid) -->
-<div class="container-fluid col-sm-12">    
-  <h3 class="margin col-sm-2 col-sm-offset-5">SERVICIOS</h3><br>
+<br>
+		<div class="panel panel-success">
+      <div class="panel-heading text-center"><h2>SERVICIOS</h2></div>
+      <div class="panel-body">
+	  
+	  <div class="container-fluid col-sm-12">    
+
   <div class="col-sm-10 col-sm-offset-1">
-    <div class="col-sm-3">
-
-      <img src="image/caja.png" class="img-responsive margin" alt="Image">
-	        <br><p>Depósito Central con playón exclusivo para la recepción de carga</p>
+    
+		<div class="panel panel-default">
+		<div class="panel-body">
+		<div class="col-sm-3">
+		<img src="image/caja.png" class="img-responsive margin" alt="Image">
+		<br><p>Depósito Central con playón exclusivo para la recepción de carga</p>
+		</div>
+		
+		  <div class="col-sm-3"> 
+    <img src="image/cajas.png" class="img-responsive margin"  alt="Image">
+	  <br> <p>Preparación de pedidos para despachos a todo el país</p>
+		</div>
+		
+		    <div class="col-sm-3"> 
+     <img src="image/camion2.png" class="img-responsive margin" alt="Image">
+	 <br><p>Entregas en Capital y GBA con móviles exclusivos. Envíos a todo el País a través de Expresos de primera línea.</p>
     </div>
+		
+		
+		
     <div class="col-sm-3"> 
+     <img src="image/auriculares.png" class="img-responsive margin" alt="Image">
+	 <br> <p>Ejecutivos de cuenta en constante comunicación con cada cliente.</p>
+    </div>
+		</div>
+		</div>
+	</div>
+		</div>
+	</div>
+		</div>
 
-      <img src="image/cajas.png" class="img-responsive margin"  alt="Image">
-	       <br> <p>Preparación de pedidos para despachos a todo el país</p>
-    </div>
-    <div class="col-sm-3"> 
-      
-      <img src="image/camion2.png" class="img-responsive margin" alt="Image">
-	        <br><p>Entregas en Capital y GBA con móviles exclusivos. Envíos a todo el País a través de Expresos de primera línea.</p>
-    </div>
-	
-	<div class="col-sm-3"> 
-      
-      <img src="image/auriculares.png" class="img-responsive margin" alt="Image">
-	       <br> <p>Ejecutivos de cuenta en constante comunicación con cada cliente.</p>
-    </div>
-  </div>
-</div>
+		
+				<div class="panel panel-success">
+      <div class="panel-heading text-center"><h2>CONTACTO</h2></div>
+ </div>
+		
 <!-- Footer -->
-	<footer class="footer-distributed">
 
-			<div class="footer-left">
 
+	<footer class="footer-distributed ">
+	 <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+	
 				<h3>MS Logistica</span></h3>
 
 				<p class="footer-links">
@@ -104,14 +125,10 @@
 					<a href="#">Servicios</a>
 					·
 					<a href="#">Contacto</a>
-					
-				
 				</p>
 
 			
-			</div>
-
-			<div class="footer-center">
+			
 
 				<div>
 					<i class="fa fa-map-marker"></i>
@@ -128,13 +145,13 @@
 					<p><a href="mailto:mslogistica@empresa.com.ar">mslogistica@empresa.com.ar</a></p>
 				</div>
 
-			</div>
+			
 
-			<div class="footer-right">
+			
 
 				<p class="footer-company-about">
 					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					Todos los derechos reservados
 				</p>
 
 				<div class="footer-icons">
@@ -147,20 +164,29 @@
 				</div>
 
 			</div>
-			
-			
 
-				<p class="glyphicon glyphicon-envelope">Contáctenos</p>
+					
 
-				<form action="#" method="post">
-
-					<input type="text" name="email" placeholder="Email" required /> <br><br>
-					<textarea name="message" placeholder="Mensaje" required></textarea>
-					<br><button class="btn btn-primary">Send</button>
-
-				</form>
 			
 
+   
+      
+	  
+	  
+<form class="col-lg-5" action="#" method="post">
+  <div class="form-group" >
+    <div class=""> <label for="exampleInputEmail1">Email:</label>
+    <input type="email" class="form-control" placeholder="Enter email"> 
+  
+  <div class="form-group">
+ <label for="exampleMessage">Mensaje:</label>
+    <textarea  class="form-control"  placeholder="Mensaje"></textarea></div>
+ 
+ 
+  <button type="submit" class="btn btn-primary">Enviar</button></div> </div>
+</form>
+	</div>
+	</div>
 		</footer>
 
 
