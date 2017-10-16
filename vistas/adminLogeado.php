@@ -1,7 +1,13 @@
 <?php 
+	include "../modelo/include.php";
 	session_start();
-
 	if($_SESSION['administrador'] == true){
+		$con = Conexion::conectar();
+		$query = "SELECT * FROM administrador";
+
+		$resultado = Conexion::getQuery($query);
+
+		$admin = mysqli_fetch_assoc($resultado);
 ?>
 
 
@@ -23,7 +29,7 @@
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-    <ul class="nav navbar-nav col-sm-8">
+    <ul class="nav navbar-nav col-sm-6">
       <li class="active"><a href="#">HOME</a></li>
 	  <li><a href="#">LA EMPRESA</a></li>
       <li><a href="#">SERVICIOS</a></li>
@@ -34,6 +40,9 @@
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
 	</ul>
 </nav>
   
@@ -209,7 +218,7 @@
 		      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Logearse">
+	        <input type="submit" class="btn btn-primary" value="Delogearse">
 	      </div>
 	    </div>
 	  </div>
