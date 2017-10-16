@@ -30,9 +30,11 @@
       <li><a href="#">CONTACTO</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
+		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
 	</ul>
-  </div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
+	</ul>
 </nav>
   
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -171,7 +173,7 @@
 		</footer>
 
 
-	<!-- Modal -->
+	<!-- Modal login-->
 	<form action="modelo/login.php" method="POST">
 	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
@@ -195,6 +197,24 @@
 	</div>
 	</form>
 
+	<!-- Modal logout-->
+	<form action="../modelo/logout.php" method="POST">
+	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header col-sm-8 col-sm-offset-2">
+	        <h2 class="modal-title" id="exampleModalLabel">¿Desea delogearse?</h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+		      </div>
+	      <div class="modal-footer col-sm-12">
+	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Logearse">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</form>
 </body>
 </html>
 
