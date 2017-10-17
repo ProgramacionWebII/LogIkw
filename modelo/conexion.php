@@ -5,6 +5,10 @@
     /*Funcion que se invoca al principio para conectar a la BDD*/
     public static function conectar(){
       $con = mysqli_connect("localhost","root","","logikw");
+	  // comprobar  conexion
+if ($con->connect_error) {
+    die("Conexion fallida" . $con->connect_error);
+} 
       return $con;
     }
 

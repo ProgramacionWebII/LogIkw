@@ -4,6 +4,7 @@
   <title>MS Logistica</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/validarLogin.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -191,7 +192,7 @@
 
 
 	<!-- Modal -->
-	<form action="modelo/login.php" method="POST">
+	<form name="miformulario" action="modelo/login.php" method="POST">
 	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
@@ -202,12 +203,14 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI"><br>
+	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario"><br>
 	        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********">
+		<br><br>	
+<div id="error" class="alert alert-danger " role="alert" ></div>
 	      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Logearse">
+	        <input type="button" class="btn btn-primary" value="Logearse" onclick= "validarLogin()" />
 	      </div>
 	    </div>
 	  </div>
