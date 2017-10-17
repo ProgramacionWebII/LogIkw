@@ -1,12 +1,12 @@
 <?php 
 	include "../modelo/include.php";
 	session_start();
-	if($_SESSION['administrador'] == true){
-		$query = "SELECT * FROM administrador";
+	$query = "SELECT * FROM administrador";
 
-		$resultado = Conexion::getQuery($query);
+	$resultado = Conexion::getQuery($query);
+	while($admin = mysqli_fetch_assoc($resultado)){
+		if($_SESSION['administrador'] == $admin['id']){
 
-		$admin = mysqli_fetch_assoc($resultado);
 ?>
 
 
@@ -202,11 +202,10 @@
 </body>
 </html>
 
-<?php }
-		else
-		{
-			header("Location: ../index.php");
-		}
+<?php } 
+}
+
+header("Location: ../index.php");
 
 
 ?>

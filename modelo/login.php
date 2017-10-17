@@ -32,35 +32,35 @@ include 'include.php';
     switch ($clase['rol']) {
     	case 'administrador':
 
-		    $_SESSION["administrador"] = true;	
+		    $_SESSION["administrador"] = $clase['id'];	
 		    header("Location: ../vistas/adminLogeado.php");
 		    Conexion::cerrar();
     		break;
 
     	case 'chofer':
 
-		    $_SESSION["chofer"] = true;	
+		    $_SESSION["chofer"] = $clase['id'];	
 		    header("Location: ../vistas/choferLogeado.php");
 		    Conexion::cerrar();
     		break;
 
     	case 'cliente':
 
-		    $_SESSION["cliente"] = true;	
+		    $_SESSION["cliente"] = $clase['id'];	
 		    header("Location: ../vistas/clienteLogeado.php");
 		    Conexion::cerrar();
     		break;
 
     	case 'mecanico':
 
-		    $_SESSION["mecanico"] = true;	
+		    $_SESSION["mecanico"] = $clase['id'];	
 		    header("Location: ../vistas/mecanicoLogeado.php");
 		    Conexion::cerrar();
     		break;
 
     	case 'empresa':
 
-		    $_SESSION["empresa"] = true;	
+		    $_SESSION["empresa"] = $clase['id'];	
 		    header("Location: ../vistas/empresaLogeado.php");
 		    Conexion::cerrar();
     		break;
