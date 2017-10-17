@@ -2,7 +2,6 @@
 	include "../modelo/include.php";
 	session_start();
 	if($_SESSION['administrador'] == true){
-		$con = Conexion::conectar();
 		$query = "SELECT * FROM administrador";
 
 		$resultado = Conexion::getQuery($query);
@@ -39,7 +38,7 @@
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
+		<li><a href=" <?php echo 'abm.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
@@ -181,30 +180,6 @@
 
 		</footer>
 
-
-	<!-- Modal login-->
-	<form action="modelo/login.php" method="POST">
-	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Login</h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI"><br>
-	        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********">
-	      </div>
-	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Logearse">
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	</form>
 
 	<!-- Modal logout-->
 	<form action="../modelo/logout.php" method="POST">
