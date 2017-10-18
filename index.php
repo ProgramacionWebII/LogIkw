@@ -202,8 +202,8 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI"><br>
-	        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********">
+	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI" required><br>
+	        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********" required>
 	      </div>
 	      <div class="modal-footer col-sm-12">
 		  
