@@ -8,10 +8,12 @@ include 'include.php';
 	/*Obtengo el usuario y pass enviado por POST desde el formulario "login" */
 	$usuario = $_POST["usuario"];
 	$password = $_POST["password"];
-	if(isset($usuario) & isset($password)){
-	    Conexion::cerrar();
+
+	if(isset($usuario) || isset($password) || empty($usuario) || empty(password)){
+		Conexion::cerrar();
 		header("Location: ../index.php");
 	}
+	
 	/*Preparo la consulta que voy a querer envía a la BDD por medio de los métodos de la clase "Conexion"*/
 	$query = "SELECT * FROM usuario WHERE user = '$usuario' AND pass = '$password'";
 
@@ -34,37 +36,38 @@ include 'include.php';
  
     switch ($clase['rol']) {
     	case 'administrador':
+	session_start();
 		    $_SESSION["administrador"] = $clase['id'];	
-		    Conexion::cerrar();
 		    header("Location: ../vistas/adminLogeado.php");
+		    Conexion::cerrar();
     		break;
 
     	case 'chofer':
-			session_start();
+session_start();
 		    $_SESSION["chofer"] = $clase['id'];	
-		    Conexion::cerrar();
 		    header("Location: ../vistas/choferLogeado.php");
+		    Conexion::cerrar();
     		break;
 
     	case 'cliente':
-			session_start();
+session_start();
 		    $_SESSION["cliente"] = $clase['id'];	
-		    Conexion::cerrar();
 		    header("Location: ../vistas/clienteLogeado.php");
+		    Conexion::cerrar();
     		break;
 
     	case 'mecanico':
-			session_start();
+session_start();
 		    $_SESSION["mecanico"] = $clase['id'];	
-		    Conexion::cerrar();
 		    header("Location: ../vistas/mecanicoLogeado.php");
+		    Conexion::cerrar();
     		break;
 
     	case 'empresa':
-			session_start();
+session_start();
 		    $_SESSION["empresa"] = $clase['id'];	
-		    Conexion::cerrar();
 		    header("Location: ../vistas/empresaLogeado.php");
+		    Conexion::cerrar();
     		break;
     }
 
