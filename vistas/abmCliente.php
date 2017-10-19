@@ -8,15 +8,7 @@
 		if($_SESSION['administrador'] == $admin['id']){
 
 		$query1 = "SELECT * FROM cliente";
-		$query2 = "SELECT * FROM empresa";
-		$query3 = "SELECT * FROM chofer";
-		$query4 = "SELECT * FROM mecanico";
-
 		$resultado1 = Conexion::getQuery($query1);
-		$resultado2 = Conexion::getQuery($query2);
-		$resultado3 = Conexion::getQuery($query3);
-		$resultado4 = Conexion::getQuery($query4);
-
 
 ?>
 
@@ -40,9 +32,9 @@
     </div>
     <ul class="nav navbar-nav col-sm-6">
       <li class="active"><a href="#">HOME</a></li>
-	  <li><a href="#">LA EMPRESA</a></li>
-      <li><a href="#">SERVICIOS</a></li>
-      <li><a href="#">CONTACTO</a></li>
+	  <li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
+      <li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
+      <li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
@@ -67,39 +59,11 @@
     </thead>
     <tbody>
    	<?php
-   	$i = 1;
 	while($cliente = mysqli_fetch_assoc($resultado1)){
 		echo "<tr>";
 		echo "<td>".$cliente['rol']."</td>";
 		echo "<td>".$cliente['razon_social']."</td>";
 		echo "<td>"."Responsable: ".$cliente['nombre']."</td>";
-		echo "<td><button type='button'  class='btn btn-primary'>Modificar</button></td>";
-		echo "<td><button type='button'  class='btn btn-danger'>Eliminar</button></td>";
-		echo "</tr>";
-	}
-	while($empresa = mysqli_fetch_assoc($resultado2)){
-		echo "<tr>";
-		echo "<td>".$empresa['rol']."</td>";
-		echo "<td>".$empresa['nombre']."</td>";
-		echo "<td>"."Telefono: ".$empresa['telefono']."</td>";
-		echo "<td><button type='button'  class='btn btn-primary'>Modificar</button></td>";
-		echo "<td><button type='button'  class='btn btn-danger'>Eliminar</button></td>";
-		echo "</tr>";
-	}
-	while($chofer = mysqli_fetch_assoc($resultado3)){
-		echo "<tr>";
-		echo "<td>".$chofer['rol']."</td>";
-		echo "<td>".$chofer['nombre']." ".$chofer['apellido']."</td>";
-		echo "<td>"."DNI: ".$chofer['dni_chofer']."</td>";
-		echo "<td><button type='button'  class='btn btn-primary'>Modificar</button></td>";
-		echo "<td><button type='button'  class='btn btn-danger'>Eliminar</button></td>";
-		echo "</tr>";
-	}
-	while($mecanico = mysqli_fetch_assoc($resultado4)){
-		echo "<tr>";
-		echo "<td>".$mecanico['rol']."</td>";
-		echo "<td>".$mecanico['nombre']." ".$mecanico['apellido']."</td>";
-		echo "<td>"."DNI: ".$mecanico['dni_mecanico']."</td>";
 		echo "<td><button type='button'  class='btn btn-primary'>Modificar</button></td>";
 		echo "<td><button type='button'  class='btn btn-danger'>Eliminar</button></td>";
 		echo "</tr>";
