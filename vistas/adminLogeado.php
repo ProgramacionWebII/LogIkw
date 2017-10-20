@@ -132,7 +132,7 @@
 <footer class="footer-distributed ">
 	<div class="container">
     	<div class="row">
-      		<div class="col-lg-5 col-sm-offset-1">
+      		<div class="col-sm-5 col-sm-offset-1">
 	
 				<h3>MS Logistica</span></h3>
 
@@ -171,7 +171,7 @@
 			</div>      
 	  
 	  
-	<form class="col-lg-5" action="#" method="post">
+	<form class="col-sm-5" action="#" method="post">
   		<div class="form-group" >
     		<label for="exampleInputEmail1">Email:</label>
     		<input type="email" class="form-control" placeholder="Enter email"> 

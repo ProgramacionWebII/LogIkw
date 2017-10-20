@@ -110,7 +110,7 @@
 <footer class="footer-distributed ">
 	<div class="container">
     	<div class="row">
-      		<div class="col-lg-6">
+      		<div class="col-lg-5 col-sm-offset-1">
 	
 				<h3>MS Logistica</span></h3>
 
@@ -189,6 +189,5 @@
 		  </div>
 		</div>
 	</form>
-
 </body>
 </html>
