@@ -1,12 +1,20 @@
 <?php 
-	include "../modelo/include.php";
 	session_start();
-	$query = "SELECT * FROM administrador";
 
-	$resultado = Conexion::getQuery($query);
-	while($admin = mysqli_fetch_assoc($resultado)){
-		if($_SESSION['administrador'] == $admin['id']){
+	/* Compruebo que la session "administrador" esté viva
+	En caso de estar viva, hago las declaraciones correspondientes para trabajar.
+	Caso contrario, redirijo al index impidiendo mostrar cualquier cosa */
 
+	if(isset($_SESSION['administrador'])){
+		include "../modelo/include.php";
+		$query = Administrador::getAll($_SESSION['administrador']);
+
+		$resultado = Conexion::getQuery($query);
+		$admin = mysqli_fetch_assoc($resultado);
+	}
+	else{		
+		header("Location: ../index.php");
+	}
 ?>
 
 
@@ -38,7 +46,7 @@
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'abm.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
+		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
@@ -201,11 +209,3 @@
 	</form>
 </body>
 </html>
-
-<?php } 
-}
-
-header("Location: ../index.php");
-
-
-?>
