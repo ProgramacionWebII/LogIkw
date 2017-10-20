@@ -64,72 +64,62 @@
 
 <!--  Container (Grid) -->
 <br>
-		<div class="panel panel-success">
-      <div class="panel-heading text-center"><h2>SERVICIOS</h2></div>
-      <div class="panel-body">
-	  
-	  <div class="container-fluid col-sm-12">    
 
-  <div class="col-sm-10 col-sm-offset-1">
-    
-		<div class="panel panel-default">
-		<div class="panel-body">
-		<div class="col-sm-3">
-		<img src="image/caja.png" class="img-responsive margin" alt="Image">
-		<br><p>Depósito Central con playón exclusivo para la recepción de carga</p>
-		</div>
-		
-		  <div class="col-sm-3"> 
-    <img src="image/cajas.png" class="img-responsive margin"  alt="Image">
-	  <br> <p>Preparación de pedidos para despachos a todo el país</p>
-		</div>
-		
-		    <div class="col-sm-3"> 
-     <img src="image/camion2.png" class="img-responsive margin" alt="Image">
-	 <br><p>Entregas en Capital y GBA con móviles exclusivos. Envíos a todo el País a través de Expresos de primera línea.</p>
+<div class="panel panel-success">
+    <div class="panel-heading text-center">
+    	<h2>SERVICIOS</h2>
     </div>
-		
-		
-		
-    <div class="col-sm-3"> 
-     <img src="image/auriculares.png" class="img-responsive margin" alt="Image">
-	 <br> <p>Ejecutivos de cuenta en constante comunicación con cada cliente.</p>
-    </div>
-		</div>
+	<div class="panel-body">	  
+		<div class="container-fluid col-sm-12">    
+
+				<div class="col-sm-10 col-sm-offset-1">
+
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="col-sm-3">
+							<img src="image/caja.png" class="img-responsive margin" alt="Image">
+							<br><p>Depósito Central con playón exclusivo para la recepción de carga</p>
+						</div>
+						<div class="col-sm-3"> 
+							<img src="image/cajas.png" class="img-responsive margin"  alt="Image">
+							<br> <p>Preparación de pedidos para despachos a todo el país</p>
+						</div>
+					    <div class="col-sm-3"> 
+						    <img src="image/camion2.png" class="img-responsive margin" alt="Image">
+							<br><p>Entregas en Capital y GBA con móviles exclusivos. Envíos a todo el País a través de Expresos de primera línea.</p>
+					    </div>		
+					    <div class="col-sm-3"> 
+					    	<img src="image/auriculares.png" class="img-responsive margin" alt="Image">
+							<br> <p>Ejecutivos de cuenta en constante comunicación con cada cliente.</p>
+					    </div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-		</div>
-	</div>
-		</div>
+</div>
 
 		
-				<div class="panel panel-success">
-      <div class="panel-heading text-center"><h2>CONTACTO</h2></div>
- </div>
+<div class="panel panel-success">
+  <div class="panel-heading text-center"><h2>CONTACTO</h2></div>
+</div>
 		
 <!-- Footer -->
 
 
-	<footer class="footer-distributed ">
-	 <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
+<footer class="footer-distributed ">
+	<div class="container">
+    	<div class="row">
+      		<div class="col-lg-6">
 	
 				<h3>MS Logistica</span></h3>
 
 				<p class="footer-links">
-					<a href="#">Home</a>
-					·
-					<a href="#">La Empresa</a>
-					·
-					<a href="#">Servicios</a>
-					·
+					<a href="#">Home</a>  ·
+					<a href="#">La Empresa</a> ·
+					<a href="#">Servicios</a> ·
 					<a href="#">Contacto</a>
 				</p>
-
-			
-			
-
 				<div>
 					<i class="fa fa-map-marker"></i>
 					<p><span>Av.Cuenca 412</span>, Buenos Aires, Argentina</p>
@@ -145,75 +135,59 @@
 					<p><a href="mailto:mslogistica@empresa.com.ar">mslogistica@empresa.com.ar</a></p>
 				</div>
 
-			
-
-			
-
 				<p class="footer-company-about">
 					<span>About the company</span>
 					Todos los derechos reservados
 				</p>
 
 				<div class="footer-icons">
-
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
 					<a href="#"><i class="fa fa-linkedin"></i></a>
 					<a href="#"><i class="fa fa-github"></i></a>
-
 				</div>
-
-			</div>
-
-					
-
-			
-
-   
-      
+			</div>      
 	  
 	  
-<form class="col-lg-5" action="#" method="post">
-  <div class="form-group" >
-    <div class=""> <label for="exampleInputEmail1">Email:</label>
-    <input type="email" class="form-control" placeholder="Enter email"> 
-  
-  <div class="form-group">
- <label for="exampleMessage">Mensaje:</label>
-    <textarea  class="form-control"  placeholder="Mensaje"></textarea></div>
+	<form class="col-lg-5" action="#" method="post">
+  		<div class="form-group" >
+    		<label for="exampleInputEmail1">Email:</label>
+    		<input type="email" class="form-control" placeholder="Enter email"> 
+  		</div>
+    	<div class="form-group">
+ 			<label for="exampleMessage">Mensaje:</label>
+    		<textarea  class="form-control"  placeholder="Mensaje"></textarea>
+    	</div>
  
- 
-  <button type="submit" class="btn btn-primary">Enviar</button></div> </div>
-</form>
-	</div>
-	</div>
-		</footer>
+  		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+</footer>
 
 
 	<!-- Modal -->
 	<form action="modelo/login.php" method="POST">
-	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Login</h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-	        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI" required><br>
-	        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********" required>
-	      </div>
-	      <div class="modal-footer col-sm-12">
-		  
+		<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content col-sm-12">
+		      <div class="modal-header col-sm-12">
+		        <h2 class="modal-title" id="exampleModalLabel">Login</h2>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body col-sm-12">
+		        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI" required><br>
+		        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********" required>
+		      </div>
+		      <div class="modal-footer col-sm-12">
+			  
 
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Logearse">
-	      </div>
-	    </div>
-	  </div>
-	</div>
+		        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+		        <input type="submit" class="btn btn-primary" value="Logearse">
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</form>
 
 </body>
