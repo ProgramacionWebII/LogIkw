@@ -1,14 +1,17 @@
 <?php
-	include "../modelo/include.php";
 	session_start();
-	$query = "SELECT * FROM administrador";
+	if(isset($_SESSION['administrador'])){
+		include "../modelo/include.php";
+		$query = Administrador::getAllForId($_SESSION['administrador']);
 
-	$resultado = Conexion::getQuery($query);
-	while($admin = mysqli_fetch_assoc($resultado)){
-		if($_SESSION['administrador'] == $admin['id']){
-
-		$query1 = "SELECT * FROM cliente";
+		$resultado = Conexion::getQuery($query);
+		$admin = mysqli_fetch_assoc($resultado);
+		$query1 = Cliente::getAll();
 		$resultado1 = Conexion::getQuery($query1);
+	}
+	else{		
+		header("Location: ../index.php");
+	}
 
 ?>
 
@@ -268,11 +271,3 @@
 </body>
 </body>
 </html>
-
-<?php }
-
-}
-header("Location: ../index.php");
-
-
-?>

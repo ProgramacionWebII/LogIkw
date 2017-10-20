@@ -7,7 +7,7 @@
 
 	if(isset($_SESSION['administrador'])){
 		include "../modelo/include.php";
-		$query = Administrador::getAll($_SESSION['administrador']);
+		$query = Administrador::getAllForId($_SESSION['administrador']);
 
 		$resultado = Conexion::getQuery($query);
 		$admin = mysqli_fetch_assoc($resultado);
