@@ -16,7 +16,8 @@
 
     /*Esta funcion se invoca para mandar consultas de las que no necesitemos que nos de un retorno, por ejemplo un INSERT, DELETE, UPDATE*/
     public static function setQuery($sql){
-      mysqli_query($con, $sql);
+      $con = Conexion::conectar();
+      $query = mysqli_query($con, $sql);
     }
 
     /*Esta funcion se usa cuando quiero mandar un SELECT EJ:

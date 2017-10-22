@@ -12,5 +12,11 @@
 			$query = "SELECT * FROM cliente WHERE id = $id";
 			return $query;
 		}
+
+		public static function insertCliente($razonSocial, $nombre, $telefono, $domicilio){
+			$query = "INSERT INTO cliente(razon_social, rol, nombre,telefono,domicilio,email)
+			VALUES ('$razonSocial', 'cliente', '$nombre', $telefono, '$domicilio', 'email')";
+			return $query;
+		}
 	}
 ?>

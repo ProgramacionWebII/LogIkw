@@ -50,6 +50,7 @@
 
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Administrador de usuarios</h2>
+  <form method="POST" action="../modelo/abm.php">
   <table class="table table-condensed">
     <thead>
       <tr>
@@ -67,13 +68,14 @@
 		echo "<td>".$cliente['rol']."</td>";
 		echo "<td>".$cliente['razon_social']."</td>";
 		echo "<td>"."Responsable: ".$cliente['nombre']."</td>";
-		echo "<td><button type='button'  class='btn btn-primary'>Modificar</button></td>";
-		echo "<td><button type='button'  class='btn btn-danger'>Eliminar</button></td>";
+		echo "<td><button type='button' class='btn btn-primary' onclick='modificar(" .$cliente['id'].") '>Modificar</button></td>";
+		echo "<td><button type='button' class='btn btn-danger' onclick='eliminar(" .$cliente['id'].") '>Eliminar</button></td>";
 		echo "</tr>";
 	}
    	?>
     </tbody>
   </table>
+  </form>
 </div>
 
 
@@ -102,94 +104,20 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
 	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Seleccion</h2>
+	        <h2 class="modal-title" id="exampleModalLabel">Alta nuevo Cliente</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="razonSocial" class="col-sm-10 col-sm-offset-1" placeholder="Razón social"><br>
-	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre">
-	        <input type="text" name="telefono" class="col-sm-10 col-sm-offset-1" placeholder="Telefono"><br>
-	        <input type="text" name="domicilio" class="col-sm-10 col-sm-offset-1" placeholder="Domicilio"><br>
-	        <input type="email" name="email" class="col-sm-10 col-sm-offset-1" placeholder="email"><br>
+   	        <input type="text" name="razonSocial" class="col-sm-10 col-sm-offset-1" placeholder="Razón social" required><br>
+	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre" required>
+	        <input type="text" name="telefono" class="col-sm-10 col-sm-offset-1" placeholder="Telefono" required><br>
+	        <input type="text" name="domicilio" class="col-sm-10 col-sm-offset-1" placeholder="Domicilio" required><br>
+	        <input type="email" name="email" class="col-sm-10 col-sm-offset-1" placeholder="email" required><br>
 	      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Delogearse">
-	      </div>
-	    </div>
-	  </div>
-	</div>
-   	</form>
-
-	<!-- Modal Empresa-->
-    <form action="../modelo/abm.php" method="POST">
-	<div class="modal fade" id="agregarEmpresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Seleccion</h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-		        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre">
-	        <input type="text" name="telefono" class="col-sm-10 col-sm-offset-1" placeholder="Telefono"><br>
-	        <input type="text" name="domicilio" class="col-sm-10 col-sm-offset-1" placeholder="Domicilio"><br>
-	       </div>
-	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Delogearse">
-	      </div>
-	    </div>
-	  </div>
-	</div>
-   	</form>
-
-	<!-- Modal Chofer-->
-    <form action="../modelo/abm.php" method="POST">
-	<div class="modal fade" id="agregarChofer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Seleccion</h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="dni" class="col-sm-10 col-sm-offset-1" placeholder="DNI"><br>
-   	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre"><br>
-	        <input type="text" name="apellido" class="col-sm-10 col-sm-offset-1" placeholder="Apellido">
-	        <input type="text" name="fechaNac" class="col-sm-10 col-sm-offset-1" placeholder="Fecha de nacimiento"><br>
-	        <input type="text" name="tipoLicencia" class="col-sm-10 col-sm-offset-1" placeholder="Tipo de licencia">
-	       </div>
-	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Delogearse">
-	      </div>
-	    </div>
-	  </div>
-	</div>
-   	</form>
-
-	<!-- Modal Mecanico-->
-    <form action="../modelo/abm.php" method="POST">
-	<div class="modal fade" id="agregarMecanico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Seleccion</h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="dni" class="col-sm-10 col-sm-offset-1" placeholder="dni"><br>
-	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre"><br>
-	        <input type="text" name="apellido" class="col-sm-10 col-sm-offset-1" placeholder="apellido">
-	       </div>
-	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Delogearse">
+	        <input type="submit" class="btn btn-primary" value="Cargar">
 	      </div>
 	    </div>
 	  </div>
