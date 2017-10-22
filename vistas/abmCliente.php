@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/abm.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
 <body>
@@ -50,7 +51,6 @@
 
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Administrador de usuarios</h2>
-  <form method="POST" action="../modelo/abm.php">
   <table class="table table-condensed">
     <thead>
       <tr>
@@ -64,18 +64,24 @@
     <tbody>
    	<?php
 	while($cliente = mysqli_fetch_assoc($resultado1)){
+		echo "<form method='POST' action='../modelo/ejecutarAbmcliente.php'>";
 		echo "<tr>";
 		echo "<td>".$cliente['rol']."</td>";
 		echo "<td>".$cliente['razon_social']."</td>";
 		echo "<td>"."Responsable: ".$cliente['nombre']."</td>";
-		echo "<td><button type='button' class='btn btn-primary' onclick='modificar(" .$cliente['id'].") '>Modificar</button></td>";
-		echo "<td><button type='button' class='btn btn-danger' onclick='eliminar(" .$cliente['id'].") '>Eliminar</button></td>";
+
+		echo "<input type='text' name='id' class='hidden' value='".$cliente['id']."'>";
+
+		echo "<td><button type='submit' id='modificar' name='alterar' class='btn btn-primary' value='modificar' onclick='modificar()'>Modificar</button></td>";
+
+		echo "<td><button type='submit'  id='eliminar' name='alterar' class='btn btn-danger' value='eliminar' onclick='eliminar()'>Eliminar</button></td>";
+
 		echo "</tr>";
+  		echo "</form>";
 	}
    	?>
     </tbody>
   </table>
-  </form>
 </div>
 
 
@@ -99,7 +105,7 @@
 	</form>
 
 	<!-- Modales de agregar-->
-    <form action="../modelo/abm.php" method="POST">
+    <form action="../modelo/ejecutarAbmCliente.php" method="POST">
 	<div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
