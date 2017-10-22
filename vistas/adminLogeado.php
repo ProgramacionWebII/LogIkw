@@ -46,7 +46,16 @@
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span> Sección ABM</a></li>
+		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span> ABM Cliente</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span>ABM Empresa</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span>ABM Chofer</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-log-in" ></span>ABM Mecanico</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
