@@ -64,20 +64,20 @@
     <tbody>
    	<?php
 	while($cliente = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmcliente.php'>";
-		echo "<tr>";
-		echo "<td>".$cliente['rol']."</td>";
-		echo "<td>".$cliente['razon_social']."</td>";
-		echo "<td>"."Responsable: ".$cliente['nombre']."</td>";
+		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php'>
+		 <tr>
+		 <td>".$cliente['rol']."</td>
+		 <td>".$cliente['razon_social']."</td>
+		 <td>"."Responsable: ".$cliente['nombre']."</td>
 
-		echo "<input type='text' name='id' class='hidden' value='".$cliente['id']."'>";
+		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'>
 
-		echo "<td><button type='submit' id='modificar' name='alterar' class='btn btn-primary' value='modificar' onclick='modificar()'>Modificar</button></td>";
+		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
 
-		echo "<td><button type='submit'  id='eliminar' name='alterar' class='btn btn-danger' value='eliminar' onclick='eliminar()'>Eliminar</button></td>";
+		 <td><button type='submit' id='eliminar' onclick= 'eliminar()' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
 
-		echo "</tr>";
-  		echo "</form>";
+		 </tr>
+  		 </form>";
 	}
    	?>
     </tbody>
@@ -104,7 +104,7 @@
 		</div>
 	</form>
 
-	<!-- Modales de agregar-->
+	<!-- Modal de agregar-->
     <form action="../modelo/ejecutarAbmCliente.php" method="POST">
 	<div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
@@ -120,6 +120,7 @@
 	        <input type="text" name="telefono" class="col-sm-10 col-sm-offset-1" placeholder="Telefono" required><br>
 	        <input type="text" name="domicilio" class="col-sm-10 col-sm-offset-1" placeholder="Domicilio" required><br>
 	        <input type="email" name="email" class="col-sm-10 col-sm-offset-1" placeholder="email" required><br>
+	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">

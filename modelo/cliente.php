@@ -23,5 +23,15 @@
 			$query = "DELETE FROM cliente WHERE id = $id";
 			return $query;
 		}
+
+		public static function actualizar($id, $razonSocial, $nombre, $telefono, $domicilio, $email){
+			$query = "UPDATE cliente
+			SET razon_social = '$razonSocial',
+			nombre = '$nombre', 
+			telefono = '$telefono',
+			domicilio = '$domicilio',
+			email = '$email'
+			WHERE id = $id";
+		}
 	}
 ?>
