@@ -32,7 +32,7 @@
 	}
 
 
-	$sql = Cliente::insertar($razonSocial, $nombre, $telefono, $domicilio);
+	$sql = Cliente::insertar($razonSocial, $nombre, $telefono, $domicilio, $email);
 	Conexion::setQuery($sql);
 	Conexion::cerrar();
 

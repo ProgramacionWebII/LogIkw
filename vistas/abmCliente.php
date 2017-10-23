@@ -50,7 +50,7 @@
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Administrador de usuarios</h2>
+  <h2>Administrador de clientes</h2>
   <table class="table table-condensed">
     <thead>
       <tr>
