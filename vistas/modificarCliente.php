@@ -30,20 +30,12 @@
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-<<<<<<< HEAD
-    <ul class="nav navbar-nav col-sm-4">
-      <li class="active"><a href="<?php echo 'adminLogeado.php'; ?>">HOME</a></li>
-	  <li><a href="#">LA EMPRESA</a></li>
-      <li><a href="#">SERVICIOS</a></li>
-      <li><a href="#">CONTACTO</a></li>
-=======
      <ul class="nav navbar-nav col-sm-6">
-         <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
+        <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
 	    <li><a href="<?php echo "abmCliente.php";?>">Cliente</a></li>
-	  <li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
-      <li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
-      <li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
->>>>>>> 2cdccb6c9534f8faf8ba3eaef221e7365dc8871d
+	  	<li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
+      	<li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
+      	<li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
@@ -71,20 +63,21 @@
 		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
 		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'><br>
-		razon Social: <input type='text' name='razonSocial' class='form-control' value='".$cliente['razon_social']."'><br>
-		 nombre:<input type='text' name='nombre' class='form-control' value='".$cliente['nombre']."'><br>
-		 telefono:<input type='text' name='telefono' class='form-control' value='".$cliente['telefono']."'><br>
-		domicilio:<input type='text' name='domicilio' class='form-control' value='".$cliente['domicilio']."'><br>
-		 email:<input type='text' name='email' class='form-control' value='".$cliente['email']."'>
+		<label>Razon Social:</label>
+		<input type='text' name='razonSocial' class='form-control' value='".$cliente['razon_social']."'><br>
+		<label>Nombre:</label>
+		<input type='text' name='nombre' class='form-control' value='".$cliente['nombre']."'><br>
+		<label>Teléfono:</label>
+		<input type='text' name='telefono' class='form-control' value='".$cliente['telefono']."'><br>
+		<label>Domicilio:</label>
+		<input type='text' name='domicilio' class='form-control' value='".$cliente['domicilio']."'><br>
+		<label>Email:</label>
+		<input type='text' name='email' class='form-control' value='".$cliente['email']."'>
 		 <input type='text' name='alterar' class='hidden' value='a'>
 		 </div>
 		 <div class='form-group col-sm-offset-3 col-sm-6''>
 		 <button type='submit' class='btn btn-primary'>Modificar</button>
 		 <a href='abmCliente.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
-<<<<<<< HEAD
-=======
-		 </tr>
->>>>>>> 2cdccb6c9534f8faf8ba3eaef221e7365dc8871d
 		 </div>
   		 </form>";
 	}
