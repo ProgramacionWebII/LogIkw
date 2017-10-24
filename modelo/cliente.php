@@ -32,6 +32,7 @@
 			domicilio = '$domicilio',
 			email = '$email'
 			WHERE id = $id";
+			return $query;
 		}
 	}
 ?>
