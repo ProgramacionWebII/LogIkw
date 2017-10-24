@@ -5,7 +5,7 @@
 		$query = Administrador::getAllForId($_SESSION['administrador']);
 		$resultado = Conexion::getQuery($query);
 		$admin = mysqli_fetch_assoc($resultado);
-		$query1 = Cliente::getAllForId($_SESSION['modificar']);
+		$query1 = Chofer::getAllForId($_SESSION['modificar']);
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
@@ -47,22 +47,22 @@
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Actualizar cliente</h2>
+  <h2>Actualizar chofer</h2>
    	<?php
-	while($cliente = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php' class='col-sm-12'>
+	while($chofer = mysqli_fetch_assoc($resultado1)){
+		echo "<form method='POST' action='../modelo/ejecutarAbmChofer.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
-		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'><br>
-		razon Social: <input type='text' name='razonSocial' class='form-control' value='".$cliente['razon_social']."'><br>
-		 nombre:<input type='text' name='nombre' class='form-control' value='".$cliente['nombre']."'><br>
-		 telefono:<input type='text' name='telefono' class='form-control' value='".$cliente['telefono']."'><br>
-		domicilio:<input type='text' name='domicilio' class='form-control' value='".$cliente['domicilio']."'><br>
-		 email:<input type='text' name='email' class='form-control' value='".$cliente['email']."'>
+		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'><br>
+		 dni:<input type='text' name='dni_chofer' class='form-control' value='".$chofer['dni_chofer']."'><br>
+		 nombre:<input type='text' name='nombre' class='form-control' value='".$chofer['nombre']."'><br>
+		 apellido:<input type='text' name='apellido' class='form-control' value='".$chofer['apellido']."'><br>
+		 fecha_de_nacimiento:<input type='text' name='fecha_de_nacimiento' class='form-control' value='".$chofer['fecha_de_nacimiento']."'><br>
+		tipo_licencia_de_conducir: <input type='text' name='tipo_licencia_de_conducir' class='form-control' value='".$chofer['tipo_licencia_de_conducir']."'><br>
 		 <input type='text' name='alterar' class='hidden' value='a'>
 		 </div>
 		 <div class='form-group col-sm-offset-3 col-sm-6''>
 		 <button type='submit' class='btn btn-primary'>Modificar</button>
-		 <a href='abmCliente.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
+		 <a href='abmChofer.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
 		 </tr>
 		 </div>
   		 </form>";

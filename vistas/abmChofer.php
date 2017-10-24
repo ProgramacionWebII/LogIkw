@@ -6,7 +6,7 @@
 
 		$resultado = Conexion::getQuery($query);
 		$admin = mysqli_fetch_assoc($resultado);
-		$query1 = Cliente::getAll();
+		$query1 = Chofer::getAll();
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
@@ -51,27 +51,29 @@
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Administrador de clientes</h2>
+  <h2>Administrador de choferes</h2>
   <table class="table table-condensed">
     <thead>
       <tr>
+	     <th>Id</th>
         <th>Rol</th>
         <th>Nombre</th>
         <th>Datos adicionales</th>
-		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarCliente'>Agregar</button></th>
+		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarChofer'>Agregar</button></th>
 
       </tr>
     </thead>
     <tbody>
    	<?php
-	while($cliente = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php'>
+	while($chofer = mysqli_fetch_assoc($resultado1)){
+		echo "<form method='POST' action='../modelo/ejecutarAbmChofer.php'>
 		 <tr>
-		 <td>".$cliente['rol']."</td>
-		 <td>".$cliente['razon_social']."</td>
-		 <td>"."Responsable: ".$cliente['nombre']."</td>
+		  <td>".$chofer['id']."</td>
+		 <td>".$chofer['rol']."</td>
+		 <td>".$chofer['dni_chofer']."</td>
+		 <td>"."Responsable: ".$chofer['nombre']."</td>
 
-		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'>
+		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'>
 
 		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
 
@@ -106,21 +108,21 @@
 	</form>
 
 	<!-- Modal de agregar-->
-    <form action="../modelo/ejecutarAbmCliente.php" method="POST">
-	<div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="../modelo/ejecutarAbmChofer.php" method="POST">
+	<div class="modal fade" id="agregarChofer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
 	      <div class="modal-header col-sm-12">
-	        <h2 class="modal-title" id="exampleModalLabel">Alta nuevo Cliente</h2>
+	        <h2 class="modal-title" id="exampleModalLabel">Alta nuevo Chofer</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="razonSocial" class="col-sm-10 col-sm-offset-1" placeholder="Razón social" required><br>
+   	        <input type="text" name="dni_chofer" class="col-sm-10 col-sm-offset-1" placeholder="dni_chofer" required><br>
 	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre" required>
-	        <input type="text" name="telefono" class="col-sm-10 col-sm-offset-1" placeholder="Telefono" required><br>
-	        <input type="text" name="domicilio" class="col-sm-10 col-sm-offset-1" placeholder="Domicilio" required><br>
-	        <input type="email" name="email" class="col-sm-10 col-sm-offset-1" placeholder="email" required><br>
+	        <input type="text" name="apellido" class="col-sm-10 col-sm-offset-1" placeholder="apellido" required><br>
+	        <input type="text" name="fecha_de_nacimiento" class="col-sm-10 col-sm-offset-1" placeholder="fecha_de_nacimiento" required><br>
+	        <input type="text" name="tipo_licencia_de_conducir" class="col-sm-10 col-sm-offset-1" placeholder="tipo_licencia_de_conducir" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">
