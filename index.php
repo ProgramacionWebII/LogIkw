@@ -12,20 +12,22 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid col-sm-12">
-    <div class="navbar-header col-sm-1">
-     <img src="image/logo.png">
-    </div>
-    <ul class="nav navbar-nav col-sm-8">
-      <li class="active"><a href="#">HOME</a></li>
-	  <li><a href="#">LA EMPRESA</a></li>
-      <li><a href="#">SERVICIOS</a></li>
-      <li><a href="#">CONTACTO</a></li>
-    </ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
-	</ul>
-  </div>
+  	<div class="col-sm-12">
+  	<div class="container-fluid">
+	    <div class="navbar-header col-sm-1">
+	     <img src="image/logo.png">
+	    </div>
+	    <ul class="nav navbar-nav col-sm-8">
+	      <li class="active"><a href="index.php">HOME</a></li>
+		  <li><a href="#">LA EMPRESA</a></li>
+	      <li><a href="#">SERVICIOS</a></li>
+	      <li><a href="#">CONTACTO</a></li>
+	    </ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+		</ul>
+  	</div>
+  	</div>
 </nav>
   
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -169,20 +171,19 @@
 		<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content col-sm-12">
-		      <div class="modal-header col-sm-12">
+		      <div class="modal-header">
 		        <h2 class="modal-title" id="exampleModalLabel">Login</h2>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
 		      <div class="modal-body col-sm-12">
-		        <input type="text" name="usuario" class="col-sm-10 col-sm-offset-1" placeholder="Usuario o DNI" required><br>
-		        <input type="password" name="password" class="col-sm-10 col-sm-offset-1" placeholder="**********" required>
+		        <input type="text" name="usuario" class="col-sm-6 form-control" placeholder="Usuario o DNI" required>
+		        <br>
+		        <input type="password" name="password" class="col-sm-6 form-control" placeholder="**********" required>
 		      </div>
 		      <div class="modal-footer col-sm-12">
-			  
-
-		        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+		        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
 		        <input type="submit" class="btn btn-primary" value="Logearse">
 		      </div>
 		    </div>

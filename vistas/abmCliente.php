@@ -30,22 +30,32 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid col-sm-12">
+	<div class="col-sm-12">
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-    <ul class="nav navbar-nav col-sm-6">
-      <li class="active"><a href="#">HOME</a></li>
-	  <li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
-      <li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
-      <li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
+    <ul class="nav navbar-nav col-sm-4">
+      <li class="active"><a href="<?php echo 'adminLogeado.php'; ?>">HOME</a></li>
+	  <li><a href="#">LA EMPRESA</a></li>
+      <li><a href="#">SERVICIOS</a></li>
+      <li><a href="#">CONTACTO</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
+		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre']; ?></a></li>
+		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
 	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
+	</ul>
+	</div>
 </nav>
   
 
@@ -109,21 +119,21 @@
 	<div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
+	      <div class="modal-header">
 	        <h2 class="modal-title" id="exampleModalLabel">Alta nuevo Cliente</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="razonSocial" class="col-sm-10 col-sm-offset-1" placeholder="Razón social" required><br>
-	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre" required>
-	        <input type="text" name="telefono" class="col-sm-10 col-sm-offset-1" placeholder="Telefono" required><br>
-	        <input type="text" name="domicilio" class="col-sm-10 col-sm-offset-1" placeholder="Domicilio" required><br>
-	        <input type="email" name="email" class="col-sm-10 col-sm-offset-1" placeholder="email" required><br>
+   	        <input type="text" name="razonSocial" class="col-sm-6 form-control" placeholder="Razón social" required><br>
+	        <input type="text" name="nombre" class="col-sm-6 form-control" placeholder="Nombre" required>
+	        <input type="text" name="telefono" class="col-sm-6 form-control" placeholder="Telefono" required><br>
+	        <input type="text" name="domicilio" class="col-sm-6 form-control" placeholder="Domicilio" required><br>
+	        <input type="email" name="email" class="col-sm-6 form-control" placeholder="email" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
 	        <input type="submit" class="btn btn-primary" value="Cargar">
 	      </div>
 	    </div>
