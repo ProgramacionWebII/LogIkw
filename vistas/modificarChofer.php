@@ -26,23 +26,33 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid col-sm-12">
+	<div class="col-sm-12">
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
      <ul class="nav navbar-nav col-sm-6">
-         <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
+        <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
 	    <li><a href="<?php echo "abmCliente.php";?>">Cliente</a></li>
-	  <li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
-      <li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
-      <li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
+	  	<li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
+      	<li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
+      	<li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
+		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre']; ?></a></li>
+		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
 	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
+	</ul>
+	</div>
 </nav>
   
 

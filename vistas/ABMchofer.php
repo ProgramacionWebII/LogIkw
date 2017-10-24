@@ -30,23 +30,33 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid col-sm-12">
+	<div class="col-sm-12">
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-    <ul class="nav navbar-nav col-sm-6">
-         <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
+     <ul class="nav navbar-nav col-sm-6">
+        <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
 	    <li><a href="<?php echo "abmCliente.php";?>">Cliente</a></li>
-	  <li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
-      <li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
-      <li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
+	  	<li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
+      	<li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
+      	<li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
+		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Bienvenido <?php echo $admin['nombre']; ?></a></li>
+		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
 	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
+	</ul>
+	</div>
 </nav>
   
 
@@ -68,14 +78,14 @@
 	while($chofer = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../modelo/ejecutarAbmChofer.php'>
 		 <tr>
-		  <td>".$chofer['id']."</td>
+		 <td>".$chofer['id']."</td>
 		 <td>".$chofer['rol']."</td>
 		 <td>".$chofer['dni_chofer']."</td>
 		 <td>"."Responsable: ".$chofer['nombre']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'>
 
-		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
+		 <td><button type='button' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
 
 		 <td><button type='submit' id='eliminar' onclick= 'eliminar()' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
 
@@ -112,21 +122,21 @@
 	<div class="modal fade" id="agregarChofer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
-	      <div class="modal-header col-sm-12">
+	      <div class="modal-header">
 	        <h2 class="modal-title" id="exampleModalLabel">Alta nuevo Chofer</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="dni_chofer" class="col-sm-10 col-sm-offset-1" placeholder="dni_chofer" required><br>
-	        <input type="text" name="nombre" class="col-sm-10 col-sm-offset-1" placeholder="Nombre" required>
-	        <input type="text" name="apellido" class="col-sm-10 col-sm-offset-1" placeholder="apellido" required><br>
-	        <input type="text" name="fecha_de_nacimiento" class="col-sm-10 col-sm-offset-1" placeholder="fecha_de_nacimiento" required><br>
-	        <input type="text" name="tipo_licencia_de_conducir" class="col-sm-10 col-sm-offset-1" placeholder="tipo_licencia_de_conducir" required><br>
+   	        <input type="text" name="dni_chofer" class="form-control col-sm-6" placeholder="dni_chofer" required><br>
+	        <input type="text" name="nombre" class="form-control col-sm-6" placeholder="Nombre" required>
+	        <input type="text" name="apellido" class="form-control col-sm-6" placeholder="apellido" required><br>
+	        <input type="text" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="fecha_de_nacimiento" required><br>
+	        <input type="text" name="tipo_licencia_de_conducir" class="form-control col-sm-6" placeholder="tipo_licencia_de_conducir" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
 	        <input type="submit" class="btn btn-primary" value="Cargar">
 	      </div>
 	    </div>
