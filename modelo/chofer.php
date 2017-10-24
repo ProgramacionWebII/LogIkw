@@ -16,7 +16,7 @@
 
 		public static function insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir){
 			$query = "INSERT INTO chofer(dni_chofer, rol, nombre,apellido,fecha_de_nacimiento,tipo_licencia_de_conducir)
-			VALUES ('$dni_chofer', 'chofer', '$nombre', $apellido, '$fecha_de_nacimiento', '$tipo_licencia_de_conducir')";
+			VALUES ($dni_chofer, 'chofer', '$nombre', '$apellido', '$fecha_de_nacimiento', '$tipo_licencia_de_conducir')";
 			return $query;
 		}
 
@@ -27,7 +27,7 @@
 
 		public static function actualizar($id,$dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir){
 			$query = "UPDATE chofer
-			SET dni_chofer = '$dni_chofer',
+			SET dni_chofer = $dni_chofer,
 			nombre = '$nombre', 
 			apellido = '$apellido',
 			fecha_de_nacimiento = '$fecha_de_nacimiento',
