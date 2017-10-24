@@ -51,24 +51,24 @@
   <h2>Actualizar cliente</h2>
    	<?php
 	while($cliente = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php'>
+		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php' class='col-sm-12'>
+		<div class='form-group col-sm-offset-3 col-sm-6'>
 		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'><br>
-		 <input type='text' name='razonSocial' class='' value='".$cliente['razon_social']."'><br>
-		 <input type='text' name='nombre' class='' value='".$cliente['nombre']."'><br>
-		 <input type='text' name='telefono' class='' value='".$cliente['telefono']."'><br>
-		 <input type='text' name='domicilio' class='' value='".$cliente['domicilio']."'><br>
-		 <input type='text' name='email' class='' value='".$cliente['email']."'>
+		 <input type='text' name='razonSocial' class='form-control' value='".$cliente['razon_social']."'><br>
+		 <input type='text' name='nombre' class='form-control' value='".$cliente['nombre']."'><br>
+		 <input type='text' name='telefono' class='form-control' value='".$cliente['telefono']."'><br>
+		 <input type='text' name='domicilio' class='form-control' value='".$cliente['domicilio']."'><br>
+		 <input type='text' name='email' class='form-control' value='".$cliente['email']."'>
 		 <input type='text' name='alterar' class='hidden' value='a'>
+		 </div>
+		 <div class='form-group col-sm-offset-3 col-sm-6''>
+		 <button type='submit' class='btn btn-primary'>Modificar</button>
 
-
-		 <td><button type='submit' class='btn btn-primary'>Modificar</button></td>
-
-		 <td><a href='abmCliente.php'><button type='submit' class='btn btn-danger'>Regresar</button></a></td>
+		 <a href='abmCliente.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
 
 		 </tr>
+		 </div>
   		 </form>";
 	}
    	?>
-    </tbody>
-  </table>
 </div>
