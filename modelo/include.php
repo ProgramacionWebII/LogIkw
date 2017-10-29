@@ -5,6 +5,7 @@ include "cliente.php";
 include "conexion.php";
 include "mantenimiento.php";
 include "mecanico.php";
+include "empresa.php";
 include "administrador.php";
 include "viaje.php";
 include "usuario.php";

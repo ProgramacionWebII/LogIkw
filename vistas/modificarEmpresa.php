@@ -5,7 +5,7 @@
 		$query = Administrador::getAllForId($_SESSION['administrador']);
 		$resultado = Conexion::getQuery($query);
 		$admin = mysqli_fetch_assoc($resultado);
-		$query1 = Chofer::getAllForId($_SESSION['modificar']);
+		$query1 = Empresa::getAllForId($_SESSION['modificar']);
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
@@ -41,10 +41,10 @@
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
+		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
+		<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
@@ -57,24 +57,24 @@
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Actualizar chofer</h2>
+  <h2>Actualizar empresa</h2>
    	<?php
-	while($chofer = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmChofer.php' class='col-sm-12'>
+	while($empresa = mysqli_fetch_assoc($resultado1)){
+		echo "<form method='POST' action='../modelo/ejecutarAbmEmpresa.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
+		 <input type='text' name='id' class='hidden' value='".$empresa['id']."'><br>
+		<label>Nombre:</label>
+		<input type='text' name='nombre' class='form-control' value='".$empresa['nombre']."'><br>
+		<label>Teléfono:</label>
+		<input type='text' name='telefono' class='form-control' value='".$empresa['telefono']."'><br>
+		<label>Domicilio:</label>
+		<input type='text' name='domicilio' class='form-control' value='".$empresa['domicilio']."'><br>
 		
-		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'><br>
-		<label>Dni:</label><input type='text' name='dni_chofer' class='form-control' value='".$chofer['dni_chofer']."'><br>
-		<label> Nombre:</label><input type='text' name='nombre' class='form-control' value='".$chofer['nombre']."'><br>
-		 <label> Apellido:</label><input type='text' name='apellido' class='form-control' value='".$chofer['apellido']."'><br>
-		 <label>Fecha de nacimiento:</label><input type='text' name='fecha_de_nacimiento' class='form-control' value='".$chofer['fecha_de_nacimiento']."'><br>
-		 <label>Tipo licencia de conducir: </label><input type='text' name='tipo_licencia_de_conducir' class='form-control' value='".$chofer['tipo_licencia_de_conducir']."'><br>
 		 <input type='text' name='alterar' class='hidden' value='a'>
 		 </div>
 		 <div class='form-group col-sm-offset-3 col-sm-6''>
 		 <button type='submit' class='btn btn-primary'>Modificar</button>
-		 <a href='abmChofer.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
-		 </tr>
+		 <a href='abmEmpresa.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
 		 </div>
   		 </form>";
 	}
