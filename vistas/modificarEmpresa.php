@@ -30,15 +30,14 @@
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-     <ul class="nav navbar-nav col-sm-6">
-        <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
-	    <li><a href="<?php echo "abmCliente.php";?>">Cliente</a></li>
-	  	<li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
-      	<li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
-      	<li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
+     <ul class="nav navbar-nav col-sm-4">
+        <li><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
@@ -48,6 +47,9 @@
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
@@ -62,21 +64,19 @@
 	while($empresa = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../modelo/ejecutarAbmEmpresa.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
-		 <input type='text' name='id' class='hidden' value='".$empresa['id']."'><br>
+		<input type='text' name='id' class='hidden' value='".$empresa['id']."'><br>
 		<label>Nombre:</label>
 		<input type='text' name='nombre' class='form-control' value='".$empresa['nombre']."'><br>
 		<label>Teléfono:</label>
 		<input type='text' name='telefono' class='form-control' value='".$empresa['telefono']."'><br>
 		<label>Domicilio:</label>
 		<input type='text' name='domicilio' class='form-control' value='".$empresa['domicilio']."'><br>
-		
-		 <input type='text' name='alterar' class='hidden' value='a'>
-		 </div>
-		 <div class='form-group col-sm-offset-3 col-sm-6''>
-		 <button type='submit' class='btn btn-primary'>Modificar</button>
-		 <a href='abmEmpresa.php'><button type='submit' class='btn btn-danger'>Regresar</button></a>
-		 </div>
-  		 </form>";
+		</div>
+		<div class='form-group col-sm-offset-3 col-sm-6''>
+		<button type='submit' name='alterar' value='a' class='btn btn-primary'>Modificar</button>
+		<a href='abmEmpresa.php'><button type='button' class='btn btn-danger'>Regresar</button></a>
+		</div>
+  		</form>";
 	}
    	?>
 </div>

@@ -23,7 +23,7 @@
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-    <ul class="nav navbar-nav col-sm-8">
+    <ul class="nav navbar-nav col-sm-4">
       <li class="active"><a href="#">HOME</a></li>
 	  <li><a href="#">LA EMPRESA</a></li>
       <li><a href="#">SERVICIOS</a></li>

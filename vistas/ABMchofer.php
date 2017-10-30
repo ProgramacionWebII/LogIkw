@@ -34,12 +34,8 @@
     <div class="navbar-header col-sm-1">
      <img src="../image/logo.png">
     </div>
-     <ul class="nav navbar-nav col-sm-6">
-        <li class="active"><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
-	    <li><a href="<?php echo "abmCliente.php";?>">Cliente</a></li>
-	  	<li><a href="<?php echo "abmEmpresa.php";?>">Empresa</a></li>
-      	<li><a href="<?php echo "abmChofer.php";?>">Chofer</a></li>
-      	<li><a href="<?php echo "abmMecanico.php";?>">Mecanico</a></li>
+     <ul class="nav navbar-nav col-sm-4">
+        <li><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
@@ -51,7 +47,13 @@
 		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
+		<li class="active"><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
@@ -128,11 +130,11 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="dni_chofer" class="form-control col-sm-6" placeholder="dni_chofer" required><br>
+   	        <input type="text" name="dni_chofer" class="form-control col-sm-6" placeholder="Dni" required><br>
 	        <input type="text" name="nombre" class="form-control col-sm-6" placeholder="Nombre" required>
-	        <input type="text" name="apellido" class="form-control col-sm-6" placeholder="apellido" required><br>
-	        <input type="text" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="fecha_de_nacimiento" required><br>
-	        <input type="text" name="tipo_licencia_de_conducir" class="form-control col-sm-6" placeholder="tipo_licencia_de_conducir" required><br>
+	        <input type="text" name="apellido" class="form-control col-sm-6" placeholder="Apellido" required><br>
+	        <input type="text" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="Fecha de nacimiento" required><br>
+	        <input type="text" name="tipo_licencia_de_conducir" class="form-control col-sm-6" placeholder="Tipo licencia de conducir" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">
