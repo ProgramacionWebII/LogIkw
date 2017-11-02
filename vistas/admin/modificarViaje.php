@@ -101,4 +101,24 @@
   		</form>";
 	}
    	?>
+
+ 	<!-- Modal logout-->
+	<form action="../../modelo/logout.php" method="POST">
+	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header col-sm-8 col-sm-offset-2">
+	        <h2 class="modal-title" id="exampleModalLabel">¿Desea delogearse?</h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+		      </div>
+	      <div class="modal-footer col-sm-12">
+	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Delogearse">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</form>
+
 </div>
