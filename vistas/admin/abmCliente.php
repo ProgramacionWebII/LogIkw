@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['administrador'])){
-		include "../modelo/include.php";
+		include "../../modelo/include.php";
 		$query = Administrador::getAllForId($_SESSION['administrador']);
 
 		$resultado = Conexion::getQuery($query);
@@ -10,7 +10,7 @@
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
-		header("Location: ../index.php");
+		header("Location: ../../index.php");
 	}
 
 ?>
@@ -21,21 +21,21 @@
   <title>MS Logistica</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../js/jquery.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  <script src="../js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/home.css">
-  <script type="text/javascript" src="../js/abm.js"></script>
+  <script src="../../js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+  <script src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/home.css">
+  <script type="text/javascript" src="../../js/abm.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
 	<div class="col-sm-12">
     <div class="navbar-header col-sm-1">
-     <img src="../image/logo.png">
+     <img src="../../image/logo.png">
     </div>
     <ul class="nav navbar-nav col-sm-4">
-        <li><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
+        <li><a href="<?php echo "../adminLogeado.php";?>">Home</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
@@ -77,7 +77,7 @@
     <tbody>
    	<?php
 	while($cliente = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmCliente.php'>
+		echo "<form method='POST' action='../../modelo/ejecutarAbmCliente.php'>
 		 <tr>
 		 <td>".$cliente['rol']."</td>
 		 <td>".$cliente['razon_social']."</td>
@@ -99,7 +99,7 @@
 
 
 	<!-- Modal logout-->
-	<form action="../modelo/logout.php" method="POST">
+	<form action="../../modelo/logout.php" method="POST">
 		<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content col-sm-12">
@@ -118,7 +118,7 @@
 	</form>
 
 	<!-- Modal de agregar-->
-    <form action="../modelo/ejecutarAbmCliente.php" method="POST">
+    <form action="../../modelo/ejecutarAbmCliente.php" method="POST">
 	<div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">

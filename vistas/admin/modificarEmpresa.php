@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['administrador'])){
-		include "../modelo/include.php";
+		include "../../modelo/include.php";
 		$query = Administrador::getAllForId($_SESSION['administrador']);
 		$resultado = Conexion::getQuery($query);
 		$admin = mysqli_fetch_assoc($resultado);
@@ -9,7 +9,7 @@
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
-		header("Location: ../index.php");
+		header("Location: ../../index.php");
 	}
 ?>
 <!DOCTYPE html>
@@ -18,20 +18,20 @@
   <title>MS Logistica</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../js/jquery.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  <script src="../js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <script src="../../js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+  <script src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/home.css">
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
 	<div class="col-sm-12">
     <div class="navbar-header col-sm-1">
-     <img src="../image/logo.png">
+     <img src="../../image/logo.png">
     </div>
      <ul class="nav navbar-nav col-sm-4">
-        <li><a href="<?php echo "adminLogeado.php";?>">Home</a></li>
+        <li><a href="<?php echo "../adminLogeado.php";?>">Home</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
@@ -62,7 +62,7 @@
   <h2>Actualizar empresa</h2>
    	<?php
 	while($empresa = mysqli_fetch_assoc($resultado1)){
-		echo "<form method='POST' action='../modelo/ejecutarAbmEmpresa.php' class='col-sm-12'>
+		echo "<form method='POST' action='../../modelo/ejecutarAbmEmpresa.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
 		<input type='text' name='id' class='hidden' value='".$empresa['id']."'><br>
 		<label>Nombre:</label>

@@ -13,7 +13,7 @@
 			$id = $_POST['id'];
 			session_start();
 			$_SESSION['modificar'] = $id;
-			header("Location: ../vistas/modificarChofer.php");			
+			header("Location: ../vistas/admin/modificarChofer.php");			
 		}
 		else if($alterar == "eliminar"){
 			/*Esta variable siguiente corresponde a eliminar o modificar*/
@@ -22,7 +22,7 @@
 			Conexion::setQuery($sql);
 			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
 			Conexion::cerrar();	
-			header("Location: ../vistas/abmChofer.php");
+			header("Location: ../vistas/admin/abmChofer.php");
 		}
 		else if($alterar == "agregar"){
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
@@ -36,7 +36,7 @@
 			$sql = Chofer::insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
 			Conexion::setQuery($sql);
 			Conexion::cerrar();
-			header("Location: ../vistas/abmChofer.php");
+			header("Location: ../vistas/admin/abmChofer.php");
 		}
 		else{
 	$dni_chofer = $_POST['dni_chofer'];
@@ -49,6 +49,6 @@
 			$sql = Chofer::actualizar($id,$dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
 			Conexion::setQuery($sql);
 			Conexion::cerrar();
-			header("Location: ../vistas/abmChofer.php");
+			header("Location: ../vistas/admin/abmChofer.php");
 		}
 ?>
