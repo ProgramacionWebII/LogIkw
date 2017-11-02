@@ -53,6 +53,9 @@
 		<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
+		<li class="active"><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
 	</ul>
 	</div>
