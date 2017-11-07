@@ -9,7 +9,7 @@ include 'include.php';
 	$usuario = $_POST["usuario"];
 	$password = $_POST["password"];
 
-	if(isset($usuario) || isset($password) || empty($usuario) || empty(password)){
+	if(isset($usuario) || isset($password) || empty($usuario) || empty($password)){
 		Conexion::cerrar();
 		header("Location: ../index.php");
 	}
@@ -20,14 +20,12 @@ include 'include.php';
 	/*Envío la consulta al método "getQuery" para que me devuelva el resultado de ese SELECT*/
 	/*Por alguna razón devuelve un resultado vacío (a solucionar)*/
 	$resultado = Conexion::getQuery($query);
-
 	/*Muestro el objeto traido por mysqli_fetch_assoc*/
     $usuarioTraido = mysqli_fetch_assoc($resultado);
     $user = $usuarioTraido['user'];
     $pass = $usuarioTraido['pass'];
     $rol = $usuarioTraido['rol'];
     $id = $usuarioTraido['id_usuario'];
-
     /*Busco por ID la clase a la que le corresponde este usuario*/
     $query2 = "SELECT * FROM $rol WHERE id_usuario = '$id'";
     $buscarRolCorrespondiente = Conexion::getQuery($query2);
