@@ -2,11 +2,22 @@ drop database logikw;
 create database logikw;
 use logikw;
 
+create table usuario(
+id int auto_increment primary key,
+user varchar(20) unique,
+pass varchar(20),
+rol varchar(20),
+telefono varchar(30),
+nombre varchar(50)
+);
+
 create table administrador(
 id int AUTO_INCREMENT primary key,
 dni_administrador varchar(20) unique,
 domicilio varchar (30),
-email varchar(30)
+email varchar(30),
+id_usuario int,
+foreign key(id_usuario) references usuario(id)
 );
 
 
@@ -15,47 +26,35 @@ id int AUTO_INCREMENT primary key,
 razon_social varchar(30) unique, 
 telefono int (10),
 domicilio varchar (20),
-email varchar(30)
+email varchar(30),
+id_usuario int,
+foreign key(id_usuario) references usuario(id)
 );
 
 create table chofer(
 id int AUTO_INCREMENT primary key,
 dni_chofer varchar(20) unique, 
-fecha_de_nacimiento date,
-tipo_licencia_de_conducir varchar(20)
+fecha_nacimiento date,
+tipo_licencia_de_conducir varchar(20),
+id_usuario int,
+foreign key(id_usuario) references usuario(id)
 );
 
 
 create table mecanico(
 id int AUTO_INCREMENT primary key,
-dni_mecanico varchar(20) unique
+dni_mecanico varchar(20) unique,
+id_usuario int,
+foreign key(id_usuario) references usuario(id)
 );
 
 create table empresa(
 id int AUTO_INCREMENT primary key,
 telefono varchar(20),
-domicilio varchar(20)
+domicilio varchar(20),
+id_usuario int,
+foreign key(id_usuario) references usuario(id)
 );
-
-create table usuario(
-id int auto_increment primary key,
-user varchar(20) unique,
-pass varchar(20),
-rol varchar(20),
-telefono varchar(30),
-nombre varchar(50),
-id_administrador int,
-id_mecanico int,
-id_empresa int,
-id_chofer int,
-id_cliente int,
-foreign key(id_administrador) references administrador(id),
-foreign key(id_mecanico) references mecanico(id),
-foreign key(id_empresa) references empresa(id),
-foreign key(id_chofer) references chofer(id),
-foreign key(id_cliente) references cliente(id)
-);
-
 
 create table viaje(
 id int auto_increment  primary key,
@@ -73,6 +72,7 @@ desviacion_km int ,
 combustible_consumido_estimado  int,
 combustible_consumido_real int,
 id_administrador int,
+id_chofer int,
 foreign key(id_administrador) references administrador(id),
 foreign key(id_chofer) references chofer(id)
 );
