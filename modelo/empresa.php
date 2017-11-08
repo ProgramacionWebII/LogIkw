@@ -4,16 +4,14 @@
 		/* Se usa el método que más convenga, si necesito todos los clientes, uso el primero,
 		si necesito un cliente en específico, filtro por ID usando el segundo méetodo */
 		public static function getAll(){
-			$query = "SELECT * FROM empresa";
+			$query = "SELECT e.*, u.nombre, u.rol, u.telefono FROM empresa e JOIN usuario u ON e.id_usuario = u.id";
 			return $query;
 		}
 
 		public static function getAllForId($id){
-			$query = "SELECT * FROM empresa WHERE id = $id";
+			$query = "SELECT e.*, u.nombre, u.rol, u.telefono FROM empresa e JOIN usuario u ON e.id_usuario = u.id where e.id_usuario = $id";
 			return $query;
 		}
-
-
 
 
 		public static function insertar($nombre, $telefono, $domicilio){
