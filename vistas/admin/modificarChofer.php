@@ -61,15 +61,17 @@
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Actualizar chofer</h2>
    	<?php
+
 	while($chofer = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../../modelo/ejecutarAbmChofer.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
 		
-		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'><br>
+		<input type='text' name='id' class='hidden' value='".$chofer['id']."'><br>
+		<label>Usuario:</label><input type='text' name='usuario' class='form-control' value='".$chofer['user']."'><br>
 		<label>Dni:</label><input type='text' name='dni_chofer' class='form-control' value='".$chofer['dni_chofer']."'><br>
 		<label> Nombre:</label><input type='text' name='nombre' class='form-control' value='".$chofer['nombre']."'><br>
-		 <label> Apellido:</label><input type='text' name='apellido' class='form-control' value='".$chofer['apellido']."'><br>
-		 <label>Fecha de nacimiento:</label><input type='text' name='fecha_de_nacimiento' class='form-control' value='".$chofer['fecha_de_nacimiento']."'><br>
+		 <label> Apellido:</label><input type='text' name='telefono' class='form-control' value='".$chofer['telefono']."'><br>
+		 <label>Fecha de nacimiento:</label><input type='text' name='fecha_de_nacimiento' class='form-control' value='".$chofer['fecha_nacimiento']."'><br>
 		 <label>Tipo licencia de conducir: </label><input type='text' name='tipo_licencia_de_conducir' class='form-control' value='".$chofer['tipo_licencia_de_conducir']."'><br>
 		 </div>
 		 <div class='form-group col-sm-offset-3 col-sm-6''>

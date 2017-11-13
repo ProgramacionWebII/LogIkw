@@ -30,6 +30,7 @@
 			
 				
 			$id_administrador = $_POST['id_administrador'];
+			$id_chofer = $_POST['id_chofer'];
 			$origen = $_POST['origen'];
 			$destino = $_POST['destino'];
 			$tipo_de_carga = $_POST['tipo_de_carga'];
@@ -47,6 +48,7 @@
 
 			$sql = Viaje::insertar(
 				$id_administrador,
+				$id_chofer,
 				$origen,
 				$destino,
 				$tipo_de_carga,
@@ -67,7 +69,7 @@
 		}
 		else{
 		
-			$id_administrador = $_POST['id_administrador'];
+			$id_chofer = $_POST['id_chofer'];
 			$origen = $_POST['origen'];
 			$destino = $_POST['destino'];
 			$tipo_de_carga = $_POST['tipo_de_carga'];
@@ -86,7 +88,7 @@
 
 			$sql = Viaje::actualizar(
 				$id,
-				$id_administrador,
+				$id_chofer,
 				$origen,
 				$destino,
 				$tipo_de_carga,

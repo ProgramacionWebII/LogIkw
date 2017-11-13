@@ -24,7 +24,6 @@ foreign key(id_usuario) references usuario(id)
 create table cliente(
 id int AUTO_INCREMENT primary key,
 razon_social varchar(30) unique, 
-telefono int (10),
 domicilio varchar (20),
 email varchar(30),
 id_usuario int,

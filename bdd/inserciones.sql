@@ -16,9 +16,9 @@ INSERT INTO administrador (dni_administrador, domicilio, email, id_usuario) VALU
 ('36555123', 'laferrere 5667', 'manu_lafe@gmail.com',1),
 ('38555123', 'salta 5367', 'nachoC10@gmail.com',2);
 
-insert into cliente (razon_social, telefono, domicilio, email, id_usuario) values
-('Dia S.A', '451215','donizeti 5847','jp15@gmail.com',3),
-('Easy S.A', '444215','san jose 452','san_jose@gmail.com',4);
+insert into cliente (razon_social, domicilio, email, id_usuario) values
+('Dia S.A', 'donizeti 5847','jp15@gmail.com',3),
+('Easy S.A', 'san jose 452','san_jose@gmail.com',4);
 
 insert into chofer (dni_chofer, fecha_nacimiento, tipo_licencia_de_conducir, id_usuario) values
 ('222222222', '1980-05-06','a5',5),

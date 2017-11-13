@@ -67,9 +67,10 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Rol</th>
-        <th>Nombre</th>
-        <th>Datos adicionales</th>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Admin Responsable</th>
+        <th>Chofer Responsable</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
 
       </tr>
@@ -77,11 +78,19 @@
     <tbody>
    	<?php
 	while($viaje = mysqli_fetch_assoc($resultado1)){
+
+		$buscarIdAdmin = Administrador::getAllForId($viaje['id_administrador']);
+		$admin = Conexion::getQuery($buscarIdAdmin);
+		$resultado = mysqli_fetch_assoc($admin);
+		$buscarIdChofer = Chofer::getAllForId($viaje['id_chofer']);
+		$chofer = Conexion::getQuery($buscarIdChofer);
+		$resultado2 = mysqli_fetch_assoc($chofer);
 		echo "<form method='POST' action='../../modelo/ejecutarAbmViajes.php'>
 		 <tr>
-		 <td>".$viaje['id_administrador']."</td>
 		 <td>".$viaje['origen']."</td>
-		 <td>"."Responsable: ".$viaje['destino']."</td>
+		 <td>".$viaje['destino']."</td>
+		 <td>".$resultado['nombre']."</td>
+		 <td>".$resultado2['nombre']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$viaje['id']."'>
 
@@ -128,7 +137,18 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="id_administrador" class="col-sm-6 form-control" placeholder="id_administrador" required><br>
+	      	<select class='col-sm-6 form-control' name='id_chofer'>
+	      	<?php
+			$buscarIdChoferes = Chofer::getAll();
+			$chofer = Conexion::getQuery($buscarIdChoferes);
+			while($resultado3 = mysqli_fetch_assoc($chofer)){
+
+			echo "<option>".$resultado3['nombre'].
+			"<input type='text' name='id_chofer' class='hidden' value='".$resultado3['id']."'>
+				</option>";
+			}
+   	        ?>
+   	        </select>
 	        <input type="text" name="origen" class="col-sm-6 form-control" placeholder="origen" required>
 	        <input type="text" name="destino" class="col-sm-6 form-control" placeholder="destino" required><br>
 	        <input type="text" name="tipo_de_carga" class="col-sm-6 form-control" placeholder="tipo_de_carga" required><br>

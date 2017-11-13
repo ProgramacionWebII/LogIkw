@@ -8,12 +8,12 @@
  		en otro lado, solo llamamos a las funciones que contienen dichas funciones, aunque por el momento
  		solo hay SELECT, hay que completar con UPDATE, CREATE y DELETE */
  	public static function getAll(){
-		$query = "SELECT a.*, u.nombre, u.rol, u.telefono FROM administrador a JOIN usuario u ON a.id_usuario = u.id";
+		$query = "SELECT a.*, u.nombre, u.rol, u.telefono, u.user FROM administrador a JOIN usuario u ON a.id_usuario = u.id";
 		return $query;
  	}
 
  	public static function getAllForId($id){ 		
-		$query = "SELECT a.*, u.nombre, u.rol, u.telefono FROM administrador a JOIN usuario u ON a.id_usuario = u.id WHERE a.id_usuario = $id";
+		$query = "SELECT a.*, u.nombre, u.rol, u.telefono, u.user FROM administrador a JOIN usuario u ON a.id_usuario = u.id WHERE a.id_usuario = $id";
 		return $query;
  	}
 }

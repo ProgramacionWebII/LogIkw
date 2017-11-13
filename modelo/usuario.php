@@ -15,5 +15,23 @@ class Usuario{
 		$query = "SELECT * FROM usuario WHERE id = $id";
 		return $query;
  	}
+
+ 	public static function insertar($usuario, $telefono, $nombre, $rol){
+ 		$query = "INSERT INTO usuario(user, rol, telefono, nombre)
+ 		VALUES ('$usuario', '$rol', '$telefono', '$nombre')";
+ 		return $query;
+ 	}
+
+ 	public static function eliminar($id){
+ 	}
+
+ 	public static function actualizar($id, $usuario, $telefono, $nombre, $rol){
+ 		$query = "UPDATE usuario SET 
+ 		user = '$usuario',
+ 		telefono = '$telefono',
+ 		nombre = '$nombre'
+ 		WHERE id = (SELECT id_usuario FROM $rol r WHERE r.id = $id)";
+ 		return $query;
+ 	}
 }
 ?>

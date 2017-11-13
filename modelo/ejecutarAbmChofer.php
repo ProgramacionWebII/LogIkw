@@ -26,28 +26,36 @@
 		}
 		else if($alterar == "agregar"){
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
-			$dni_chofer = $_POST['dni_chofer'];
+			$usuario = $_POST['usuario'];
 			$nombre = $_POST['nombre'];
-			$apellido = $_POST['apellido'];
+			$telefono = $_POST['telefono'];
+			$dni_chofer = $_POST['dni_chofer'];
 			$fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
 			$tipo_licencia_de_conducir = $_POST['tipo_licencia_de_conducir'];
 		
 
-			$sql = Chofer::insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
-			Conexion::setQuery($sql);
+			$sql1 = Usuario::insertar($usuario, $telefono, $nombre, "chofer");
+			Conexion::setQuery($sql1);
+
+			$sql2 = Chofer::insertar($dni_chofer, $fecha_de_nacimiento, $tipo_licencia_de_conducir, $id_usuario['id']);
+			Conexion::setQuery($sql2);
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmChofer.php");
 		}
 		else{
-	$dni_chofer = $_POST['dni_chofer'];
+			$dni_chofer = $_POST['dni_chofer'];
+			$usuario = $_POST['usuario'];
 			$nombre = $_POST['nombre'];
-			$apellido = $_POST['apellido'];
+			$telefono = $_POST['telefono'];
 			$fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
 			$tipo_licencia_de_conducir = $_POST['tipo_licencia_de_conducir'];
 			$id = $_POST['id'];
 
-			$sql = Chofer::actualizar($id,$dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
-			Conexion::setQuery($sql);
+			$sql1 = Chofer::actualizar($id, $dni_chofer, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
+			$sql2 = Usuario::actualizar($id, $usuario, $telefono, $nombre, "chofer");
+			Conexion::setQuery($sql1);
+			Conexion::setQuery($sql2);
+
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmChofer.php");
 		}
