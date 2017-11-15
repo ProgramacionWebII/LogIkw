@@ -67,8 +67,6 @@
 		<input type='text' name='id' class='hidden' value='".$viaje['id']."'><br>
 		 
 		<input type='text' name='id_administrador' class='hidden' value='".$viaje['id_administrador']."'><br>
-		<input type='text' name='id_chofer' class='hidden' value='".$viaje['id_chofer']."'><br>
-		<input type='text' name='id' class='hidden' value='".$viaje['id']."'><br>
 		<label>origen:</label>
 		<input type='text' name='origen' class='form-control' value='".$viaje['origen']."'><br>
 		<label>destino:</label>
@@ -76,15 +74,15 @@
 		<label>tipo_de_carga:</label>
 		<input type='text' name='tipo_de_carga' class='form-control' value='".$viaje['tipo_de_carga']."'><br>
 		<label>fecha_de_salida_prevista:</label>
-		<input type='date' name='fecha_de_salida_prevista' class='form-control' value='".$viaje['fecha_de_salida_prevista']."'required pattern='[0-9]{4}-[0-9]{2}-[0-9]{2}'><br>
+		<input type='text' name='fecha_de_salida_prevista' class='form-control' value='".$viaje['fecha_de_salida_prevista']."'><br>
 		<label>fecha_de_llegada_prevista:</label>
-		<input type='date' name='fecha_de_llegada_prevista' class='form-control' value='".$viaje['fecha_de_llegada_prevista']."'required pattern='[0-9]{4}-[0-9]{2}-[0-9]{2}'>
+		<input type='text' name='fecha_de_llegada_prevista' class='form-control' value='".$viaje['fecha_de_llegada_prevista']."'>
 		<label>tiempo_estimado:</label>
 		<input type='text' name='tiempo_estimado' class='form-control' value='".$viaje['tiempo_estimado']."'><br>
 		<label>fecha_de_salida_real:</label>
-		<input type='date' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'required pattern='[0-9]{4}-[0-9]{2}-[0-9]{2}'><br>
+		<input type='text' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'><br>
 		<label>fecha_de_llegada_real:</label>
-		<input type='date' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'required pattern='[0-9]{4}-[0-9]{2}-[0-9]{2}'><br>
+		<input type='text' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'><br>
 		<label>tiempo_real:</label>
 		<input type='text' name='tiempo_real' class='form-control' value='".$viaje['tiempo_real']."'><br>
 		<label>km_recorridos_previstos:</label>

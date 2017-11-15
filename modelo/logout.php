@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if(isset($_SESSION['administrador']) || isset($_SESSION['chofer']) || 
-	isset($_SESSION['cliente']) || isset($_SESSION['mecanico']) || isset($_SESSION['empresa'])){
+	if($_SESSION['administrador'] == true || $_SESSION['chofer'] == true || 
+	$_SESSION['cliente'] == true || $_SESSION['mecanico'] == true || $_SESSION['empresa'] == true){
 		include "conexion.php";
 
 		Conexion::cerrar();

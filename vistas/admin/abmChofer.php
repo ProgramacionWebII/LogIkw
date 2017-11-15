@@ -67,9 +67,10 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-	     <th>Nombre</th>
-        <th>DNI</th>
-        <th>Telefono</th>
+	     <th>Id</th>
+        <th>Rol</th>
+        <th>Nombre</th>
+        <th>Datos adicionales</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarChofer'>Agregar</button></th>
 
       </tr>
@@ -79,9 +80,10 @@
 	while($chofer = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../../modelo/ejecutarAbmChofer.php'>
 		 <tr>
-		 <td>".$chofer['nombre']."</td>
+		 <td>".$chofer['id']."</td>
+		 <td>".$chofer['rol']."</td>
 		 <td>".$chofer['dni_chofer']."</td>
-		 <td>".$chofer['telefono']."</td>
+		 <td>"."Responsable: ".$chofer['nombre']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'>
 
@@ -129,10 +131,9 @@
 	      </div>
 	      <div class="modal-body col-sm-12">
    	        <input type="text" name="dni_chofer" class="form-control col-sm-6" placeholder="Dni" required><br>
-	        <input type="text" name="nombre" class="form-control col-sm-6" placeholder="Nombre y apellido" required>
-	        <input type="text" name="usuario" class="form-control col-sm-6" placeholder="usuario" required>
-	        <input type="text" name="telefono" class="form-control col-sm-6" placeholder="Telefono" required><br>
-	        <input type="date" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="Fecha de nacimiento" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"><br>
+	        <input type="text" name="nombre" class="form-control col-sm-6" placeholder="Nombre" required>
+	        <input type="text" name="apellido" class="form-control col-sm-6" placeholder="Apellido" required><br>
+	        <input type="text" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="Fecha de nacimiento" required><br>
 	        <input type="text" name="tipo_licencia_de_conducir" class="form-control col-sm-6" placeholder="Tipo licencia de conducir" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>

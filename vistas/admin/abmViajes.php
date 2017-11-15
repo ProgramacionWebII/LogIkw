@@ -67,10 +67,9 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Origen</th>
-        <th>Destino</th>
-        <th>Admin Responsable</th>
-        <th>Chofer Responsable</th>
+        <th>Rol</th>
+        <th>Nombre</th>
+        <th>Datos adicionales</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
 
       </tr>
@@ -78,19 +77,11 @@
     <tbody>
    	<?php
 	while($viaje = mysqli_fetch_assoc($resultado1)){
-
-		$buscarIdAdmin = Administrador::getAllForId($viaje['id_administrador']);
-		$admin = Conexion::getQuery($buscarIdAdmin);
-		$resultado = mysqli_fetch_assoc($admin);
-		$buscarIdChofer = Chofer::getAllForId($viaje['id_chofer']);
-		$chofer = Conexion::getQuery($buscarIdChofer);
-		$resultado2 = mysqli_fetch_assoc($chofer);
 		echo "<form method='POST' action='../../modelo/ejecutarAbmViajes.php'>
 		 <tr>
+		 <td>".$viaje['id_administrador']."</td>
 		 <td>".$viaje['origen']."</td>
-		 <td>".$viaje['destino']."</td>
-		 <td>".$resultado['nombre']."</td>
-		 <td>".$resultado2['nombre']."</td>
+		 <td>"."Responsable: ".$viaje['destino']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$viaje['id']."'>
 
@@ -137,44 +128,15 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-	      	<label class='col-sm-6'>Chofer:</label><br>
-	      	<select class='col-sm-6 form-control' name='id_chofer'>
-	      	<?php
-			$buscarIdChoferes = Chofer::getAll();
-			$chofer = Conexion::getQuery($buscarIdChoferes);
-			while($resultado3 = mysqli_fetch_assoc($chofer)){
-
-			echo "<label>Chofer:</label>";
-			echo "<option name ='id_chofer' value = '".$resultado3['id']."'>";
-			echo $resultado3['nombre'];
-			echo "</option>";
-			}
-   	        ?>
-   	        </select>
-
-	      	<label class='col-sm-6'>Administrador:</label><br>
-	      	<select class='col-sm-6 form-control' name='id_administrador'>
-	      	<?php
-			$query3 = Administrador::getAllForId($_SESSION['administrador']);
-
-			$resultado4 = Conexion::getQuery($query3);
-			while($admin3 = mysqli_fetch_assoc($resultado4)){
-
-			echo "<label>Chofer:</label>";
-			echo "<option name ='id_chofer' value = '".$admin3['id']."'>";
-			echo $admin3['nombre'];
-			echo "</option>";
-			}
-   	        ?>
-   	        </select>
+   	        <input type="text" name="id_administrador" class="col-sm-6 form-control" placeholder="id_administrador" required><br>
 	        <input type="text" name="origen" class="col-sm-6 form-control" placeholder="origen" required>
 	        <input type="text" name="destino" class="col-sm-6 form-control" placeholder="destino" required><br>
 	        <input type="text" name="tipo_de_carga" class="col-sm-6 form-control" placeholder="tipo_de_carga" required><br>
-	        <input type="date" name="fecha_de_salida_prevista" class="col-sm-6 form-control" placeholder="fecha_de_salida_prevista" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"><br>
-			<input type="date" name="fecha_de_llegada_prevista" class="col-sm-6 form-control" placeholder="fecha_de_llegada_prevista" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"><br>
+	        <input type="text" name="fecha_de_salida_prevista" class="col-sm-6 form-control" placeholder="fecha_de_salida_prevista" required><br>
+			<input type="text" name="fecha_de_llegada_prevista" class="col-sm-6 form-control" placeholder="fecha_de_llegada_prevista" required><br>
 			<input type="text" name="tiempo_estimado" class="col-sm-6 form-control" placeholder="tiempo_estimado" required><br>
-	        <input type="date" name="fecha_de_salida_real" class="col-sm-6 form-control" placeholder="fecha_de_salida_real" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
-	        <input type="date" name="fecha_de_llegada_real" class="col-sm-6 form-control" placeholder="fecha_de_llegada_real" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"><br>
+	        <input type="text" name="fecha_de_salida_real" class="col-sm-6 form-control" placeholder="fecha_de_salida_real" required>
+	        <input type="text" name="fecha_de_llegada_real" class="col-sm-6 form-control" placeholder="fecha_de_llegada_real" required><br>
 	        <input type="text" name="tiempo_real" class="col-sm-6 form-control" placeholder="tiempo_real" required><br>
 	        <input type="text" name="km_recorridos_previstos" class="col-sm-6 form-control" placeholder="km_recorridos_previstos" required><br>
 			<input type="text" name="desviacion_km" class="col-sm-6 form-control" placeholder="desviacion_km" required><br>

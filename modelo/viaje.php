@@ -14,42 +14,40 @@
 		}
 
 		public static function insertar(
-			$id_administrador,
-			$id_chofer,
-			$origen,
-			$destino,
-			$tipo_de_carga,
-			$fecha_de_salida_prevista,
-			$fecha_de_llegada_prevista,
-			$tiempo_estimado,
-			$fecha_de_salida_real,
-			$fecha_de_llegada_real,
-			$tiempo_real,
-			$km_recorridos_previstos,
-			$desviacion_km,
-			$combustible_consumido_estimado,
-			$combustible_consumido_real){			
-				
+		$id_administrador,
+		$origen,
+		$destino,
+		$tipo_de_carga,
+		$fecha_de_salida_prevista,
+		$fecha_de_llegada_prevista,
+		$tiempo_estimado,
+		$fecha_de_salida_real,
+		$fecha_de_llegada_real,
+		$tiempo_real,
+		$km_recorridos_previstos,
+		$desviacion_km,
+		$combustible_consumido_estimado,
+		$combustible_consumido_real){
+			
 			$query = "INSERT INTO viaje(
-			origen,
-			destino,
-			tipo_de_carga,
-			fecha_de_salida_prevista,
-			fecha_de_llegada_prevista,
-			tiempo_estimado,
-			fecha_de_salida_real,
-			fecha_de_llegada_real,
-			tiempo_real,
-			km_recorridos_previstos,
-			desviacion_km,
-			combustible_consumido_estimado,
-			combustible_consumido_real,
-			id_administrador,
-			id_chofer
-)
+				id_administrador,
+		origen,
+		destino,
+		tipo_de_carga,
+		fecha_de_salida_prevista,
+		fecha_de_llegada_prevista,
+		tiempo_estimado,
+		fecha_de_salida_real,
+		fecha_de_llegada_real,
+		tiempo_real,
+		km_recorridos_previstos,
+		desviacion_km,
+		combustible_consumido_estimado,
+		combustible_consumido_real)
 			
 			VALUES (
 			
+		$id_administrador,
 		'$origen',
 		'$destino',
 		'$tipo_de_carga',
@@ -62,9 +60,7 @@
 		$km_recorridos_previstos,
 		$desviacion_km,
 		$combustible_consumido_estimado,
-		$combustible_consumido_real,
-		$id_administrador,
-		$id_chofer)";
+		$combustible_consumido_real)";
 		
 		
 		
@@ -79,7 +75,7 @@
 
 		public static function actualizar(
 		$id, 
-		$id_chofer,
+		$id_administrador,
 		$origen,
 		$destino,
 		$tipo_de_carga,
@@ -95,7 +91,7 @@
 		$combustible_consumido_real){
 			$query = "UPDATE viaje
 			SET 
-			id_chofer = $id_chofer,
+			id_administrador = $id_administrador,
 		origen ='$origen',
 		destino = '$destino',
 		tipo_de_carga = '$tipo_de_carga',
