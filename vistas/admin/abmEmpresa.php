@@ -67,9 +67,9 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Rol</th>
         <th>Nombre</th>
-        <th>Datos adicionales</th>
+        <th>Telefono</th>
+        <th>Domiclio</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarEmpresa'>Agregar</button></th>
 
       </tr>
@@ -79,9 +79,9 @@
 	while($empresa = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../../modelo/ejecutarAbmEmpresa.php'>
 		 <tr>
-		 <td>".$empresa['rol']."</td>
 		 <td>".$empresa['nombre']."</td>
-		 <td>"."Responsable: ".$empresa['telefono']."</td>
+		 <td>".$empresa['telefono']."</td>
+		 <td>".$empresa['domicilio']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$empresa['id']."'>
 

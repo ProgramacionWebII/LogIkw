@@ -67,9 +67,11 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Rol</th>
-        <th>Nombre</th>
-        <th>Datos adicionales</th>
+        <th>Nro Viaje</th>
+        <th>Origen - Destino</th>
+        <th>Fecha salida</th>
+        <th>Fecha llegada</th>
+        <th>Responsable de alta</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
 
       </tr>
@@ -77,11 +79,16 @@
     <tbody>
    	<?php
 	while($viaje = mysqli_fetch_assoc($resultado1)){
+		$sqlAdmin = Administrador::getAllForId($viaje['id_administrador']);
+		$consultaAdmin = Conexion::getQuery($sqlAdmin);
+		$admin = mysqli_fetch_assoc($consultaAdmin);
 		echo "<form method='POST' action='../../modelo/ejecutarAbmViajes.php'>
 		 <tr>
-		 <td>".$viaje['id_administrador']."</td>
-		 <td>".$viaje['origen']."</td>
-		 <td>"."Responsable: ".$viaje['destino']."</td>
+		 <td>".$viaje['id']."</td>
+		 <td>".$viaje['origen']." - ".$viaje['destino']."</td>
+		 <td>".$viaje['fecha_de_salida_real']."</td>
+		 <td>".$viaje['fecha_de_llegada_real']."</td>
+		 <td>".$admin['nombre']." ".$admin['apellido']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$viaje['id']."'>
 
@@ -132,11 +139,11 @@
 	        <input type="text" name="origen" class="col-sm-6 form-control" placeholder="origen" required>
 	        <input type="text" name="destino" class="col-sm-6 form-control" placeholder="destino" required><br>
 	        <input type="text" name="tipo_de_carga" class="col-sm-6 form-control" placeholder="tipo_de_carga" required><br>
-	        <input type="text" name="fecha_de_salida_prevista" class="col-sm-6 form-control" placeholder="fecha_de_salida_prevista" required><br>
-			<input type="text" name="fecha_de_llegada_prevista" class="col-sm-6 form-control" placeholder="fecha_de_llegada_prevista" required><br>
+	        <input type="date" name="fecha_de_salida_prevista" class="col-sm-6 form-control" placeholder="fecha_de_salida_prevista" required><br>
+			<input type="date" name="fecha_de_llegada_prevista" class="col-sm-6 form-control" placeholder="fecha_de_llegada_prevista" required><br>
 			<input type="text" name="tiempo_estimado" class="col-sm-6 form-control" placeholder="tiempo_estimado" required><br>
-	        <input type="text" name="fecha_de_salida_real" class="col-sm-6 form-control" placeholder="fecha_de_salida_real" required>
-	        <input type="text" name="fecha_de_llegada_real" class="col-sm-6 form-control" placeholder="fecha_de_llegada_real" required><br>
+	        <input type="date" name="fecha_de_salida_real" class="col-sm-6 form-control" placeholder="fecha_de_salida_real" required>
+	        <input type="date" name="fecha_de_llegada_real" class="col-sm-6 form-control" placeholder="fecha_de_llegada_real" required><br>
 	        <input type="text" name="tiempo_real" class="col-sm-6 form-control" placeholder="tiempo_real" required><br>
 	        <input type="text" name="km_recorridos_previstos" class="col-sm-6 form-control" placeholder="km_recorridos_previstos" required><br>
 			<input type="text" name="desviacion_km" class="col-sm-6 form-control" placeholder="desviacion_km" required><br>

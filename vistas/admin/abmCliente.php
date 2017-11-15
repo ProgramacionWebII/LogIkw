@@ -67,9 +67,11 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Rol</th>
-        <th>Nombre</th>
-        <th>Datos adicionales</th>
+        <th>Razon social</th>
+        <th>Responsable</th>
+        <th>Telefono</th>
+        <th>Domicilio</th>
+        <th>E-Mail</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarCliente'>Agregar</button></th>
 
       </tr>
@@ -79,9 +81,11 @@
 	while($cliente = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../../modelo/ejecutarAbmCliente.php'>
 		 <tr>
-		 <td>".$cliente['rol']."</td>
 		 <td>".$cliente['razon_social']."</td>
-		 <td>"."Responsable: ".$cliente['nombre']."</td>
+		 <td>".$cliente['nombre']."</td>
+		 <td>".$cliente['telefono']."</td>
+		 <td>".$cliente['domicilio']."</td>
+		 <td>".$cliente['email']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'>
 

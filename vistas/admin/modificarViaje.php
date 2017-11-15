@@ -74,15 +74,15 @@
 		<label>tipo_de_carga:</label>
 		<input type='text' name='tipo_de_carga' class='form-control' value='".$viaje['tipo_de_carga']."'><br>
 		<label>fecha_de_salida_prevista:</label>
-		<input type='text' name='fecha_de_salida_prevista' class='form-control' value='".$viaje['fecha_de_salida_prevista']."'><br>
+		<input type='date' name='fecha_de_salida_prevista' class='form-control' value='".$viaje['fecha_de_salida_prevista']."'><br>
 		<label>fecha_de_llegada_prevista:</label>
-		<input type='text' name='fecha_de_llegada_prevista' class='form-control' value='".$viaje['fecha_de_llegada_prevista']."'>
+		<input type='date' name='fecha_de_llegada_prevista' class='form-control' value='".$viaje['fecha_de_llegada_prevista']."'>
 		<label>tiempo_estimado:</label>
 		<input type='text' name='tiempo_estimado' class='form-control' value='".$viaje['tiempo_estimado']."'><br>
 		<label>fecha_de_salida_real:</label>
-		<input type='text' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'><br>
+		<input type='date' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'><br>
 		<label>fecha_de_llegada_real:</label>
-		<input type='text' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'><br>
+		<input type='date' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'><br>
 		<label>tiempo_real:</label>
 		<input type='text' name='tiempo_real' class='form-control' value='".$viaje['tiempo_real']."'><br>
 		<label>km_recorridos_previstos:</label>

@@ -69,7 +69,7 @@
 		<label>Dni:</label><input type='text' name='dni_chofer' class='form-control' value='".$chofer['dni_chofer']."'><br>
 		<label> Nombre:</label><input type='text' name='nombre' class='form-control' value='".$chofer['nombre']."'><br>
 		 <label> Apellido:</label><input type='text' name='apellido' class='form-control' value='".$chofer['apellido']."'><br>
-		 <label>Fecha de nacimiento:</label><input type='text' name='fecha_de_nacimiento' class='form-control' value='".$chofer['fecha_de_nacimiento']."'><br>
+		 <label>Fecha de nacimiento:</label><input type='date' name='fecha_de_nacimiento' class='form-control' value='".$chofer['fecha_de_nacimiento']."'><br>
 		 <label>Tipo licencia de conducir: </label><input type='text' name='tipo_licencia_de_conducir' class='form-control' value='".$chofer['tipo_licencia_de_conducir']."'><br>
 		 </div>
 		 <div class='form-group col-sm-offset-3 col-sm-6''>
