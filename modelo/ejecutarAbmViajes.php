@@ -22,7 +22,7 @@
 			Conexion::setQuery($sql);
 			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
 			Conexion::cerrar();	
-			header("Location: ../vistas/admin/abmViajes.php");
+			//header("Location: ../vistas/admin/abmViajes.php");
 		}
 		else if($alterar == "agregar"){
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
@@ -37,8 +37,8 @@
 			$fecha_de_salida_prevista = $_POST['fecha_de_salida_prevista'];
 			$fecha_de_llegada_prevista = $_POST['fecha_de_llegada_prevista'];
 			$tiempo_estimado = $_POST['tiempo_estimado'];
-			$fecha_de_salida_real = $_POST['fecha_de_salida_real'];
-			$fecha_de_llegada_real = $_POST['fecha_de_llegada_real'];
+			$fecha_de_salida_real = ($_POST['fecha_de_salida_real']);
+			$fecha_de_llegada_real = ($_POST['fecha_de_llegada_real']);
 			$tiempo_real = $_POST['tiempo_real'];
 			$km_recorridos_previstos = $_POST['km_recorridos_previstos'];
 			$desviacion_km = $_POST['desviacion_km'];
@@ -83,9 +83,8 @@
 			$desviacion_km = $_POST['desviacion_km'];
 			$combustible_consumido_estimado = $_POST['combustible_consumido_estimado'];
 			$combustible_consumido_real = $_POST['combustible_consumido_real'];
-		
 			$id = $_POST['id'];
-
+		
 			$sql = Viaje::actualizar(
 				$id,
 				$id_chofer,

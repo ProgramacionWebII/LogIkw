@@ -22,7 +22,9 @@ class Usuario{
  		return $query;
  	}
 
- 	public static function eliminar($id){
+ 	public static function eliminar($id, $rol){
+ 		$sql = "DELETE FROM usuario where id = (SELECT id_usuario FROM $rol WHERE id_usuario = $id)";
+ 		return $sql;
  	}
 
  	public static function actualizar($id, $usuario, $telefono, $nombre, $rol){

@@ -67,10 +67,9 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-	     <th>Id</th>
-        <th>Rol</th>
-        <th>Nombre</th>
-        <th>Datos adicionales</th>
+	     <th>Nombre</th>
+        <th>DNI</th>
+        <th>Telefono</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarChofer'>Agregar</button></th>
 
       </tr>
@@ -80,10 +79,9 @@
 	while($chofer = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../../modelo/ejecutarAbmChofer.php'>
 		 <tr>
-		 <td>".$chofer['id']."</td>
-		 <td>".$chofer['rol']."</td>
+		 <td>".$chofer['nombre']."</td>
 		 <td>".$chofer['dni_chofer']."</td>
-		 <td>"."Responsable: ".$chofer['nombre']."</td>
+		 <td>".$chofer['telefono']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'>
 
@@ -134,7 +132,7 @@
 	        <input type="text" name="nombre" class="form-control col-sm-6" placeholder="Nombre y apellido" required>
 	        <input type="text" name="usuario" class="form-control col-sm-6" placeholder="usuario" required>
 	        <input type="text" name="telefono" class="form-control col-sm-6" placeholder="Telefono" required><br>
-	        <input type="text" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="Fecha de nacimiento" required><br>
+	        <input type="date" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="Fecha de nacimiento" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"><br>
 	        <input type="text" name="tipo_licencia_de_conducir" class="form-control col-sm-6" placeholder="Tipo licencia de conducir" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>

@@ -30,7 +30,8 @@
 			$query = "UPDATE chofer
 			SET dni_chofer = '$dni_chofer',
 			/*fecha_ nacimiento = '$fecha_de_nacimiento',*/
-			tipo_licencia_de_conducir = '$tipo_licencia_de_conducir'
+			tipo_licencia_de_conducir = '$tipo_licencia_de_conducir',
+			fecha_nacimiento = '$fecha_de_nacimiento'
 
 			WHERE id = $id";
 			return $query;
