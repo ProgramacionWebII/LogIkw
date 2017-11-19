@@ -62,6 +62,17 @@ INSERT into mantenimiento(id_empresa,id_mecanico,patente ,nro_chasis ,nro_motor 
 (1,1,'ab 123 cd',10,20,'2017-05-04',150000,20000,'externo','valvula,tubo de escape'),
 (2,2,'kd 456 rr',20,10,'2017-04-04',300000,50000,'externo','motor');
 
-INSERT into reporte_chofer(id_chofer,id_viaje,fecha,combustible_cargado,importe_combustible,ubicacion,km_unidad) values
+INSERT into reporte_chofer_combustible(id_chofer,id_viaje,fecha,combustible_cargado,importe_combustible,ubicacion,km_unidad) values
 (1,2,'2017-09-04',10,500,'san justo',13000), 
 (2,1,'2017-11-04',100,5000,'temperley',130000);
+
+
+INSERT into reporte_chofer_posicion(id_chofer,id_viaje,fecha,latitud,longitud) values
+(1,2,'2017-09-04',-5555.4,4444.4), 
+(2,1,'2017-11-04',-2222.4,555.4);
+
+INSERT into reporte_chofer_incidente(id_chofer,id_viaje,fecha,incidente) values
+(1,2,'2017-09-04','choque'), 
+(2,1,'2017-11-04','piquete');
+
+

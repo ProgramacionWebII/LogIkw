@@ -64,6 +64,19 @@
 
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Administrador de viajes</h2>
+  <h3>Generar Codigo Qr</h3>
+
+<form action="generador_qr.php" method="GET">
+<h4>Id de viaje</h4>
+ <div class="col-xs-1">
+        <input class="form-control" name="id_viaje" type="text" required><br>
+  <input type="submit" class="btn btn-info" value="Enviar" 	href='generador_qr.php'>
+	
+      </div>
+
+
+</form>
+  
   <table class="table table-condensed">
     <thead>
       <tr>

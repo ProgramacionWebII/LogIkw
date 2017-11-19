@@ -38,6 +38,7 @@
     </div>
     <ul class="nav navbar-nav col-sm-4">
       <li class="active"><a href="#">HOME</a></li>
+	  <li><a href="reportesChofer.php">REPORTES</a></li>
     </ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>

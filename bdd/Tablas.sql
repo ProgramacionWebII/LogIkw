@@ -1,6 +1,7 @@
 drop database if exists logikw;
 
 create database if not exists logikw;
+use logikw;
 
 create table usuario(
 id_usuario int AUTO_INCREMENT primary key,
@@ -122,7 +123,7 @@ repuestos_cambiados varchar(50)
 );
 
 
-create table reporte_chofer(
+create table reporte_chofer_combustible(
 id int auto_increment primary key,
 id_chofer int ,
 id_viaje int ,
@@ -131,5 +132,22 @@ combustible_cargado int,
 importe_combustible int,
 ubicacion varchar(20),
 km_unidad int
+);
 
+
+create table reporte_chofer_posicion(
+id int auto_increment primary key,
+id_chofer int ,
+id_viaje int ,
+latitud float,
+longitud float
+
+);
+
+create table reporte_chofer_incidente(
+id int auto_increment primary key,
+id_chofer int ,
+id_viaje int ,
+fecha date,
+incidente  varchar(20)
 );

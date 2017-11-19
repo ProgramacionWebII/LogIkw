@@ -1,3 +1,20 @@
+<?php
+  # Iniciando la variable de control que permitirá mostrar o no el modal
+  $exibirModal = false;
+  # Verificando si existe o no la cookie
+  if(!isset($_COOKIE["mostrarModal"]))
+  {
+    # Caso no exista la cookie entra aquí
+    # Creamos la cookie con la duración que queramos
+    $expirar = 10800; // muestra cada 3 horas
+   
+
+    setcookie('mostrarModal', 'SI', (time() + $expirar)); // mostrará cada 3horas.
+    # Ahora nuestra variable de control pasará a tener el valor TRUE (Verdadero)
+    $exibirModal = true;
+  }
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -193,3 +210,13 @@
 	</form>
 </body>
 </html>
+
+  <?php if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario. ?>
+  <script>
+  $(document).ready(function()
+  {
+    // id de nuestro modal
+    $("#login").modal("show");
+  });
+  </script>
+  <?php endif; ?>
