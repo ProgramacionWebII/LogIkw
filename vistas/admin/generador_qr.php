@@ -24,7 +24,7 @@
 
 	
 	
-	$contenido = "http://localhost/LogIkw-master/vistas/reportesChofer.php?id_viaje=".$parametro; //Texto
+	$contenido = "http://localhost/LogIkw/vistas/reportesChofer.php?id_viaje=".$parametro; //Texto
 	
         //Enviamos los parametros a la Función para generar código QR 
 	QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
