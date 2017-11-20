@@ -1,6 +1,6 @@
 <?php
 include 'include.php';
-
+	$variable=$_POST['id_viaje'];	
 
 	/*Conecto a la BDD primeramente para comenzar a operar por medio de ella*/
 	$con = Conexion::conectar();
@@ -43,7 +43,7 @@ include 'include.php';
     	case 'chofer':
 session_start();
 		    $_SESSION["chofer"] = $clase['id'];	
-		    header("Location: ../vistas/choferLogeado.php");
+		    header("Location: ../vistas/choferLogeado.php?id_viaje=$variable");
 		    Conexion::cerrar();
     		break;
 

@@ -13,6 +13,15 @@
     # Ahora nuestra variable de control pasará a tener el valor TRUE (Verdadero)
     $exibirModal = true;
   }
+  
+  	if(isset($_GET['id_viaje']))
+	{
+		$variable=$_GET['id_viaje'];
+	}	
+	else{
+		
+		$variable=0;
+	}	
 ?>
 
 <!DOCTYPE html>
@@ -203,6 +212,7 @@
 		      <div class="modal-footer col-sm-12">
 		        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
 		        <input type="submit" class="btn btn-primary" value="Logearse">
+				    <input type="text" name="id_viaje" value="<?php echo $variable; ?>" class="hidden">
 		      </div>
 		    </div>
 		  </div>

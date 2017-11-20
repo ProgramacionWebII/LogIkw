@@ -14,12 +14,16 @@
 		
 		
 	}
-	else{		
-		header("Location: ../index.php");
-	}
+	else{
+		
+	$variable=$_GET['id_viaje'];	
+	header("Location: ../index.php?id_viaje=$variable");}
 	
 	$variable=$_GET['id_viaje'];
-	//echo $variable;
+	/*if(isset ($_GET['id_viaje']))
+	{$variable=$_GET['id_viaje'];}
+	//echo $variable;}
+	else{$variable=0;}*/
 ?>
 
 <!DOCTYPE html>
