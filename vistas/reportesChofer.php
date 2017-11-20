@@ -148,24 +148,7 @@
 	</div>
    	</form>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	<!-- Modal logout-->
 	<form action="../modelo/logout.php" method="POST">
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -184,6 +167,45 @@
 	  </div>
 	</div>
 	</form>
+	
+	
+	
+	
+	<button onclick="getLocation()">Tomar posicion</button>
+
+<p id="demo"></p>
+	
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+	
+	var latitud = position.coords.latitude;
+	var longitud = position.coords.longitude;
+	
+	document.getElementById("lat").innerHTML=latitud;
+document.getElementById("long").innerHTML=longitud;
+  
+}
+
+</script>	
+
+
+
+	<p>Latitud: <span id="lat"></span></p>
+	<p>Longitud: <span id="long"></span></p>
+	
+
+	
+	
+
 </body>
 </html>
-
