@@ -77,7 +77,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-		     	        <input type="text" name="fecha" class="form-control col-sm-6" placeholder="fecha" required><br>
+		     	        <input type="date" name="fecha" class="form-control col-sm-6" placeholder="fecha" required><br>
    	        <input type="text" name="latitud" class="form-control col-sm-6" placeholder="latitud" required><br>
 	        <input type="text" name="longitud" class="form-control col-sm-6" placeholder="longitud" required>
 				        <input type="text" name="tipo_reporte" value="posicion" class="hidden">
@@ -105,7 +105,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-		  <input type="text" name="fecha" class="form-control col-sm-6" placeholder="fecha" required><br>
+		  <input type="date" name="fecha" class="form-control col-sm-6" placeholder="fecha" required><br>
    	        <input type="text" name="incidente" class="form-control col-sm-6" placeholder="descripcion" required><br>
 	            <input type="text" name="tipo_reporte" value="incidente" class="hidden">
 					       		<input type='text' name='variable' class='hidden' value="<?php echo $variable; ?>">
@@ -131,7 +131,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-		       <input type="text" name="fecha" class="form-control col-sm-6" placeholder="Fecha" required><br>
+		       <input type="date" name="fecha" class="form-control col-sm-6" placeholder="Fecha" required><br>
    	        <input type="text" name="ubicacion" class="form-control col-sm-6" placeholder="Lugar" required><br>
 	        <input type="text" name="combustible_cargado" class="form-control col-sm-6" placeholder="Cantidad De Litros" required><br>
 	       <input type="text" name="importe_combustible" class="form-control col-sm-6" placeholder="importe" required><br>
