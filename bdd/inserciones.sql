@@ -76,3 +76,6 @@ INSERT into reporte_chofer_incidente(id_chofer,id_viaje,fecha,incidente) values
 (2,1,'2017-11-04','piquete');
 
 
+INSERT into calendarioService(id_vehiculo,fecha_service,km_de_la_unidad,descripcion) values
+(1,'2017-09-04',6000,'cambio de aceite'); 
+

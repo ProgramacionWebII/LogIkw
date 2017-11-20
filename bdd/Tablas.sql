@@ -139,6 +139,7 @@ create table reporte_chofer_posicion(
 id int auto_increment primary key,
 id_chofer int ,
 id_viaje int ,
+fecha date,
 latitud float,
 longitud float
 
@@ -150,4 +151,13 @@ id_chofer int ,
 id_viaje int ,
 fecha date,
 incidente  varchar(20)
+);
+
+
+create table calendarioService(
+id int  AUTO_INCREMENT primary key,
+id_vehiculo int,
+fecha_service date,
+km_de_la_unidad int,
+descripcion varchar(30)
 );

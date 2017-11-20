@@ -38,6 +38,7 @@
     </div>
     <ul class="nav navbar-nav col-sm-4">
       <li class="active"><a href="#">HOME</a></li>
+	   <li class=""><a href=" <?php echo 'CalendarioService.php'; ?>">Calendario Service</a></li>
 
     </ul>
 	<ul class="nav navbar-nav navbar-right">
