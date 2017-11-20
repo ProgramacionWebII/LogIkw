@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+		
 
 	/* Compruebo que la session "chofer" esté viva
 	En caso de estar viva, hago las declaraciones correspondientes para trabajar.
@@ -13,7 +14,7 @@
 			$query= CalendarioService::getAll();
 
 		$resultado = Conexion::getQuery($query);
-		$service = mysqli_fetch_assoc($resultado);
+	
 		
 	}
 	else{		
@@ -47,36 +48,58 @@
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
 	</ul>
 </nav>
-
-  <table class="table table-hover">
+<div class="col-sm-10 col-sm-offset-1">
+  <h2>Calendario Service</h2>
+  <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Id Vehiculo</th>
-        <th>Km unidad</th>
-        <th>Descripcion</th>
+        <th>Id vehiculo</th>
+        <th>Fecha Service</th>
+        <th>Km de la unidad</th>
+	 <th>Notificacion</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><?php echo $service['id_vehiculo']?></td>
-              <td><?php echo $service['km_de_la_unidad']?></td>
-            <td><?php echo $service['descripcion']?></td>
-      </tr>
-      <tr>
-        <td><?php echo $service['id_vehiculo']?></td>
-                 <td><?php echo $service['km_de_la_unidad']?></td>
-            <td><?php echo $service['descripcion']?></td>
-      </tr>
-      <tr>
-        <td><?php echo $service['id_vehiculo']?></td>
-                 <td><?php echo $service['km_de_la_unidad']?></td>
-            <td><?php echo $service['descripcion']?></td>
-      </tr>
+   	<?php
+	while($var = mysqli_fetch_assoc($resultado)){
+	
+	if( $var['km_de_la_unidad']>100000)
+	//	{$notificacion="cambiar cadena de distribucion";}
+{$notificacion='<div class="alert alert-danger">
+  <strong>Cambiar cadena de distribucion</strong> 
+</div>';}
+	
+	elseif( $var['km_de_la_unidad']>10000)
+	{$notificacion='<div class="alert alert-warning">
+  <strong>Cambiar pastilla de frenos</strong> 
+</div>';}
+	
+	elseif( $var['km_de_la_unidad']>5000 )
+		{$notificacion='<div class="alert alert-info">
+  <strong>Cambiar aceite</strong> 
+</div>';}
+
+		else{$notificacion="";}
+		
+		echo "<form method='POST' action='../../modelo/ejecutarAbmEmpresa.php'>
+		 <tr>
+		 <td>".$var['id_vehiculo']."</td>
+		 <td>".$var['fecha_service']."</td>
+		 <td>".$var['km_de_la_unidad']."</td>
+		 <td>".$notificacion."</td>
+		 </tr>
+  		 </form>";
+	}
+	
+	
+
+
+
+	
+   	?>
     </tbody>
   </table>
 </div>
-  
-
 	<!-- Modal logout-->
 	<form action="../modelo/logout.php" method="POST">
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

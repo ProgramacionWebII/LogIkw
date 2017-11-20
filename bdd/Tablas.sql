@@ -158,6 +158,5 @@ create table calendarioService(
 id int  AUTO_INCREMENT primary key,
 id_vehiculo int,
 fecha_service date,
-km_de_la_unidad int,
-descripcion varchar(30)
+km_de_la_unidad int
 );
