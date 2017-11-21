@@ -81,7 +81,9 @@ nro_chasis int unique,
 nro_motor int unique,
 marca varchar(20),
 modelo varchar(20),
-anio_fabricacion int
+anio_fabricacion int,
+tipo varchar(20),
+estado varchar(20)
 );
 
 

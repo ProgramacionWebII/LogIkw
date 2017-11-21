@@ -60,6 +60,9 @@
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 	</ul>
+		<ul class="nav navbar-nav navbar-right">
+		<li><a href=" <?php echo 'admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
 	</ul>
