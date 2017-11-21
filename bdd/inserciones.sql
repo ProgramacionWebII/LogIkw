@@ -68,8 +68,8 @@ INSERT into reporte_chofer_combustible(id_chofer,id_viaje,fecha,combustible_carg
 
 
 INSERT into reporte_chofer_posicion(id_chofer,id_viaje,fecha,latitud,longitud) values
-(1,2,'2017-09-04',-5555.4,4444.4), 
-(2,1,'2017-11-04',-2222.4,555.4);
+(1,2,'2017-09-04 17:16:18','-5555.4','4444.4'), 
+(2,1,'2017-11-04 17:16:18','-2222.4','555.4');
 
 INSERT into reporte_chofer_incidente(id_chofer,id_viaje,fecha,incidente) values
 (1,2,'2017-09-04','choque'), 

@@ -21,7 +21,7 @@
 	
 			$id_chofer = $_SESSION['chofer'];
 			$id_viaje = $_POST['variable'];
-			$fecha = $_POST['fecha'];
+			$fecha = date("Y-m-d H:i:s");
 			$latitud = $_POST['latitud'];
 			$longitud = $_POST['longitud'];
 

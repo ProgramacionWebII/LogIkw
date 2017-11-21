@@ -139,9 +139,9 @@ create table reporte_chofer_posicion(
 id int auto_increment primary key,
 id_chofer int ,
 id_viaje int ,
-fecha date,
-latitud float,
-longitud float
+fecha datetime,
+latitud varchar(100),
+longitud varchar(100)
 
 );
 

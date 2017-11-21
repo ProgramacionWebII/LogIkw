@@ -61,32 +61,29 @@
   
 <H2>REPORTES</H2>
   <BR>
-  <button type='button'  class='btn btn-primary' data-toggle='modal' data-target='#posicion'>POSICION</button>
+  <button type='button'  class='btn btn-primary' data-toggle='modal' data-target='#posicion' onclick="getLocation()">POSICION</button>
     <button type='button'  class='btn btn-danger' data-toggle='modal' data-target='#incidente'>INCIDENTE</button>
 	  <button type='button'  class='btn btn-success' data-toggle='modal' data-target='#cargaDeCombustible'>CARGA DE COMBUSTIBLE</button>
 	
 	
 	<!-- Modal de POSICION-->
-	  <form action="../modelo/agregar_reporte.php" method="POST">
+	  <form action="../modelo/agregar_reporte.php" method="POST" id="demo">
 	<div class="modal fade" id="posicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
 	      <div class="modal-header">
-	        <h2 class="modal-title" id="exampleModalLabel">Reportar Posicion</h2>
+	        <h2 class="modal-title" id="exampleModalLabel">¿Desea enviar su posición?</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
-	      <div class="modal-body col-sm-12">
-		     	        <input type="date" name="fecha" class="form-control col-sm-6" placeholder="fecha" required><br>
-   	        <input type="text" name="latitud" class="form-control col-sm-6" placeholder="latitud" required><br>
-	        <input type="text" name="longitud" class="form-control col-sm-6" placeholder="longitud" required>
-				        <input type="text" name="tipo_reporte" value="posicion" class="hidden">
-			       		<input type='text' name='variable' class='hidden' value="<?php echo $variable; ?>">
+   	        <input type="text" name="latitud" id="lat" class="form-control col-sm-6 hidden" placeholder="latitud" required><br>
+	        <input type="text" name="longitud" id="long" class="form-control col-sm-6 hidden" placeholder="longitud" required>
+	        <input type="text" name="tipo_reporte" value="posicion" class="hidden">
+       		<input type='text' name='variable' class='hidden' value="<?php echo $variable; ?>">
 	      
-	      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Cargar">
+	        <input type="submit" class="btn btn-primary" value="Enviar">
 	      </div>
 	    </div>
 	  </div>
@@ -168,13 +165,6 @@
 	</div>
 	</form>
 	
-	
-	
-	
-	<button onclick="getLocation()">Tomar posicion</button>
-
-<p id="demo"></p>
-	
 <script>
 var x = document.getElementById("demo");
 
@@ -188,24 +178,11 @@ function getLocation() {
 
 function showPosition(position) {
 	
-	var latitud = position.coords.latitude;
-	var longitud = position.coords.longitude;
-	
-	document.getElementById("lat").innerHTML=latitud;
-document.getElementById("long").innerHTML=longitud;
-  
+	$("#lat").attr({value: position.coords.latitude});
+	$("#long").attr({value: position.coords.longitude});
 }
 
 </script>	
-
-
-
-	<p>Latitud: <span id="lat"></span></p>
-	<p>Longitud: <span id="long"></span></p>
-	
-
-	
-	
 
 </body>
 </html>
