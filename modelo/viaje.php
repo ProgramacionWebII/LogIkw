@@ -13,6 +13,23 @@
 			return $query;
 		}
 
+		public static function getAllForIdChofer($id){
+			$query = "SELECT v.*, vj.id_chofer FROM viaje v JOIN viaje_chofer vj ON v.id = vj.id_viaje
+			WHERE vj.id_chofer = $id";
+			return $query;
+		}
+
+		public static function getAllTableOnViaje($id){
+				$query = "SELECT v.*, c.nombre nombreChofer, c.apellido apellidoChofer, a.nombre nombreAdmin, a.apellido apellidoAdmin, rcp.latitud, rcp.longitud, rcp.fecha
+					 FROM viaje v
+						JOIN  viaje_chofer vj ON v.id = vj.id_viaje
+						JOIN chofer c ON vj.id_chofer = c.id
+						JOIN administrador a ON v.id_administrador = a.id
+						JOIN reporte_chofer_posicion rcp ON v.id = rcp.id_viaje
+						WHERE v.id = $id";
+			return $query;
+		}
+
 		public static function insertar(
 		$id_administrador,
 		$origen,

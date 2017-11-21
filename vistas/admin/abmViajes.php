@@ -25,7 +25,6 @@
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
   <script src="../../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../../css/home.css">
-  <script type="text/javascript" src="../../js/abm.js"></script>
 </head>
 <body>
 
@@ -78,7 +77,7 @@
 </form>
   
   <table class="table table-condensed">
-    <thead>
+    <thead id="headTable">
       <tr>
         <th>Nro Viaje</th>
         <th>Origen - Destino</th>
@@ -96,16 +95,18 @@
 		$consultaAdmin = Conexion::getQuery($sqlAdmin);
 		$admin = mysqli_fetch_assoc($consultaAdmin);
 		echo "<form method='POST' action='../../modelo/ejecutarAbmViajes.php'>
-		 <tr>
-		 <td>".$viaje['id']."</td>
+		 <input type='text name='id' id='idViaje' class='hidden' value='".$viaje['id']."'>
+		 <tr id='viajeNro".$viaje['id']."'> 
+		 <td>".$viaje['id']."</div></td>
 		 <td>".$viaje['origen']." - ".$viaje['destino']."</td>
 		 <td>".$viaje['fecha_de_salida_real']."</td>
 		 <td>".$viaje['fecha_de_llegada_real']."</td>
 		 <td>".$admin['nombre']." ".$admin['apellido']."</td>
 
-		 <input type='text' name='id' class='hidden' value='".$viaje['id']."'>
 
-		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
+		 <td><button type='button' onclick='(infoExtendida())' name='info' class='btn btn-info glyphicon glyphicon-plus-sign'></button></td>
+
+		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary '>Modificar</button></td>
 
 		 <td><button type='submit' id='eliminar' onclick= 'eliminar()' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
 
@@ -173,5 +174,8 @@
 	  </div>
 	</div>
    	</form>
+ <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZGkBOCBsr2y1CWsZdAbgQLp48v081Elk"></script>
+   <script type="text/javascript" src="../../js/abm.js"></script>
+  <script type="text/javascript" src="../../js/traerDatosDeViajes.js"></script>
 </body>
 </html>

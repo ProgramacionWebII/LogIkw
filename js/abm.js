@@ -9,3 +9,13 @@ function eliminar(){
 		$("#modificar").remove();
 	});
 }
+
+function extender(){
+	$("#eliminar").click(function(event){
+		$("#modificar").remove();
+	});
+	
+	$("#modificar").click(function(event){
+		$("#eliminar").remove();
+	});
+}
