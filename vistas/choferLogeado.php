@@ -5,7 +5,11 @@
 	En caso de estar viva, hago las declaraciones correspondientes para trabajar.
 	Caso contrario, redirijo al index impidiendo mostrar cualquier cosa */
 
-	if(isset($_SESSION['chofer'])){
+	if($_GET['id_viaje'] == 0){
+		session_destroy();		
+		header("Location: ../index.php");
+	}
+	else if(isset($_SESSION['chofer'])){
 		include "../modelo/include.php";
 		$query = Chofer::getAllForId($_SESSION['chofer']);
 
