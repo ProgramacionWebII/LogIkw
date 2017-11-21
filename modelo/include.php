@@ -1,5 +1,5 @@
 <?php
-include "camion.php";
+include "vehiculo.php";
 include "chofer.php";
 include "cliente.php";
 include "conexion.php";
