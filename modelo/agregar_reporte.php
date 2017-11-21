@@ -24,10 +24,19 @@
 			$fecha = date("Y-m-d H:i:s");
 			$latitud = $_POST['latitud'];
 			$longitud = $_POST['longitud'];
-
-			$sql1 = Reporte_chofer::insertar_posicion($id_chofer, $id_viaje,$fecha,$latitud,$longitud);
-			Conexion::setQuery($sql1);
-			Conexion::cerrar();
+			$sqlViaje = Reporte_chofer::getAllForIdViaje($id_viaje);
+			$resultado = Conexion::getQuery($sqlViaje);
+			$reporteC = mysqli_fetch_assoc($resultado);
+			if($reporteC['id'] != null){
+				$sql1 = Reporte_chofer::actualizar_posicion($reporteC['id'],$fecha,$latitud,$longitud);
+				Conexion::setQuery($sql1);
+				Conexion::cerrar();
+			}
+			else{
+				$sql1 = Reporte_chofer::insertar_posicion($id_chofer, $id_viaje,$fecha,$latitud,$longitud);
+				Conexion::setQuery($sql1);
+				Conexion::cerrar();
+			}
 			
 			header("Location: ../vistas/reportesChofer.php?id_viaje=$id_viaje");
 		/*	echo $id_chofer;

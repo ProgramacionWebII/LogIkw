@@ -13,6 +13,11 @@
 			return $query;
 		}
 
+		public static function getAllForIdViaje($id){
+			$query = "SELECT rc.* FROM reporte_chofer rc join viaje v ON v.id = rc.id_viaje
+			WHERE rc.id_viaje = $id";
+			return $query;
+		}
 
 		public static function insertar_posicion($id_chofer, $id_viaje,$fecha,$latitud,$longitud){
 			$query = "INSERT INTO reporte_chofer_posicion(id_chofer, id_viaje,fecha,latitud,longitud)
@@ -31,6 +36,14 @@
 			return $query;
 		}
 
+		public static function actualizar_posicion($reporteId,$id_chofer, $id_viaje,$fecha,$latitud,$longitud){
+			$query = "UPDATE reporte_chofer 
+			SET	fecha = $fecha,
+			latitud = $latitud,
+			longitud = $longitud
+			WHERE id = $reporteId";
+			return $query;
+		}
 		
 	}
 ?>
