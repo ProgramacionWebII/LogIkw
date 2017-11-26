@@ -97,12 +97,7 @@
 		 
 
 
-<td><button type='button' name='hola' onClick='window.location = 
-
-\"../admin/generador_qr.php?valor=".$viaje['id']."\";'/ class='btn btn-info btn-md' value='".$viaje
-
-['id']."'>
-          <span class='glyphicon glyphicon-qrcode'></span></button></td>
+		<td><button type='button' onclick='(generarQr())' id='qr' class='btn btn-info btn-md glyphicon glyphicon-qrcode' value='".$viaje['id']."'></button></td>
 		  
 		 <td><button type='button' onclick='(infoExtendida())' name='info' class='btn btn-info glyphicon glyphicon-plus-sign'></button></td>
 
@@ -116,6 +111,7 @@
    	?>
     </tbody>
   </table>
+  <div class='col-sm-offset-3 col-sm-6' id="botonRegresar"></div>
 </div>
 
 
@@ -174,9 +170,9 @@
 	  </div>
 	</div>
    	</form>
- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZGkBOCBsr2y1CWsZdAbgQLp48v081Elk"></script>
-   <script type="text/javascript" src="../../js/abm.js"></script>
-  <script type="text/javascript" src="../../js/traerDatosDeViajes.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZGkBOCBsr2y1CWsZdAbgQLp48v081Elk"></script>
+<script type="text/javascript" src="../../js/abm.js"></script>
+<script type="text/javascript" src="../../js/abmViajes.js"></script>
 
 
 </body>
