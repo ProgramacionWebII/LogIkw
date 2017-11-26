@@ -33,43 +33,30 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="col-sm-12">
-    <div class="navbar-header col-sm-1">
-     <img src="../image/logo.png">
-    </div>
-    <ul class="nav navbar-nav col-sm-4">
-      <li class="active"><a href="<?php echo 'adminLogeado.php'; ?>">HOME</a></li>
-	  <li><a href="#">LA EMPRESA</a></li>
-      <li><a href="#">SERVICIOS</a></li>
-      <li><a href="#">CONTACTO</a></li>
-    </ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-	</ul>
-	
-		<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
-	</ul>
-		<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""><span class="glyphicon glyphicon-user" ></span> Bienvenido <?php echo $admin['nombre'] ?></a></li>
-	</ul>
+	    <div class="navbar-header col-sm-1">
+	     <img src="../image/logo.png">
+	    </div>
+	    <ul class="nav navbar-nav col-sm-4">
+	      <li class="active"><a href="<?php echo 'adminLogeado.php'; ?>">HOME</a></li>
+	    </ul>
+		<ul class="dropdown nav navbar-nav navbar-right nombreLogeado" style="padding-top: 0.5%;">
+		  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Seccion ABM
+		  <span class="caret"></span></button>
+		  <ul class="dropdown-menu">
+				<li><a href=" <?php echo 'admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
+				<li><a href=" <?php echo 'admin/abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
+				<li><a href=" <?php echo 'admin/abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
+				<li><a href=" <?php echo 'admin/abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
+				<li><a href=" <?php echo 'admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+				<li><a href=" <?php echo 'admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
+				<li><a href=" <?php echo 'admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li class="divider"></li>
+				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
+		  </ul>
+		</ul>
+	    <ul class="nav navbar-nav navbar-right">
+	    	<li><a href=""><span class="glyphicon glyphicon-user" ></span>Bienvenido <?php echo $admin['nombre'] ?></a></li>
+	    </ul>
 	</div>
 </nav>
   
