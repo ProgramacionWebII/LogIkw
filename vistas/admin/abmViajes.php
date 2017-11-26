@@ -63,18 +63,7 @@
 
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Administrador de viajes</h2>
-  <h3>Generar Codigo Qr</h3>
 
-<form action="generador_qr.php" method="GET">
-<h4>Id de viaje</h4>
- <div class="col-xs-1">
-        <input class="form-control" name="id_viaje" type="text" required><br>
-  <input type="submit" class="btn btn-info" value="Enviar" 	href='generador_qr.php'>
-	
-      </div>
-
-
-</form>
   
   <table class="table table-condensed">
     <thead id="headTable">
@@ -84,6 +73,8 @@
         <th>Fecha salida</th>
         <th>Fecha llegada</th>
         <th>Responsable de alta</th>
+		  <th>Codigo Qr</th>
+		  <th>Mapa</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
 
       </tr>
@@ -103,12 +94,15 @@
 		 <td>".$viaje['fecha_de_llegada_real']."</td>
 		 <td>".$admin['nombre']." ".$admin['apellido']."</td>
 
+<td><button type='button'   class='btn btn-info btn-md'>
+          <span class='glyphicon glyphicon-qrcode'></span></button></td>
+	
 
 		 <td><button type='button' onclick='(infoExtendida())' name='info' class='btn btn-info glyphicon glyphicon-plus-sign'></button></td>
 
-		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary '>Modificar</button></td>
+		 <td><button type='submit' id='modificar'  name='alterar' value='modificar' class='btn btn-primary '>Modificar</button></td>
 
-		 <td><button type='submit' id='eliminar' onclick= 'eliminar()' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
+		 <td><button type='submit' id='eliminar' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
 
 		 </tr>
   		 </form>";

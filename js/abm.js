@@ -18,4 +18,10 @@ function extender(){
 	$("#modificar").click(function(event){
 		$("#eliminar").remove();
 	});
+	
+	
+
+	
+	
 }
+

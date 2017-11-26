@@ -3,8 +3,9 @@
 	/* valido que haya una session "administador" viva, para que esta sección solo pueda ejecutar un administrador */
 	if(!isset($_SESSION['administrador'])){
 		Conexion::cerrar();
-		header("Location: ../index.php");
+		//header("Location: ../index.php");
 	}
+	
 	$alterar = $_POST['alterar'];
 
 	/* En caso de que se trate de un DELETE o un UPDATE, eliminar o actualizar, ejecuto esta sentencia,
@@ -13,22 +14,20 @@
 			$id = $_POST['id'];
 			session_start();
 			$_SESSION['modificar'] = $id;
-			header("Location: ../vistas/admin/modificarViaje.php");			
+			//header("Location: ../vistas/admin/modificarViaje.php");			
 		}
-		else if($alterar == "eliminar"){
+		 elseif($alterar == "eliminar"){
 			/*Esta variable siguiente corresponde a eliminar o modificar*/
 			$id = $_POST['id'];
 			$sql = Viaje::eliminar($id);
 			Conexion::setQuery($sql);
 			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
 			Conexion::cerrar();	
-			header("Location: ../vistas/admin/abmViajes.php");
+			//header("Location: ../vistas/admin/abmViajes.php");
 		}
 		else if($alterar == "agregar"){
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
-			
-			
-				
+	
 			$id_administrador = $_POST['id_administrador'];
 			$origen = $_POST['origen'];
 			$destino = $_POST['destino'];
@@ -63,8 +62,10 @@
 			);
 				Conexion::setQuery($sql);
 				Conexion::cerrar();
-				header("Location: ../vistas/admin/abmViajes.php");
+			//	header("Location: ../vistas/admin/abmViajes.php");
 		}
+
+	
 		else{
 		
 			$id_administrador = $_POST['id_administrador'];
@@ -103,6 +104,8 @@
 			);
 			Conexion::setQuery($sql);
 			Conexion::cerrar();
-			header("Location: ../vistas/admin/abmViajes.php");
+		//	header("Location: ../vistas/admin/abmViajes.php");
 		}
-?>
+		
+		
+		?>
