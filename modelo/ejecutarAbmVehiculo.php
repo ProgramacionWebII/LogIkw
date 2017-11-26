@@ -39,7 +39,7 @@
 			
 
 			$sql = Vehiculo::insertar($patente, $nro_chasis,$nro_motor,
-			$marca, $modelo,$anio_fabricacion);
+			$marca, $modelo,$anio_fabricacion,$tipo,$estado);
 			Conexion::setQuery($sql);
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmVehiculo.php");
@@ -57,10 +57,13 @@
 		
 			$id = $_POST['id'];
 
-			$sql = Vehiculo::actualizar($id, $patente, $nro_chasis,$nro_motor,
-			$marca, $modelo,$anio_fabricacion);
+			
+			$sql = Vehiculo::actualizar($id,$patente, $nro_chasis, $nro_motor, $marca, $modelo, $anio_fabricacion, $tipo,$estado);
+		
 			Conexion::setQuery($sql);
 			Conexion::cerrar();
-			header("Location: ../vistas/admin/abmVehiculo.php");
+		header("Location: ../vistas/admin/abmVehiculo.php");
+		
+	
 		}
 ?>

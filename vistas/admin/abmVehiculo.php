@@ -40,11 +40,17 @@
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 	</ul>
+	
+	<ul class="nav navbar-nav navbar-right">
+		<li class="active"><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Vehiculo</a></li>
+	</ul>
+	
+	
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li class="active"><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt"></span> Empresa</a></li>
+		<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt"></span> Empresa</a></li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>

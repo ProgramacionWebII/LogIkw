@@ -35,12 +35,9 @@
 			nro_motor = $nro_motor,
 			marca = '$marca',
 			modelo = '$modelo',
-			anio_fabricacion = $anio_fabricacion
+			anio_fabricacion = $anio_fabricacion,
 			tipo = '$tipo',
 			estado = '$estado'
-			
-			
-			
 		
 			WHERE id = $id";
 			return $query;
