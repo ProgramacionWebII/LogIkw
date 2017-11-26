@@ -19,9 +19,7 @@
 	$level = 'L'; //Precisión Baja
 	$framSize = 3; //Tamaño en blanco
 	
-	$parametro=$_GET['id_viaje'];
-
-
+	$parametro=$_GET['valor'];
 	
 	
 	$contenido = "http://localhost/LogIkw/vistas/reportesChofer.php?id_viaje=".$parametro; //Texto

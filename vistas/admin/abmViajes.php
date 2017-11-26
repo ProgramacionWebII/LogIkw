@@ -63,18 +63,7 @@
 
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Administrador de viajes</h2>
-  <h3>Generar Codigo Qr</h3>
 
-<form action="generador_qr.php" method="GET">
-<h4>Id de viaje</h4>
- <div class="col-xs-1">
-        <input class="form-control" name="id_viaje" type="text" required><br>
-  <input type="submit" class="btn btn-info" value="Enviar" 	href='generador_qr.php'>
-	
-      </div>
-
-
-</form>
   
   <table class="table table-condensed">
     <thead id="headTable">
@@ -84,6 +73,8 @@
         <th>Fecha salida</th>
         <th>Fecha llegada</th>
         <th>Responsable de alta</th>
+		<th>Codigo Qr</th>
+		  <th>Mapa</th>
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
 
       </tr>
@@ -95,7 +86,7 @@
 		$consultaAdmin = Conexion::getQuery($sqlAdmin);
 		$admin = mysqli_fetch_assoc($consultaAdmin);
 		echo "<form method='POST' action='../../modelo/ejecutarAbmViajes.php'>
-		 <input type='text name='id' id='idViaje' class='hidden' value='".$viaje['id']."'>
+		 <input type='text' name='id' id='idViaje' class='hidden' value='".$viaje['id']."'>
 		 <tr id='viajeNro".$viaje['id']."'> 
 		 <td>".$viaje['id']."</div></td>
 		 <td>".$viaje['origen']." - ".$viaje['destino']."</td>
@@ -103,7 +94,16 @@
 		 <td>".$viaje['fecha_de_llegada_real']."</td>
 		 <td>".$admin['nombre']." ".$admin['apellido']."</td>
 
+		 
 
+
+<td><button type='button' name='hola' onClick='window.location = 
+
+\"../admin/generador_qr.php?valor=".$viaje['id']."\";'/ class='btn btn-info btn-md' value='".$viaje
+
+['id']."'>
+          <span class='glyphicon glyphicon-qrcode'></span></button></td>
+		  
 		 <td><button type='button' onclick='(infoExtendida())' name='info' class='btn btn-info glyphicon glyphicon-plus-sign'></button></td>
 
 		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary '>Modificar</button></td>
@@ -177,5 +177,7 @@
  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZGkBOCBsr2y1CWsZdAbgQLp48v081Elk"></script>
    <script type="text/javascript" src="../../js/abm.js"></script>
   <script type="text/javascript" src="../../js/traerDatosDeViajes.js"></script>
+
+
 </body>
 </html>

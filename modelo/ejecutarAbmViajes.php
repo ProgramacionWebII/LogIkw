@@ -3,7 +3,7 @@
 	/* valido que haya una session "administador" viva, para que esta sección solo pueda ejecutar un administrador */
 	if(!isset($_SESSION['administrador'])){
 		Conexion::cerrar();
-		header("Location: ../index.php");
+	//	header("Location: ../index.php");
 	}
 	$alterar = $_POST['alterar'];
 
