@@ -26,7 +26,7 @@
 						JOIN chofer c ON vj.id_chofer = c.id
 						JOIN administrador a ON v.id_administrador = a.id
 						JOIN reporte_chofer_posicion rcp ON v.id = rcp.id_viaje
-						WHERE v.id = $id";
+						WHERE v.id = $id and rcp.id = (select MAX(id) from reporte_chofer_posicion where id_viaje = $id)";
 			return $query;
 		}
 

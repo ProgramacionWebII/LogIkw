@@ -14,7 +14,7 @@
 		}
 
 		public static function getAllForIdViaje($id){
-			$query = "SELECT rc.* FROM reporte_chofer rc join viaje v ON v.id = rc.id_viaje
+			$query = "SELECT rc.* FROM reporte_chofer_posicion rc join viaje v ON v.id = rc.id_viaje
 			WHERE rc.id_viaje = $id";
 			return $query;
 		}
@@ -36,7 +36,7 @@
 			return $query;
 		}
 
-		public static function actualizar_posicion($reporteId,$id_chofer, $id_viaje,$fecha,$latitud,$longitud){
+		public static function actualizar_posicion($reporteId,$fecha,$latitud,$longitud){
 			$query = "UPDATE reporte_chofer 
 			SET	fecha = $fecha,
 			latitud = $latitud,
