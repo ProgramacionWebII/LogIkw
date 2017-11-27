@@ -63,20 +63,18 @@
 	while($usuario = mysqli_fetch_assoc($resultado1)){
 		echo "<form method='POST' action='../../modelo/ejecutarAbmUsuario.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
-		 <input type='text' name='id' class='hidden' value='".$usuario['id_usuario']."'><br>
+		<input type='text' name='id' class='hidden' value='".$usuario['id_usuario']."'><br>
 		<label>Usuario:</label>
 		<input type='text' name='user' class='form-control' value='".$usuario['user']."'><br>
-		<label>Password:</label>
-		<input type='text' name='pass' class='form-control' value='".$usuario['pass']."'><br>
 		<label>Rol:</label>
 		<input type='text' name='rol' class='form-control' value='".$usuario['rol']."'>
 		
-		 </div>
-		 <div class='form-group col-sm-offset-3 col-sm-6''>
-		 <button type='submit' name='alterar' value='a' class='btn btn-primary'>Modificar</button>
-		 <a href='abmUsuario.php'><button type='button' class='btn btn-danger'>Regresar</button></a>
-		 </div>
-  		 </form>";
+		</div>
+		<div class='form-group col-sm-offset-3 col-sm-6''>
+		<button type='submit' name='alterar' value='a' class='btn btn-primary'>Modificar</button>
+		<a href='abmUsuario.php'><button type='button' class='btn btn-danger'>Regresar</button></a>
+		</div>
+  		</form>";
 	}
    	?>
 </div>

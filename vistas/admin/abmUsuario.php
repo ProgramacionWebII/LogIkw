@@ -66,7 +66,6 @@
     <thead>
       <tr>
         <th>Usuario</th>
-        <th>Password</th>
         <th>Rol</th>
     
 		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarUsuario'>Agregar</button></th>
@@ -79,7 +78,6 @@
 		echo "<form method='POST' action='../../modelo/ejecutarAbmUsuario.php'>
 		 <tr>
 		 <td>".$usuario['user']."</td>
-		 <td>".$usuario['pass']."</td>
 		 <td>".$usuario['rol']."</td>
 	
 		 <input type='text' name='id' class='hidden' value='".$usuario['id_usuario']."'>
