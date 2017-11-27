@@ -46,9 +46,6 @@
     </div>
     <ul class="nav navbar-nav col-sm-4">
       <li class="active"><a href="#">HOME</a></li>
-	  <li><a href="#">LA EMPRESA</a></li>
-      <li><a href="#">SERVICIOS</a></li>
-      <li><a href="#">CONTACTO</a></li>
 	 
     </ul>
 	<ul class="nav navbar-nav navbar-right">
@@ -58,13 +55,91 @@
 </nav>
   
 
-  
-<H2>REPORTES</H2>
-  <BR>
-  <button type='button'  class='btn btn-primary' data-toggle='modal' data-target='#posicion' onclick="getLocation()">POSICION</button>
-    <button type='button'  class='btn btn-danger' data-toggle='modal' data-target='#incidente'>INCIDENTE</button>
-	  <button type='button'  class='btn btn-success' data-toggle='modal' data-target='#cargaDeCombustible'>CARGA DE COMBUSTIBLE</button>
+<div class="col-sm-8 col-sm-offset-2">
+	<div class="col-sm-12">		
+		<H2 class="col-sm-offset-2 col-sm-8">Seleccione el tipo de reporte a realizar</H2>
+	</div>  
+	<div class="col-sm-12">
+	<button type='button'  class='btn btn-primary col-sm-4' data-toggle='modal' data-target='#posicion' onclick="getLocation()">POSICION</button>
+	<button type='button'  class='btn btn-danger col-sm-4' data-toggle='modal' data-target='#incidente'>INCIDENTE</button>
+	<button type='button'  class='btn btn-success col-sm-4' data-toggle='modal' data-target='#cargaDeCombustible'>CARGA DE COMBUSTIBLE</button>
+	</div>
+</div>
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<br>	
+<div class="panel panel-success">
+  <div class="panel-heading text-center"><h2>CONTACTO</h2></div>
+</div>
+		
+<!-- Footer -->
+
+
+<footer class="footer-distributed ">
+	<div class="container">
+    	<div class="row">
+      		<div class="col-sm-5 col-sm-offset-1">
 	
+				<h3>MS Logistica</span></h3>
+
+				<p class="footer-links">
+					<a href="#">Home</a>  ·
+					<a href="#">La Empresa</a> ·
+					<a href="#">Servicios</a> ·
+					<a href="#">Contacto</a>
+				</p>
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Av.Cuenca 412</span>, Buenos Aires, Argentina</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p> +54 011 4852-4454</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:mslogistica@empresa.com.ar">mslogistica@empresa.com.ar</a></p>
+				</div>
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Todos los derechos reservados
+				</p>
+
+				<div class="footer-icons">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+				</div>
+			</div>      
+	  
+	  
+	<form class="col-sm-5" action="#" method="post">
+  		<div class="form-group" >
+    		<label for="exampleInputEmail1">Email:</label>
+    		<input type="email" class="form-control" placeholder="Enter email"> 
+  		</div>
+    	<div class="form-group">
+ 			<label for="exampleMessage">Mensaje:</label>
+    		<textarea  class="form-control"  placeholder="Mensaje"></textarea>
+    	</div>
+ 
+  		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+</footer>
 	
 	<!-- Modal de POSICION-->
 	  <form action="../modelo/agregar_reporte.php" method="POST" id="demo">

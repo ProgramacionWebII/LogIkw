@@ -43,7 +43,7 @@ include 'include.php';
     	case 'chofer':
 session_start();
 		    $_SESSION["chofer"] = $clase['id'];	
-		    header("Location: ../vistas/choferLogeado.php?id_viaje=$variable");
+		    header("Location: ../vistas/reportesChofer.php?id_viaje=$variable");
 		    Conexion::cerrar();
     		break;
 
