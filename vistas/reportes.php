@@ -81,38 +81,14 @@
 
 
 
-
-
-
-<form method='POST' action='../modelo/consultarReporteVehiculo.php'>
+  
 	
-
-		 <label>seleccione vehiculo</label>
-      <select class='form-control' name="vehiculos">
-        <option value='1'>1</option>
-          <option value='2'>2</option>
-           <option value='3'>3</option>
-           <option value='4'>4</option>
-      </select>
-
-		
-
-		 <button type='submit' id='modificar' value='modificar' class='btn btn-primary'>Consultar</button>
+<input type="submit"  class='btn btn-primary' value="Reportes de Vehiculos" onclick = "location='../modelo/consultarReporteVehiculo.php'"/>
+  	
+		 
+		 
 
 
-
-		
-  		 </form>
-	
-
-
-	
-	
-	
-	
-	
-	
-	
 
 
 	<!-- Modal logout-->

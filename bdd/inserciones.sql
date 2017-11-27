@@ -25,13 +25,18 @@ INSERT into chofer(dni_chofer,rol, nombre, apellido,fecha_de_nacimiento,tipo_lic
 (222222222,'chofer','hector','diaz','1980-05-06','a5',5),
 (333333333,'chofer','pepe','castañeda','1970-05-07','a5',6);
 
-INSERT into viaje(id_administrador,origen,destino,tipo_de_carga,fecha_de_salida_prevista,fecha_de_llegada_prevista,tiempo_estimado,
+INSERT into viaje(id_vehiculo,id_administrador,origen,destino,tipo_de_carga,fecha_de_salida_prevista,fecha_de_llegada_prevista,tiempo_estimado,
 fecha_de_salida_real,fecha_de_llegada_real,tiempo_real,km_recorridos_previstos,desviacion_km,combustible_consumido_estimado,combustible_consumido_real) values
-(1,'san juan','buenos aires','Granel Sólido','2017-10-05','2017-10-10',120,
+(1,1,'san juan','buenos aires','Granel Sólido','2017-10-05','2017-10-10',120,
 '2017-10-05','2017-10-11',130,1300,5,300,350),
-(2,'la pampa','san luis','Granel Sólido','2017-11-05','2017-11-08',100,
-'2017-11-05','2017-11-09',105,1000,1,400,380);
-
+(1,2,'la pampa','san luis','Granel Sólido','2017-11-05','2017-11-08',200,
+'2017-11-05','2017-11-09',105,1500,1,400,380),
+(2,1,'salta','buenos aires','Granel Sólido','2017-09-05','2017-10-08',150,
+'2017-11-05','2017-11-09',105,1600,1,400,380),
+(3,1,'misiones','buenos aires','Granel Sólido','2017-09-05','2017-10-08',400,
+'2017-11-05','2017-11-09',105,1700,1,600,450),
+(4,1,'san luis','buenos aires','Granel Sólido','2017-09-05','2017-10-08',100,
+'2017-11-05','2017-11-09',105,1500,1,700,500);
 
 INSERT into vehiculo(patente,nro_chasis,nro_motor,marca,modelo,anio_fabricacion,tipo,estado) values
 ('ab 123 cd','10',20,'ford','j2001',2000,'camion','disponible'),
@@ -58,10 +63,13 @@ INSERT into viaje_vehiculo(id_viaje,id_vehiculo) values
 (2,9);
 
 
-INSERT into mantenimiento(id_empresa,id_mecanico,patente ,nro_chasis ,nro_motor ,fecha_service,km_de_la_unidad ,costo,tipo,repuestos_cambiados) values
+INSERT into mantenimiento(id_vehiculo,id_empresa,id_mecanico,patente ,nro_chasis ,nro_motor ,fecha_service,km_de_la_unidad ,costo,tipo,repuestos_cambiados) values
 
-(1,1,'ab 123 cd',10,20,'2017-05-04',150000,20000,'externo','valvula,tubo de escape'),
-(2,2,'kd 456 rr',20,10,'2017-04-04',300000,50000,'externo','motor');
+(1,1,1,'ab 123 cd',10,20,'2017-05-04',150000,20000,'externo','valvula,tubo de escape'),
+(1,2,2,'ab 123 cd',20,10,'2017-04-04',300000,70000,'externo','motor'),
+(4,2,2,'ab 323 cd',20,10,'2017-04-04',305000,50000,'externo','motor'),
+(3,2,2,'tb 623 kd',20,10,'2017-04-04',400000,80000,'externo','motor'),
+(2,2,2,'kd 456 rr',20,10,'2017-04-04',320000,90000,'externo','motor');
 
 INSERT into reporte_chofer_combustible(id_chofer,id_viaje,fecha,combustible_cargado,importe_combustible,ubicacion,km_unidad) values
 (1,2,'2017-09-04',10,500,'san justo',13000), 

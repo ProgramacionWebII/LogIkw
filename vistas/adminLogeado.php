@@ -37,7 +37,7 @@
 	     <img src="../image/logo.png">
 	    </div>
 	    <ul class="nav navbar-nav col-sm-4">
-	      <li class="active"><a href="<?php echo 'adminLogeado.php'; ?>">HOME</a></li>
+	      <li class="active"><a href="<?php echo '../vistas/adminLogeado.php'; ?>">HOME</a></li>
 	    </ul>
 		<ul class="dropdown nav navbar-nav navbar-right nombreLogeado" style="padding-top: 0.5%;">
 		  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Seccion ABM
@@ -50,6 +50,7 @@
 				<li><a href=" <?php echo 'admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
 				<li><a href=" <?php echo 'admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 				<li><a href=" <?php echo 'admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li><a href=" <?php echo 'reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>reportes</a></li>
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
