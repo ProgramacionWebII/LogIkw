@@ -55,11 +55,33 @@
 	$var6 = "<tbody>
 				<tr>
 					<td>".$viaje['fecha']."</td>
-					<td id='latitud'>".$viaje['latitud']."</td>
-					<td id='longitud'>".$viaje['longitud']."</td>
 					<td id='mapa'style='width:500px; height:400px;'></td>
+					<div class='col-sm-12' id='botonRegresar'></div>
 				</tr>
-			</tbody>";
+			</tbody>
+			<script>
+
+			    var mapOptions = {
+			        center:new google.maps.LatLng(".$viaje['latitud'].",".$viaje['longitud']."),
+			        zoom:12,
+			        panControl: false,
+			        zoomControl: false,
+			        scaleControl: false,
+			        mapTypeControl:false,
+			        streetViewControl:true,
+			        overviewMapControl:true,
+			        rotateControl:true,
+			        mapTypeId:google.maps.MapTypeId.ROADMAP
+			    };
+
+			    var map = new google.maps.Map(document.getElementById('mapa'),mapOptions);
+
+			    var marker = new google.maps.Marker({
+			        position: new google.maps.LatLng(".$viaje['latitud'].",".$viaje['longitud']."),
+			        map: map
+			    });
+
+			</script>";
 
 	echo $var1.$var2.$var3.$var4.$var5.$var6;
 ?>
