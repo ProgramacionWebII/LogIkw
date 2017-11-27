@@ -19,7 +19,7 @@
 	$level = 'L'; //Precisión Baja
 	$framSize = 3; //Tamaño en blanco
 	
-	$parametro = $_REQUEST['id'];
+	$parametro=$_GET['valor'];
 	
 	
 	$contenido = "http://localhost/LogIkw/vistas/reportesChofer.php?id_viaje=".$parametro; //Texto
@@ -30,20 +30,11 @@
         //Mostramos la imagen generada
 
 			
-	$var = "
-	<thead class='col-sm-offset-3 col-sm-6'>
-		<tr>
-			<th>Codigo de reporte</th>
-		</tr>
-	</thead>
-	<tbody class='col-sm-offset-3 col-sm-6'>
-		<tr class='col-sm-12'>
-			<td><img src='".$dir.basename($filename)."'/></td>
-			<div class='col-sm-12' id='boton'></div>
-		</tr>
-	</tbody>
-	";
-	echo $var;
+	echo '<img src="'.$dir.basename($filename).'" />';  
+	echo "<br>";
+	echo "Id de viaje:".$parametro;  
+
+
 ?>
 
 
