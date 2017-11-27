@@ -56,6 +56,5 @@ function descargar(){
 		data : 1,
 		url : '../modelo/generarPDF.php',
 		type: 'POST'
-		}
 	});
 }
