@@ -29,14 +29,8 @@ INSERT into viaje(id_vehiculo,id_administrador,origen,destino,tipo_de_carga,fech
 fecha_de_salida_real,fecha_de_llegada_real,tiempo_real,km_recorridos_previstos,desviacion_km,combustible_consumido_estimado,combustible_consumido_real) values
 (1,1,'san juan','buenos aires','Granel Sólido','2017-10-05','2017-10-10',120,
 '2017-10-05','2017-10-11',130,1300,5,300,350),
-(1,2,'la pampa','san luis','Granel Sólido','2017-11-05','2017-11-08',200,
-'2017-11-05','2017-11-09',105,1500,1,400,380),
-(2,1,'salta','buenos aires','Granel Sólido','2017-09-05','2017-10-08',150,
-'2017-11-05','2017-11-09',105,1600,1,400,380),
-(3,1,'misiones','buenos aires','Granel Sólido','2017-09-05','2017-10-08',400,
-'2017-11-05','2017-11-09',105,1700,1,600,450),
-(4,1,'san luis','buenos aires','Granel Sólido','2017-09-05','2017-10-08',100,
-'2017-11-05','2017-11-09',105,1500,1,700,500);
+(2,2,'la pampa','san luis','Granel Sólido','2017-11-05','2017-11-08',200,
+'2017-11-05','2017-11-09',105,1500,1,400,380);
 
 INSERT into vehiculo(patente,nro_chasis,nro_motor,marca,modelo,anio_fabricacion,tipo,estado) values
 ('ab 123 cd','10',20,'ford','j2001',2000,'camion','disponible'),
@@ -54,13 +48,13 @@ INSERT into empresa(nombre,rol,telefono,domicilio,id_usuario) values
 
 
 INSERT into viaje_chofer(id_viaje,id_chofer) values
-(5,1),
+(1,1),
 (2,2);
 
 
 INSERT into viaje_vehiculo(id_viaje,id_vehiculo) values
-(1,5),
-(2,9);
+(1,1),
+(2,2);
 
 
 INSERT into mantenimiento(id_vehiculo,id_empresa,id_mecanico,patente ,nro_chasis ,nro_motor ,fecha_service,km_de_la_unidad ,costo,tipo,repuestos_cambiados) values
@@ -72,17 +66,17 @@ INSERT into mantenimiento(id_vehiculo,id_empresa,id_mecanico,patente ,nro_chasis
 (2,2,2,'kd 456 rr',20,10,'2017-04-04',320000,90000,'externo','motor');
 
 INSERT into reporte_chofer_combustible(id_chofer,id_viaje,fecha,combustible_cargado,importe_combustible,ubicacion,km_unidad) values
-(1,2,'2017-09-04',10,500,'san justo',13000), 
-(2,1,'2017-11-04',100,5000,'temperley',130000);
+(1,1,'2017-09-04',10,500,'san justo',13000), 
+(2,2,'2017-11-04',100,5000,'temperley',130000);
 
 
 INSERT into reporte_chofer_posicion(id_chofer,id_viaje,fecha,latitud,longitud) values
-(1,2,'2017-09-04 17:16:18','-5555.4','4444.4'), 
-(2,1,'2017-11-04 17:16:18','-2222.4','555.4');
+(1,1,'2017-09-04 17:16:18','-5555.4','4444.4'), 
+(2,2,'2017-11-04 17:16:18','-2222.4','555.4');
 
 INSERT into reporte_chofer_incidente(id_chofer,id_viaje,fecha,incidente) values
-(1,2,'2017-09-04','choque'), 
-(2,1,'2017-11-04','piquete');
+(1,1,'2017-09-04','choque'), 
+(2,2,'2017-11-04','piquete');
 
 
 INSERT into calendarioService(id_vehiculo,fecha_service,km_de_la_unidad) values
