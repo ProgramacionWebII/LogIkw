@@ -60,9 +60,9 @@
 
 <div class="col-sm-10 col-sm-offset-1">
   <h2>Administrador de viajes</h2>
-
+ 
   
-  <table class="table table-condensed">
+  <table class="table table-condensed col-sm-12">
     <thead id="headTable">
       <tr>
         <th>Nro Viaje</th>

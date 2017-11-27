@@ -39,7 +39,9 @@ function generarQr(){
 		success: function(response){
 			$('.table-condensed').html(response);
 			$('#botonRegresar').html(
-				'<button class="btn btn-danger col-sm-6" onclick= "(regresar())">Regresar</button>'+
+				'<button class="btn btn-danger col-sm-6" onclick= "(regresar())">Regresar</button>'
+			);
+			$('#botonDescargar').html(
 				'<button class="btn btn-primary col-sm-6" onclick="(descargar())">Descargar</button>'
 				);
 		}
@@ -52,9 +54,6 @@ function regresar(){
 }
 
 function descargar(){
-		$.ajax({
-		data : 1,
-		url : '../modelo/generarPDF.php',
-		type: 'POST'
-	});
+	url = '../modelo/generarPDF.php',
+	window.location.href = url;
 }

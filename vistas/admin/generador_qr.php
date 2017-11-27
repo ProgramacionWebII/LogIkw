@@ -32,14 +32,17 @@
 			
 	$var = "
 	<thead class='col-sm-offset-3 col-sm-6'>
-		<tr>
+		<tr class='col-sm-offset-3 col-sm-6'>
 			<th>Codigo de reporte</th>
 		</tr>
 	</thead>
 	<tbody class='col-sm-offset-3 col-sm-6'>
-		<tr class='col-sm-12'>
+		<tr>
 			<td><img src='".$dir.basename($filename)."'/></td>
-			<div class='col-sm-12' id='boton'></div>
+		</tr>
+		<tr>
+			<td><div id='botonRegresar></div></td>
+			<td><div id='botonDescargar onclick='(descargar())'></div></td>
 		</tr>
 	</tbody>
 	";

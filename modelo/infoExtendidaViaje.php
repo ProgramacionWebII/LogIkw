@@ -56,7 +56,9 @@
 				<tr>
 					<td>".$viaje['fecha']."</td>
 					<td id='mapa'style='width:500px; height:400px;'></td>
-					<div class='col-sm-12' id='botonRegresar'></div>
+				</tr>
+				<tr>
+					<td><div class='col-sm-12' id='botonRegresar'></div></td>
 				</tr>
 			</tbody>
 			<script>
