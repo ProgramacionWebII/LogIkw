@@ -48,9 +48,7 @@
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
 	</ul>
-		<ul class="nav navbar-nav navbar-right">
-		<li><a href=" <?php echo 'reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
-	</ul>
+	
 		<ul class="nav navbar-nav navbar-right">
 		<li><a href=" <?php echo 'admin/abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
 	</ul>

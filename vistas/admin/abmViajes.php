@@ -68,12 +68,10 @@
   <table class="table table-condensed">
     <thead id="headTable">
       <tr>
-	   <th>Id vehiculo</th>
         <th>Nro Viaje</th>
         <th>Origen - Destino</th>
         <th>Fecha salida</th>
         <th>Fecha llegada</th>
-		<th>Horas</th>
         <th>Responsable de alta</th>
 		<th>Codigo Qr</th>
 		  <th>Mapa</th>
@@ -83,28 +81,20 @@
     </thead>
     <tbody>
    	<?php
-	
-
 	while($viaje = mysqli_fetch_assoc($resultado1)){
 		$sqlAdmin = Administrador::getAllForId($viaje['id_administrador']);
 		$consultaAdmin = Conexion::getQuery($sqlAdmin);
 		$admin = mysqli_fetch_assoc($consultaAdmin);
-	
-
-		
-		
 		echo "<form method='POST' action='../../modelo/ejecutarAbmViajes.php'>
 		 <input type='text' name='id' id='idViaje' class='hidden' value='".$viaje['id']."'>
 		 <tr id='viajeNro".$viaje['id']."'> 
-		 	 <td>".$viaje['id_vehiculo']."</div></td>
 		 <td>".$viaje['id']."</div></td>
 		 <td>".$viaje['origen']." - ".$viaje['destino']."</td>
 		 <td>".$viaje['fecha_de_salida_real']."</td>
 		 <td>".$viaje['fecha_de_llegada_real']."</td>
- <td>".$viaje['tiempo_estimado']."</td>
 		 <td>".$admin['nombre']." ".$admin['apellido']."</td>
 
-	
+		 
 
 
 <td><button type='button' name='hola' onClick='window.location = 

@@ -58,7 +58,6 @@ id_usuario int
 
 create table viaje(
 id int AUTO_INCREMENT  primary key,
-id_vehiculo int ,
 id_administrador int,
 origen varchar(20),
 destino varchar(20),
