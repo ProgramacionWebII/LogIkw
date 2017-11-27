@@ -1,9 +1,7 @@
 
-var id = $('#idViaje').val();
-var parametro = { 'id' : id};
-var idPeticion = "#viajeNro"+id;
-
-function infoExtendida(){
+function infoExtendida(id){
+	var id = id;
+	var parametro = { 'id' : id};
 	$('#headTable').remove();
 	$.ajax({
 		data : parametro,

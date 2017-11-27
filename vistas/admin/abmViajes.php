@@ -96,7 +96,7 @@
 
 		<td><button type='button' onclick='(generarQr())' id='qr' class='btn btn-info btn-md glyphicon glyphicon-qrcode' value='".$viaje['id']."'></button></td>
 		  
-		 <td><button type='button' onclick='(infoExtendida())' name='info' class='btn btn-info glyphicon glyphicon-plus-sign'></button></td>
+		 <td><button type='button' onclick='(infoExtendida(".$viaje['id']."))' name='info' class='btn btn-info glyphicon glyphicon-plus-sign'></button></td>
 
 		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary '>Modificar</button></td>
 
