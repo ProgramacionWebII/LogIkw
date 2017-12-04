@@ -15,13 +15,13 @@
 
 		public static function getAllForIdViaje($id){
 			$query = "SELECT rc.* FROM reporte_chofer_posicion rc join viaje v ON v.id = rc.id_viaje
-			WHERE rc.id_viaje = $id";
+			WHERE v.id = $id";
 			return $query;
 		}
 
 		public static function insertar_posicion($id_chofer, $id_viaje,$fecha,$latitud,$longitud){
 			$query = "INSERT INTO reporte_chofer_posicion(id_chofer, id_viaje,fecha,latitud,longitud)
-			VALUES ($id_chofer, $id_viaje,'$fecha',$latitud,$longitud)";
+			VALUES ($id_chofer, $id_viaje,'$fecha','$latitud','$longitud')";
 			return $query;
 		}
 
@@ -36,11 +36,12 @@
 			return $query;
 		}
 
-		public static function actualizar_posicion($reporteId,$fecha,$latitud,$longitud){
+		public static function actualizar_posicion($reporteId, $id_viaje, $fecha,$latitud,$longitud){
 			$query = "UPDATE reporte_chofer 
-			SET	fecha = $fecha,
-			latitud = $latitud,
-			longitud = $longitud
+			SET	fecha = '$fecha',
+			id_viaje = '$id_viaje',
+			latitud = '$latitud',
+			longitud = '$longitud'
 			WHERE id = $reporteId";
 			return $query;
 		}

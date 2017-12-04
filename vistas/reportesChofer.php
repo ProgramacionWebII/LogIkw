@@ -12,7 +12,9 @@
 		$resultado = Conexion::getQuery($query);
 		$chofer = mysqli_fetch_assoc($resultado);
 		
-		
+		$query2 = Viaje::getAllforIdChofer($chofer['id']);
+		$resultado2 = Conexion::getQuery($query2);
+		$viaje = mysqli_fetch_assoc($resultado2);
 	}
 	else{
 		
@@ -210,8 +212,8 @@
 	        <input type="text" name="combustible_cargado" class="form-control col-sm-6" placeholder="Cantidad De Litros" required><br>
 	       <input type="text" name="importe_combustible" class="form-control col-sm-6" placeholder="importe" required><br>
 		   <input type="text" name="km_unidad" class="form-control col-sm-6" placeholder="Km de la unidad" required><br>
-		         <input type="text" name="tipo_reporte" value="combustible" class="hidden">
-	  			       		<input type='text' name='variable' class='hidden' value="<?php echo $variable; ?>">
+		    <input type="text" name="tipo_reporte" value="combustible" class="hidden">
+	  		<input type='text' name='variable' class='hidden' <?php echo "value='".$viaje['id']."'"; ?> >
 	      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">

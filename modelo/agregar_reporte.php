@@ -28,7 +28,7 @@
 			$resultado = Conexion::getQuery($sqlViaje);
 			$reporteC = mysqli_fetch_assoc($resultado);
 			if($reporteC['id'] != null){
-				$sql1 = Reporte_chofer::actualizar_posicion($reporteC['id'],$fecha,$latitud,$longitud);
+				$sql1 = Reporte_chofer::actualizar_posicion($reporteC['id'], $id_viaje, $fecha,$latitud,$longitud);
 				Conexion::setQuery($sql1);
 				Conexion::cerrar();
 			}
