@@ -124,11 +124,24 @@
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
-	      <div class="modal-body col-sm-12">
+	      <div class="modal-body col-sm-12" id="agregarAtributos">
    	        <input type="text" name="user" class="col-sm-6 form-control" placeholder="usuario" required><br>
-	        <input type="text" name="pass" class="col-sm-6 form-control" placeholder="password"required><br>
-	        <input type="text" name="rol" class="col-sm-6 form-control"  placeholder="rol"required><br>
+	        <select type="text" name="rol" class="col-sm-6 form-control" id="usuario" placeholder="rol" onchange="cambiarAtributos()">
+	        	<option value="administrador">Administrador</option>
+	        	<option value="chofer">Chofer</option>
+	        	<option value="cliente">Cliente</option>
+	        	<option value="mecanico">Mecanico</option>
+	        	<option value="empresa">Empresa</option>
+	        </select>
+	        <div id="administrador">
+	        	<input type='text' name='nombre' id='nombre' class='col-sm-6 form-control' placeholder='Nombre' required><br>
+	   	        <input type='text' name='apellido' id='apellido' class='col-sm-6 form-control' placeholder='Apellido' required><br>
+	   	        <input type='text' name='dni' id='dni' class='col-sm-6 form-control' placeholder='DNI' required><br>
+	   	        <input type='text' name='telefono' id='telefono' class='col-sm-6 form-control' placeholder='Telefono' required><br>
+	   	        <input type='text' name='domicilio' id='domicilio' class='col-sm-6 form-control' placeholder='Domicilio' required><br>
+	   	        <input type='text' name='email' id='email' class='col-sm-6 form-control' placeholder='E-Mail' required><br>
 
+	        </div>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">
@@ -139,5 +152,6 @@
 	  </div>
 	</div>
    	</form>
+  <script type="text/javascript" src="../../js/abm.js"></script>
 </body>
 </html>
