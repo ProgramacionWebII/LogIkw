@@ -1,2 +1,6 @@
 languaje: php
+php:
+  -'5.2'
+before_script:
+  - curl -sSf -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
 os: windows
