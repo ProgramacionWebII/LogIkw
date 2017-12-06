@@ -31,6 +31,7 @@
 		}
 
 		public static function insertar(
+		$id_vehiculo,
 		$id_administrador,
 		$origen,
 		$destino,
@@ -42,12 +43,13 @@
 		$fecha_de_llegada_real,
 		$tiempo_real,
 		$km_recorridos_previstos,
-		$desviacion_km,
+		$km_recorridos_reales,
 		$combustible_consumido_estimado,
 		$combustible_consumido_real){
 			
 			$query = "INSERT INTO viaje(
-				id_administrador,
+		id_vehiculo,
+		id_administrador,
 		origen,
 		destino,
 		tipo_de_carga,
@@ -58,12 +60,12 @@
 		fecha_de_llegada_real,
 		tiempo_real,
 		km_recorridos_previstos,
-		desviacion_km,
+		km_recorridos_reales,
 		combustible_consumido_estimado,
 		combustible_consumido_real)
 			
 			VALUES (
-			
+		$id_vehiculo,	
 		$id_administrador,
 		'$origen',
 		'$destino',
@@ -75,7 +77,7 @@
 		'$fecha_de_llegada_real',
 		$tiempo_real,
 		$km_recorridos_previstos,
-		$desviacion_km,
+		$km_recorridos_reales,
 		$combustible_consumido_estimado,
 		$combustible_consumido_real)";
 		
@@ -92,6 +94,7 @@
 
 		public static function actualizar(
 		$id, 
+		$id_vehiculo,
 		$id_administrador,
 		$origen,
 		$destino,
@@ -103,12 +106,13 @@
 		$fecha_de_llegada_real,
 		$tiempo_real,
 		$km_recorridos_previstos,
-		$desviacion_km,
+		$km_recorridos_reales,
 		$combustible_consumido_estimado,
 		$combustible_consumido_real){
 			$query = "UPDATE viaje
 			SET 
-			id_administrador = $id_administrador,
+		id_vehiculo = $id_vehiculo,
+		id_administrador = $id_administrador,
 		origen ='$origen',
 		destino = '$destino',
 		tipo_de_carga = '$tipo_de_carga',
@@ -119,7 +123,7 @@
 		fecha_de_llegada_real = '$fecha_de_llegada_real',
 		tiempo_real = $tiempo_real,
 		km_recorridos_previstos = $km_recorridos_previstos,
-		desviacion_km = $desviacion_km,
+		km_recorridos_reales = $km_recorridos_reales,
 		combustible_consumido_estimado = $combustible_consumido_estimado,
 		combustible_consumido_real = $combustible_consumido_real
 			

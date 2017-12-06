@@ -142,21 +142,30 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-   	        <input type="text" name="id_administrador" class="col-sm-6 form-control" placeholder="id_administrador" required><br>
-	        <input type="text" name="origen" class="col-sm-6 form-control" placeholder="origen" required>
-	        <input type="text" name="destino" class="col-sm-6 form-control" placeholder="destino" required><br>
-	        <input type="text" name="tipo_de_carga" class="col-sm-6 form-control" placeholder="tipo_de_carga" required><br>
-	        <input type="date" name="fecha_de_salida_prevista" class="col-sm-6 form-control" placeholder="fecha_de_salida_prevista" required><br>
-			<input type="date" name="fecha_de_llegada_prevista" class="col-sm-6 form-control" placeholder="fecha_de_llegada_prevista" required><br>
-			<input type="text" name="tiempo_estimado" class="col-sm-6 form-control" placeholder="tiempo_estimado" required><br>
-	        <input type="date" name="fecha_de_salida_real" class="col-sm-6 form-control" placeholder="fecha_de_salida_real" required>
-	        <input type="date" name="fecha_de_llegada_real" class="col-sm-6 form-control" placeholder="fecha_de_llegada_real" required><br>
-	        <input type="text" name="tiempo_real" class="col-sm-6 form-control" placeholder="tiempo_real" required><br>
-	        <input type="text" name="km_recorridos_previstos" class="col-sm-6 form-control" placeholder="km_recorridos_previstos" required><br>
-			<input type="text" name="desviacion_km" class="col-sm-6 form-control" placeholder="desviacion_km" required><br>
-	        <input type="text" name="combustible_consumido_estimado" class="col-sm-6 form-control" placeholder="combustible_consumido_estimado" required>
-	        <input type="text" name="combustible_consumido_real" class="col-sm-6 form-control" placeholder="combustible_consumido_real" required><br>
-	       
+		    <input type="text" name="id_vehiculo" class="col-sm-6 form-control" placeholder="Id vehiculo" required><br>
+   	        <input type="text" name="id_administrador" class="col-sm-6 form-control" placeholder="Id administrador" required><br>
+	        <input type="text" name="origen" class="col-sm-6 form-control" placeholder="Origen" required>
+	        <input type="text" name="destino" class="col-sm-6 form-control" placeholder="Destino" required><br>
+	        <input type="text" name="tipo_de_carga" class="col-sm-6 form-control" placeholder="Tipo de carga" required><br>
+			
+		
+	        <input type="text" name="fecha_de_salida_prevista" class="col-sm-6 form-control" 	onfocus="(this.type='date')"  id="date" placeholder="Fecha de salida prevista" required><br>
+			<input type="text" name="fecha_de_llegada_prevista" class="col-sm-6 form-control" onfocus="(this.type='date')"  id="date"  placeholder="Fecha de llegada prevista" required><br>
+			
+			
+			<input type="text" name="tiempo_estimado" class="col-sm-6 form-control" placeholder="Tiempo estimado" required><br>
+			
+			
+	        <input type="text" name="fecha_de_salida_real" class="col-sm-6 form-control" onfocus="(this.type='date')"  id="date" placeholder="Fecha de salida real" required>
+	        <input type="text" name="fecha_de_llegada_real" class="col-sm-6 form-control" onfocus="(this.type='date')"  id="date" placeholder="Fecha de llegada real" required><br>
+			
+			
+	        <input type="text" name="tiempo_real" class="col-sm-6 form-control" placeholder="Tiempo real" required><br>
+	        <input type="text" name="km_recorridos_previstos" class="col-sm-6 form-control" placeholder="Km recorridos previstos" required><br>
+			<input type="text" name="km_recorridos_reales" class="col-sm-6 form-control" placeholder="Km recorridos reales" required><br>
+	        <input type="text" name="combustible_consumido_estimado" class="col-sm-6 form-control" placeholder="Combustible consumido estimado" required>
+	        <input type="text" name="combustible_consumido_real" class="col-sm-6 form-control" placeholder="Combustible consumido real" required><br>
+
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
 	      <div class="modal-footer col-sm-12">

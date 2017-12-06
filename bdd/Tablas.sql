@@ -70,7 +70,7 @@ fecha_de_salida_real date,
 fecha_de_llegada_real date,
 tiempo_real int,
 km_recorridos_previstos int,
-desviacion_km int ,
+km_recorridos_reales int,
 combustible_consumido_estimado  int,
 combustible_consumido_real int
 );

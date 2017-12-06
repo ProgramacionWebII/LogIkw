@@ -64,31 +64,33 @@
 		<input type='text' name='id' class='hidden' value='".$viaje['id']."'><br>
 		 
 		<input type='text' name='id_administrador' class='hidden' value='".$viaje['id_administrador']."'><br>
-		<label>origen:</label>
+			<label>Id vehiculo:</label>
+		<input type='text' name='id_vehiculo' class='form-control' value='".$viaje['id_vehiculo']."'><br>
+		<label>Origen:</label>
 		<input type='text' name='origen' class='form-control' value='".$viaje['origen']."'><br>
-		<label>destino:</label>
+		<label>Destino:</label>
 		<input type='text' name='destino' class='form-control' value='".$viaje['destino']."'><br>
-		<label>tipo_de_carga:</label>
+		<label>Tipo de carga:</label>
 		<input type='text' name='tipo_de_carga' class='form-control' value='".$viaje['tipo_de_carga']."'><br>
-		<label>fecha_de_salida_prevista:</label>
+		<label>Fecha de salida prevista:</label>
 		<input type='date' name='fecha_de_salida_prevista' class='form-control' value='".$viaje['fecha_de_salida_prevista']."'><br>
-		<label>fecha_de_llegada_prevista:</label>
+		<label>Fecha de llegada prevista:</label>
 		<input type='date' name='fecha_de_llegada_prevista' class='form-control' value='".$viaje['fecha_de_llegada_prevista']."'>
-		<label>tiempo_estimado:</label>
+		<label>Tiempo estimado:</label>
 		<input type='text' name='tiempo_estimado' class='form-control' value='".$viaje['tiempo_estimado']."'><br>
-		<label>fecha_de_salida_real:</label>
+		<label>Fecha de salida real:</label>
 		<input type='date' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'><br>
-		<label>fecha_de_llegada_real:</label>
+		<label>Fecha de llegada real:</label>
 		<input type='date' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'><br>
-		<label>tiempo_real:</label>
+		<label>Tiempo real:</label>
 		<input type='text' name='tiempo_real' class='form-control' value='".$viaje['tiempo_real']."'><br>
-		<label>km_recorridos_previstos:</label>
+		<label>Km recorridos previstos:</label>
 		<input type='text' name='km_recorridos_previstos' class='form-control' value='".$viaje['km_recorridos_previstos']."'>
-		<label>desviacion_km:</label>
-		<input type='text' name='desviacion_km' class='form-control' value='".$viaje['desviacion_km']."'><br>
-		<label>combustible_consumido_estimado:</label>
+		<label>Km recorridos reales:</label>
+		<input type='text' name='km_recorridos_reales' class='form-control' value='".$viaje['km_recorridos_reales']."'><br>
+		<label>Combustible consumido estimado:</label>
 		<input type='text' name='combustible_consumido_estimado' class='form-control' value='".$viaje['combustible_consumido_estimado']."'><br>
-		<label>combustible_consumido_real:</label>
+		<label>Combustible consumido real:</label>
 		<input type='text' name='combustible_consumido_real' class='form-control' value='".$viaje['combustible_consumido_real']."'>
 		</div>
 		<div class='form-group col-sm-offset-3 col-sm-6''>

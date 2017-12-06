@@ -128,14 +128,14 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-	        <input type="text" name="patente" class="col-sm-6 form-control" placeholder="patente" required>
-	        <input type="text" name="nro_chasis" class="col-sm-6 form-control" placeholder="nro_chasis" required><br>
-	        <input type="text" name="nro_motor" class="col-sm-6 form-control" placeholder="nro_motor" required><br>
-	        <input type="text" name="marca" class="col-sm-6 form-control" placeholder="marca" required>
-	        <input type="text" name="modelo" class="col-sm-6 form-control" placeholder="modelo" required><br>
-	        <input type="text" name="anio_fabricacion" class="col-sm-6 form-control" placeholder="anio_fabricacion" required><br>
-			<input type="text" name="tipo" class="col-sm-6 form-control" placeholder="tipo" required><br>
-	        <input type="text" name="estado" class="col-sm-6 form-control" placeholder="estado" required>
+	        <input type="text" name="patente" class="col-sm-6 form-control" placeholder="Patente" required>
+	        <input type="text" name="nro_chasis" class="col-sm-6 form-control" placeholder="Nro chasis" required><br>
+	        <input type="text" name="nro_motor" class="col-sm-6 form-control" placeholder="Nro motor" required><br>
+	        <input type="text" name="marca" class="col-sm-6 form-control" placeholder="Marca" required>
+	        <input type="text" name="modelo" class="col-sm-6 form-control" placeholder="Modelo" required><br>
+	        <input type="text" name="anio_fabricacion" class="col-sm-6 form-control" placeholder="Año de fabricacion" required><br>
+			<input type="text" name="tipo" class="col-sm-6 form-control" placeholder="Tipo" required><br>
+	        <input type="text" name="estado" class="col-sm-6 form-control" placeholder="Estado" required>
 			
 			
 			

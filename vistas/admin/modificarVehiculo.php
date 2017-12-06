@@ -65,21 +65,21 @@
 		
 		
 		
-		<label>patente:</label>
+		<label>Patente:</label>
 		<input type='text' name='patente' class='form-control' value='".$vehiculo['patente']."'><br>
-		<label>nro_chasis:</label>
+		<label>Nro chasis:</label>
 		<input type='text' name='nro_chasis' class='form-control' value='".$vehiculo['nro_chasis']."'><br>
-		<label>nro_motor:</label>
+		<label>Nro motor:</label>
 		<input type='text' name='nro_motor' class='form-control' value='".$vehiculo['nro_motor']."'><br>
-		<label>marca:</label>
+		<label>Marca:</label>
 		<input type='text' name='marca' class='form-control' value='".$vehiculo['marca']."'><br>
-		<label>modelo:</label>
+		<label>Modelo:</label>
 		<input type='text' name='modelo' class='form-control' value='".$vehiculo['modelo']."'><br>
-		<label>anio_fabricacion:</label>
+		<label>Año de fabricacion:</label>
 		<input type='text' name='anio_fabricacion' class='form-control' value='".$vehiculo['anio_fabricacion']."'><br>
-		<label>tipo:</label>
+		<label>Tipo:</label>
 		<input type='text' name='tipo' class='form-control' value='".$vehiculo['tipo']."'><br>
-		<label>estado:</label>
+		<label>Estado:</label>
 		<input type='text' name='estado' class='form-control' value='".$vehiculo['estado']."'><br>
 		
 		

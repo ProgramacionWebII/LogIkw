@@ -130,7 +130,7 @@
    	        <input type="text" name="dni_chofer" class="form-control col-sm-6" placeholder="Dni" required><br>
 	        <input type="text" name="nombre" class="form-control col-sm-6" placeholder="Nombre" required>
 	        <input type="text" name="apellido" class="form-control col-sm-6" placeholder="Apellido" required><br>
-	        <input type="date" name="fecha_de_nacimiento" class="form-control col-sm-6" placeholder="Fecha de nacimiento" required><br>
+			<input type="text" name="fecha_de_nacimiento" class="form-control col-sm-6" onfocus="(this.type='date')"  id="date" placeholder="Fecha de nacimiento" required><br>
 	        <input type="text" name="tipo_licencia_de_conducir" class="form-control col-sm-6" placeholder="Tipo licencia de conducir" required><br>
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>

@@ -67,7 +67,7 @@
 		<input type='text' name='dni_mecanico' class='form-control' value='".$mecanico['dni_mecanico']."'><br>
 		<label>Nombre:</label>
 		<input type='text' name='nombre' class='form-control' value='".$mecanico['nombre']."'><br>
-		<label>Teléfono:</label>
+		<label>Apellido:</label>
 		<input type='text' name='apellido' class='form-control' value='".$mecanico['apellido']."'><br>
 		 </div>
 		 <div class='form-group col-sm-offset-3 col-sm-6''>

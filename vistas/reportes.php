@@ -72,7 +72,7 @@
 	
 <input type="submit"  class='btn btn-primary' value="Reportes de Vehiculos" onclick = "location='../modelo/consultarReporteVehiculo.php'"/>
   	
-		 
+<input type="submit"  class='btn btn-success' value="Reportes de Viajes" onclick = "location='../modelo/consultarReporteViajes.php'"/>
 		 
 
 

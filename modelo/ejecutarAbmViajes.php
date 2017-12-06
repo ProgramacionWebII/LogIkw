@@ -3,7 +3,7 @@
 	/* valido que haya una session "administador" viva, para que esta sección solo pueda ejecutar un administrador */
 	if(!isset($_SESSION['administrador'])){
 		Conexion::cerrar();
-	//	header("Location: ../index.php");
+		//header("Location: ../index.php");
 	}
 	$alterar = $_POST['alterar'];
 
@@ -28,7 +28,7 @@
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
 			
 			
-				
+			$id_vehiculo = $_POST['id_vehiculo'];	
 			$id_administrador = $_POST['id_administrador'];
 			$origen = $_POST['origen'];
 			$destino = $_POST['destino'];
@@ -40,12 +40,13 @@
 			$fecha_de_llegada_real = $_POST['fecha_de_llegada_real'];
 			$tiempo_real = $_POST['tiempo_real'];
 			$km_recorridos_previstos = $_POST['km_recorridos_previstos'];
-			$desviacion_km = $_POST['desviacion_km'];
+			$km_recorridos_reales = $_POST['km_recorridos_reales'];
 			$combustible_consumido_estimado = $_POST['combustible_consumido_estimado'];
 			$combustible_consumido_real = $_POST['combustible_consumido_real'];
 				
 
 			$sql = Viaje::insertar(
+				$id_vehiculo ,
 				$id_administrador,
 				$origen,
 				$destino,
@@ -57,7 +58,7 @@
 				$fecha_de_llegada_real,
 				$tiempo_real,
 				$km_recorridos_previstos,
-				$desviacion_km,
+				$km_recorridos_reales,
 				$combustible_consumido_estimado,
 				$combustible_consumido_real			
 			);
@@ -66,7 +67,7 @@
 				header("Location: ../vistas/admin/abmViajes.php");
 		}
 		else{
-		
+			$id_vehiculo = $_POST['id_vehiculo'];
 			$id_administrador = $_POST['id_administrador'];
 			$origen = $_POST['origen'];
 			$destino = $_POST['destino'];
@@ -78,7 +79,7 @@
 			$fecha_de_llegada_real = $_POST['fecha_de_llegada_real'];
 			$tiempo_real = $_POST['tiempo_real'];
 			$km_recorridos_previstos = $_POST['km_recorridos_previstos'];
-			$desviacion_km = $_POST['desviacion_km'];
+			$km_recorridos_reales = $_POST['km_recorridos_reales'];
 			$combustible_consumido_estimado = $_POST['combustible_consumido_estimado'];
 			$combustible_consumido_real = $_POST['combustible_consumido_real'];
 		
@@ -86,6 +87,7 @@
 
 			$sql = Viaje::actualizar(
 				$id,
+				$id_vehiculo,
 				$id_administrador,
 				$origen,
 				$destino,
@@ -97,7 +99,7 @@
 				$fecha_de_llegada_real,
 				$tiempo_real,
 				$km_recorridos_previstos,
-				$desviacion_km,
+				$km_recorridos_reales,
 				$combustible_consumido_estimado,
 				$combustible_consumido_real
 			);

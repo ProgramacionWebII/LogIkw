@@ -25,12 +25,32 @@ INSERT into chofer(dni_chofer,rol, nombre, apellido,fecha_de_nacimiento,tipo_lic
 (222222222,'chofer','hector','diaz','1980-05-06','a5',5),
 (333333333,'chofer','pepe','castañeda','1970-05-07','a5',6);
 
-INSERT into viaje(id_vehiculo,id_administrador,origen,destino,tipo_de_carga,fecha_de_salida_prevista,fecha_de_llegada_prevista,tiempo_estimado,
-fecha_de_salida_real,fecha_de_llegada_real,tiempo_real,km_recorridos_previstos,desviacion_km,combustible_consumido_estimado,combustible_consumido_real) values
+INSERT into viaje(
+id_vehiculo,
+id_administrador,
+origen,
+destino,
+tipo_de_carga,
+fecha_de_salida_prevista,
+fecha_de_llegada_prevista,
+tiempo_estimado,
+fecha_de_salida_real,
+fecha_de_llegada_real,
+tiempo_real,
+km_recorridos_previstos,
+km_recorridos_reales,
+combustible_consumido_estimado,
+combustible_consumido_real) values
 (1,1,'san juan','buenos aires','Granel Sólido','2017-10-05','2017-10-10',120,
-'2017-10-05','2017-10-11',130,1300,5,300,350),
+'2017-10-05','2017-10-11',130,1300,1500,300,350),
 (2,2,'la pampa','san luis','Granel Sólido','2017-11-05','2017-11-08',200,
-'2017-11-05','2017-11-09',105,1500,1,400,380);
+'2017-11-05','2017-11-09',105,1500,1700,400,380),
+(1,1,'salta','buenos aires','Granel Sólido','2017-09-05','2017-10-08',150,
+'2017-11-05','2017-11-09',170,1600,1650,400,500),
+(3,1,'misiones','buenos aires','Granel Sólido','2017-09-05','2017-10-08',400,
+'2017-11-05','2017-11-09',450,1700,2000,600,700),
+(2,1,'san luis','buenos aires','Granel Sólido','2017-09-05','2017-10-08',100,
+'2017-11-05','2017-11-09',105,1500,1600,700,750);
 
 INSERT into vehiculo(patente,nro_chasis,nro_motor,marca,modelo,anio_fabricacion,tipo,estado) values
 ('ab 123 cd','10',20,'ford','j2001',2000,'camion','disponible'),
