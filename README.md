@@ -75,6 +75,7 @@ It is released under the MIT license.
    Bugs:          https://github.com/swiftmailer/swiftmailer/issues
    Repository:    https://github.com/swiftmailer/swiftmailer
 
+
 Swift Mailer is highly object-oriented by design and lends itself
 to use in complex web application with a great deal of flexibility.
 
