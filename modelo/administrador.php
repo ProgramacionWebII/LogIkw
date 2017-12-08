@@ -17,6 +17,11 @@
 		return $query;
 	}
 
+	public static function eliminar($id){
+		$query = "DELETE FROM administrador WHERE id_usuario = $id";
+		return $query;
+	}
+
 	public static function insertar($dni, $rol, $nombre, $apellido, $telefono, $domicilio, $email, $idUsuario){
 		$query = "INSERT INTO 
 		administrador(dni_administrador,rol,nombre,apellido,telefono,domicilio,email,id_usuario) VALUES
@@ -24,41 +29,6 @@
 		return $query;
 	}
 
-	public static function setDni($dni){}
-	public static function getDni(){		
-		$query = "SELECT dni_administrador FROM administrador";
-		return $query;
-	}
-	public static function setRol($rol){}
-	public static function getRol(){
-		$query = "SELECT rol FROM administrador";
-		return $query;
-	}
-	public static function setNombre($nombre){}
-	public static function getNombre(){
-		$query = "SELECT nombre FROM administrador";
-		return $query;
-	}
-	public static function setApellido($apellido){}
-	public static function getApellido(){
-		$query = "SELECT apellido FROM administrador";
-		return $query;
-	}
-	public static function setTelefono($fechaDeNac){}
-	public static function getTelefono(){
-		$query = "SELECT telefono FROM administrador";
-		return $query;
-	}
-	public static function setdomicilio($domicilio){}
-	public static function getdomicilio(){
-		$query = "SELECT domicilio FROM administrador";
-		return $query;
-	}
-	public static function setEmail($fechaDeNac){}
-	public static function getEmail(){
-		$query = "SELECT Email FROM administrador";
-		return $query;
-	}
 
 }
 ?>

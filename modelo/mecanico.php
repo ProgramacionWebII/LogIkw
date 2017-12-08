@@ -21,7 +21,7 @@
 		}
 
 		public static function eliminar($id){
-			$query = "DELETE FROM mecanico WHERE id = $id";
+			$query = "DELETE FROM mecanico WHERE id_usuario = $id";
 			return $query;
 		}
 

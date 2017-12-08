@@ -20,13 +20,37 @@
 			/*Esta variable siguiente corresponde a eliminar o modificar*/
 			
 			$id = $_POST['id'];
-			
-			
+			$rolClaseAEliminar = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getRolForId($id)));
 			$sql = Usuario::eliminar($id);
 			Conexion::setQuery($sql);
 			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
-			Conexion::cerrar();	
-			header("Location: ../vistas/admin/abmUsuario.php");
+			switch($rolClaseAEliminar['rol']){
+				case 'administrador':
+					mysqli_fetch_assoc(Conexion::setQuery(Administrador::eliminar($id)));
+					Conexion::cerrar();	
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+				case 'chofer':
+					mysqli_fetch_assoc(Conexion::setQuery(Chofer::eliminar($id)));
+					Conexion::cerrar();	
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+				case 'cliente':
+					mysqli_fetch_assoc(Conexion::setQuery(Cliente::eliminar($id)));
+					Conexion::cerrar();	
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+				case 'mecanico':
+					mysqli_fetch_assoc(Conexion::setQuery(Mecanico::eliminar($id)));
+					Conexion::cerrar();	
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+				case 'empresa':
+					mysqli_fetch_assoc(Conexion::setQuery(Empresa::eliminar($id)));
+					Conexion::cerrar();	
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+			}
 		}
 		
 		else if($alterar == "agregar"){

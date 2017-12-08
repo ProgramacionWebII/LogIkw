@@ -18,6 +18,11 @@
 			return $query;
 		}
 
+		public static function getRolForId($id){
+			$query = "SELECT rol FROM usuario where id_usuario = $id";
+			return $query;
+		}
+
 		public static function insertar($user, $pass, $rol){
 			$query = "INSERT INTO usuario(user,pass,rol)
 			VALUES ('$user', '$pass', '$rol')";
