@@ -14,9 +14,9 @@
 		}
 
 
-		public static function insertar($dni_mecanico, $nombre, $apellido){
-			$query = "INSERT INTO mecanico(dni_mecanico, rol, nombre,apellido)
-			VALUES ($dni_mecanico, 'mecanico', '$nombre', '$apellido')";
+		public static function insertar($dni_mecanico, $nombre, $apellido,$idUsuario){
+			$query = "INSERT INTO mecanico(dni_mecanico, rol, nombre,apellido, id_usuario)
+			VALUES ($dni_mecanico, 'mecanico', '$nombre', '$apellido', $idUsuario)";
 			return $query;
 		}
 

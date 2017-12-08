@@ -13,9 +13,9 @@
 			return $query;
 		}
 
-		public static function insertar($razonSocial, $nombre, $telefono, $domicilio, $email){
-			$query = "INSERT INTO cliente(razon_social, rol, nombre,telefono,domicilio,email)
-			VALUES ('$razonSocial', 'cliente', '$nombre', $telefono, '$domicilio', '$email')";
+		public static function insertar($razonSocial, $nombre, $telefono, $domicilio, $email, $idUsuario){
+			$query = "INSERT INTO cliente(razon_social, rol, nombre,telefono,domicilio,email,id_usuario)
+			VALUES ('$razonSocial', 'cliente', '$nombre', $telefono, '$domicilio', '$email', $idUsuario)";
 			return $query;
 		}
 

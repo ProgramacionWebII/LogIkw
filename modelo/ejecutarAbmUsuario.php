@@ -34,16 +34,72 @@
 	
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
 			$user = $_POST['user'];
-			$pass = $_POST['pass'];
+			$pass = $user.'1234';
 			$rol = $_POST['rol'];
 		
 			
-			$sql = Usuario::insertar($user, md5($pass), $rol);
-			
-		
+			$sql = Usuario::insertar($user, /*md5($pass)*/ $pass, $rol);
 			Conexion::setQuery($sql);
+			switch($rol){
+				case 'administrador':
+					$dni = $_POST['dni'];
+					$nombre = $_POST['nombre'];
+					$apellido = $_POST['apellido'];
+					$telefono = $_POST['telefono'];
+					$domicilio = $_POST['domicilio'];
+					$email = $_POST['email'];
+					$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+					Conexion::setQuery(Administrador::insertar($dni, $rol, $nombre, $apellido, $telefono, $domicilio, $email, $idUsuario['id_usuario']));
+					Conexion::cerrar();
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+
+				case 'chofer':
+					$dni = $_POST['dni'];
+					$nombre = $_POST['nombre'];
+					$apellido = $_POST['apellido'];
+					$fecha_nac = $_POST['fecha_nacimiento'];
+					$licencia = $_POST['tipo_licencia'];
+					$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+					Conexion::setQuery(Chofer::insertar($dni, $nombre, $apellido, $fecha_nac, $licencia, $idUsuario['id_usuario']));										
+					Conexion::cerrar();
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+
+				case 'cliente':
+					$nombre = $_POST['nombre'];
+					$razonSocial = $_POST['razon_social'];
+					$telefono = $_POST['telefono'];
+					$domicilio = $_POST['domicilio'];
+					$email = $_POST['email'];
+					$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+					Conexion::setQuery(Cliente::insertar($razonSocial, $nombre, $telefono, $domicilio, $email, $idUsuario['id_usuario']));
+					Conexion::cerrar();
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+
+				case 'mecanico':
+					$dni = $_POST['dni'];
+					$nombre = $_POST['nombre'];
+					$apellido = $_POST['apellido'];
+					$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+					Conexion::setQuery(Mecanico::insertar($dni, $nombre, $apellido, $idUsuario['id_usuario']));
+					Conexion::cerrar();
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+
+				case 'empresa':
+					$nombre = $_POST['nombre'];
+					$telefono = $_POST['telefono'];
+					$domicilio = $_POST['domicilio'];
+					$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+					Conexion::setQuery(Empresa::insertar($nombre, $telefono, $domicilio, $idUsuario['id_usuario']));
+					Conexion::cerrar();
+					header("Location: ../vistas/admin/abmUsuario.php");
+				break;
+			}
+		
 			Conexion::cerrar();
-		header("Location: ../vistas/admin/abmUsuario.php");
 		}
 		else{
 			$user = $_POST['user'];

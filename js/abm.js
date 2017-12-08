@@ -60,8 +60,6 @@ function cambiarAtributos(){
 			"<div id='chofer'><input type='text' name='nombre' id='nombre' class='col-sm-6 form-control' placeholder='Nombre' required><br>"+
    	        "<input type='text' name='apellido' id='apellido' class='col-sm-6 form-control' placeholder='Apellido' required><br>"+
    	        "<input type='text' name='dni' id='dni' class='col-sm-6 form-control' placeholder='DNI' required><br>"+
-   	        "<input type='text' name='telefono' id='telefono' class='col-sm-6 form-control' placeholder='Telefono' required><br>"+
-   	        "<input type='text' name='domicilio' id='domicilio' class='col-sm-6 form-control' placeholder='Domicilio' required><br>"+
    	        "<input type='date' name='fecha_nacimiento' id='fecha' class='col-sm-6 form-control' required><br>"+
    	        "<input type='text' name='tipo_licencia' id='fecha' class='col-sm-6 form-control' placeholder='Tipo de licencia' required><br></div>");
 		break;

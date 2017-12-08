@@ -13,6 +13,10 @@
 			return $query;
 		}
 
+		public static function getLastUser(){
+			$query = "SELECT MAX(id_usuario) as id_usuario FROM usuario";
+			return $query;
+		}
 
 		public static function insertar($user, $pass, $rol){
 			$query = "INSERT INTO usuario(user,pass,rol)

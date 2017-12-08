@@ -1,4 +1,4 @@
-<?php
+ <?php
 	class Chofer{
 
 		/* Se usa el método que más convenga, si necesito todos los clientes, uso el primero,
@@ -14,9 +14,9 @@
 		}
 
 
-		public static function insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir){
-			$query = "INSERT INTO chofer(dni_chofer, rol, nombre,apellido,fecha_de_nacimiento,tipo_licencia_de_conducir)
-			VALUES ($dni_chofer, 'chofer', '$nombre', '$apellido', '$fecha_de_nacimiento', '$tipo_licencia_de_conducir')";
+		public static function insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir, $idUsuario){
+			$query = "INSERT INTO chofer(dni_chofer, rol, nombre,apellido,fecha_de_nacimiento,tipo_licencia_de_conducir, id_usuario)
+			VALUES ($dni_chofer, 'chofer', '$nombre', '$apellido', '$fecha_de_nacimiento', '$tipo_licencia_de_conducir', $idUsuario)";
 			return $query;
 		}
 

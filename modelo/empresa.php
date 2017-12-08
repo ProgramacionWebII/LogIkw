@@ -16,9 +16,9 @@
 
 
 
-		public static function insertar($nombre, $telefono, $domicilio){
-			$query = "INSERT INTO empresa(nombre, rol ,telefono,domicilio)
-			VALUES ('$nombre', 'empresa', $telefono, '$domicilio')";
+		public static function insertar($nombre, $telefono, $domicilio, $idUsuario){
+			$query = "INSERT INTO empresa(nombre, rol ,telefono,domicilio, id_usuario)
+			VALUES ('$nombre', 'empresa', '$telefono', '$domicilio', $idUsuario)";
 			return $query;
 		}
 

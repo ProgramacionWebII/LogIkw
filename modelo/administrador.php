@@ -16,6 +16,14 @@
 		$query = "SELECT id FROM administrador";
 		return $query;
 	}
+
+	public static function insertar($dni, $rol, $nombre, $apellido, $telefono, $domicilio, $email, $idUsuario){
+		$query = "INSERT INTO 
+		administrador(dni_administrador,rol,nombre,apellido,telefono,domicilio,email,id_usuario) VALUES
+		($dni, '$rol', '$nombre', '$apellido', $telefono, '$domicilio', '$email', $idUsuario)";
+		return $query;
+	}
+
 	public static function setDni($dni){}
 	public static function getDni(){		
 		$query = "SELECT dni_administrador FROM administrador";
