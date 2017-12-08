@@ -86,8 +86,6 @@
 		<input type='text' name='tiempo_real' class='form-control' value='".$viaje['tiempo_real']."'><br>
 		<label>Km recorridos previstos:</label>
 		<input type='text' name='km_recorridos_previstos' class='form-control' value='".$viaje['km_recorridos_previstos']."'>
-		<label>Km recorridos reales:</label>
-		<input type='text' name='km_recorridos_reales' class='form-control' value='".$viaje['km_recorridos_reales']."'><br>
 		<label>Combustible consumido estimado:</label>
 		<input type='text' name='combustible_consumido_estimado' class='form-control' value='".$viaje['combustible_consumido_estimado']."'><br>
 		<label>Combustible consumido real:</label>

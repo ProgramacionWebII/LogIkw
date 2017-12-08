@@ -121,3 +121,15 @@ function cambiarAtributos(){
 		break;
 	};
 }
+
+function cambiarRol(){
+	var rol = $("#rol").val();
+	$("#opt").remove();
+	$("#rol").append(
+		"<option id='opt'>administrador</option>"+
+		"<option id='opt'>chofer</option>"+
+		"<option id='opt'>cliente</option>"+
+		"<option id='opt'>empresa</option>"+
+		"<option id='opt'>mecanico</option>"
+		);
+}

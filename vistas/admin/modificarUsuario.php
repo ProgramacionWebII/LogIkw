@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
   <script src="../../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../../css/home.css">
+  <script type="text/javascript" src="../../js/abm.js"></script>
 </head>
 <body>
 
@@ -67,7 +68,9 @@
 		<label>Usuario:</label>
 		<input type='text' name='user' class='form-control' value='".$usuario['user']."'><br>
 		<label>Rol:</label>
-		<input type='text' name='rol' class='form-control' value='".$usuario['rol']."'>
+		<select name='rol' id='rol' class='form-control' onchange='cambiarRol()' onload='cambiarRol()'>
+			<option id='opt'>".$usuario['rol']."</option>
+		</select>
 		
 		</div>
 		<div class='form-group col-sm-offset-3 col-sm-6''>
