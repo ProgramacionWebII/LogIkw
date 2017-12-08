@@ -89,7 +89,7 @@ tiempo_real-tiempo_estimado as desviacion_t,combustible_consumido_estimado,combu
 
 
 	while($lista = mysqli_fetch_assoc($var)){
-		echo "
+	echo "
 		 <tr>
 		 <td>".$lista['id']."</td>
 		 <td>".$lista['km_recorridos_previstos']." - ".$lista['km_recorridos_reales']."</td>
@@ -98,11 +98,14 @@ tiempo_real-tiempo_estimado as desviacion_t,combustible_consumido_estimado,combu
 		 <td>".$lista['desviacion_t']."</td>
 		 <td>".$lista['combustible_consumido_estimado']." - ".$lista['combustible_consumido_real']."</td> 
 		 <td>".$lista['desviacion_c']."</td>
-		 </tr>";
+		 </tr> ";
 	}
    	?>
     </tbody>
   </table>
+  
+
+  <input type="submit"  class='btn btn-success' value="Grafico Desviacion Km " onclick = "location='../modelo/grafico.php'"/>
 </div>
 
 
