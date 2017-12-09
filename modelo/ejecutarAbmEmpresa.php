@@ -31,10 +31,14 @@
 			$nombre = $_POST['nombre'];
 			$telefono = $_POST['telefono'];
 			$domicilio = $_POST['domicilio'];
+			$user = $_POST['user'];
+			$pass = $user.'1234';
 			
+			Conexion::setQuery(Usuario::insertar($user, /*md5($pass)*/ $pass, 'empresa'));
+			
+			$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+			Conexion::setQuery(Empresa::insertar($nombre, $telefono, $domicilio, $idUsuario['id_usuario']));
 
-			$sql = Empresa::insertar($nombre, $telefono,$domicilio);
-			Conexion::setQuery($sql);
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmEmpresa.php");
 		}

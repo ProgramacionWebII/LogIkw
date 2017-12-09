@@ -32,9 +32,13 @@
 			$telefono = $_POST['telefono'];
 			$domicilio = $_POST['domicilio'];
 			$email = $_POST['email'];
+			$user = $_POST['user'];
+			$pass = $user.'1234';
+			
+			Conexion::setQuery(Usuario::insertar($user, /*md5($pass)*/ $pass, 'cliente'));
 
-			$sql = Cliente::insertar($razonSocial, $nombre, $telefono, $domicilio, $email);
-			Conexion::setQuery($sql);
+			$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+			Conexion::setQuery(Cliente::insertar($razonSocial, $nombre, $telefono, $domicilio, $email, $idUsuario['id_usuario']));
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmCliente.php");
 		}

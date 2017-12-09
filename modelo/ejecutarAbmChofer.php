@@ -32,10 +32,13 @@
 			$apellido = $_POST['apellido'];
 			$fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
 			$tipo_licencia_de_conducir = $_POST['tipo_licencia_de_conducir'];
-		
+			$user = $_POST['user'];
+			$pass = $user.'1234';
+			
+			Conexion::setQuery(Usuario::insertar($user, /*md5($pass)*/ $pass, 'chofer'));
 
-			$sql = Chofer::insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
-			Conexion::setQuery($sql);
+			$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+			Conexion::setQuery(Chofer::insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir, $idUsuario['id_usuario']));
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmChofer.php");
 		}

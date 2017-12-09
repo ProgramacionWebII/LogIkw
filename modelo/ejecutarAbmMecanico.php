@@ -30,9 +30,12 @@
 			$dni_mecanico = $_POST['dni_mecanico'];
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
-
-			$sql = Mecanico::insertar($dni_mecanico, $nombre, $apellido);
-			Conexion::setQuery($sql);
+			$user = $_POST['user'];
+			$pass = $user.'1234';
+			
+			Conexion::setQuery(Usuario::insertar($user, /*md5($pass)*/ $pass, 'mecanico'));
+			$idUsuario = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getLastUser()));
+			Conexion::setQuery(Mecanico::insertar($dni, $nombre, $apellido, $idUsuario['id_usuario']));
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmMecanico.php");
 		}
