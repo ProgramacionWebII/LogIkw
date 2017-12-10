@@ -237,7 +237,7 @@
 		      </div>
 	      <div class="modal-footer col-sm-12">
 	        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Logearse">
+	        <input type="submit" class="btn btn-primary" value="Delogearse">
 	      </div>
 	    </div>
 	  </div>
