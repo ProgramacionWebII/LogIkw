@@ -40,13 +40,16 @@
 			header("Location: ../vistas/admin/abmMecanico.php");
 		}
 		else{
-	$dni_mecanico = $_POST['dni_mecanico'];
+			$dni_mecanico = $_POST['dni_mecanico'];
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
 			$id = $_POST['id'];
+			$user = $_POST['user'];
+			$idUsuario = $_POST['idUsuario'];
 
-			$sql = Mecanico::actualizar($id,$dni_mecanico, $nombre, $apellido);
-			Conexion::setQuery($sql);
+			Conexion::setQuery(Usuario::actualizar($idUsuario, $user));
+
+			Conexion::setQuery(Mecanico::actualizar($id,$dni_mecanico, $nombre, $apellido));
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmMecanico.php");
 		}

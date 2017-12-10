@@ -41,14 +41,13 @@
 	     <img src="../image/logo.png">
 	    </div>
 	    <ul class="nav navbar-nav col-sm-4">
-	      <li class="active"><a href="<?php echo '../vistas/adminLogeado.php'; ?>">HOME</a></li>
+	      <li class="active"><a href="<?php echo 'adminLogeado.php'; ?>">HOME</a></li>
 	    </ul>
 		<ul class="dropdown nav navbar-nav navbar-right nombreLogeado" style="padding-top: 0.5%;">
 		  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Seccion ABM
 		  <span class="caret"></span></button>
 		  <ul class="dropdown-menu">
 				<li><a href=" <?php echo 'admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-				<li><a href=" <?php echo 'admin/abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
 				<li><a href=" <?php echo 'admin/abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
 				<li><a href=" <?php echo 'admin/abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
 				<li><a href=" <?php echo 'admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>

@@ -43,15 +43,18 @@
 			header("Location: ../vistas/admin/abmChofer.php");
 		}
 		else{
-	$dni_chofer = $_POST['dni_chofer'];
+			$dni_chofer = $_POST['dni_chofer'];
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
 			$fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
 			$tipo_licencia_de_conducir = $_POST['tipo_licencia_de_conducir'];
 			$id = $_POST['id'];
+			$user = $_POST['user'];
+			$idUsuario = $_POST['idUsuario'];
 
-			$sql = Chofer::actualizar($id,$dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir);
-			Conexion::setQuery($sql);
+			Conexion::setQuery(Usuario::actualizar($idUsuario, $user));
+
+			Conexion::setQuery(Chofer::actualizar($id,$dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir));
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmChofer.php");
 		}

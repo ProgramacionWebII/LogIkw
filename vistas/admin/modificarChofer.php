@@ -28,22 +28,22 @@
 <nav class="navbar navbar-inverse">
 	<div class="col-sm-12">
 	    <div class="navbar-header col-sm-1">
-	     <img src="../../image/logo.png">
+	     <img src="../image/logo.png">
 	    </div>
 	    <ul class="nav navbar-nav col-sm-4">
-	      <li class="active"><a href="<?php echo '../adminLogeado.php'; ?>">HOME</a></li>
+	      <li class="active"><a href="<?php echo '../vistas/adminLogeado.php'; ?>">HOME</a></li>
 	    </ul>
 		<ul class="dropdown nav navbar-nav navbar-right nombreLogeado" style="padding-top: 0.5%;">
 		  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Seccion ABM
 		  <span class="caret"></span></button>
 		  <ul class="dropdown-menu">
-				<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-				<li><a href=" <?php echo 'abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
-				<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
-				<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
-				<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
-				<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
-				<li><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li><a href=" <?php echo 'admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
+				<li><a href=" <?php echo 'admin/abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
+				<li><a href=" <?php echo 'admin/abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
+				<li><a href=" <?php echo 'admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+				<li><a href=" <?php echo 'admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
+				<li><a href=" <?php echo 'admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li><a href=" <?php echo '../reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
@@ -54,16 +54,24 @@
 	</div>
 </nav>
 
+
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Actualizar chofer</h2>
+  <h2 class="col-sm-6 col-sm-offset-3">Actualizar chofer</h2>
    	<?php
+   	$num = true;
 	while($chofer = mysqli_fetch_assoc($resultado1)){
+		if($num){
+			$usuarioChofer = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getAllForId($chofer['id_usuario'])));
+			$num = false;
+		}
 		echo "<form method='POST' action='../../modelo/ejecutarAbmChofer.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
 		
-		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'><br>
+		<input type='text' name='id' class='hidden' value='".$chofer['id']."'>
+		<input type='text' name='idUsuario' class='hidden' value='".$chofer['id_usuario']."'>
+		<label>Nombre de usuario:</label><input type='text' name='user' class='form-control' value='".$usuarioChofer['user']."'><br>
 		<label>Dni:</label><input type='text' name='dni_chofer' class='form-control' value='".$chofer['dni_chofer']."'><br>
 		<label> Nombre:</label><input type='text' name='nombre' class='form-control' value='".$chofer['nombre']."'><br>
 		 <label> Apellido:</label><input type='text' name='apellido' class='form-control' value='".$chofer['apellido']."'><br>

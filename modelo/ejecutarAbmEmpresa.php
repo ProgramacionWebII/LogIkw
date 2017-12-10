@@ -46,11 +46,14 @@
 		
 			$nombre = $_POST['nombre'];
 			$telefono = $_POST['telefono'];
-			$domicilio = $_POST['domicilio'];
-		
+			$domicilio = $_POST['domicilio'];		
 			$id = $_POST['id'];
+			$idUsuario = $_POST['idUsuario'];
+			$user = $_POST['user'];
 
-			$sql = Empresa::actualizar($id, $nombre, $telefono, $domicilio);
+			Conexion::setQuery(Usuario::actualizar($idUsuario, $user));
+
+			Conexion::setQuery(Empresa::actualizar($id, $nombre, $telefono, $domicilio));
 			Conexion::setQuery($sql);
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmEmpresa.php");

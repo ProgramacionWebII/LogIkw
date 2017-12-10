@@ -38,12 +38,12 @@
 		  <span class="caret"></span></button>
 		  <ul class="dropdown-menu">
 				<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-				<li><a href=" <?php echo 'abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
 				<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
 				<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
 				<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
 				<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 				<li><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li><a href=" <?php echo '../reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
@@ -57,24 +57,32 @@
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Actualizar mecanico</h2>
+  <h2 class="col-sm-offset-3 col-sm-6">Actualizar mecanico</h2>
    	<?php
+   	$num = true;
 	while($mecanico = mysqli_fetch_assoc($resultado1)){
+		if($num = true){
+			$usuarioMecanico = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getAllForId($mecanico['id_usuario'])));
+			$num = false;
+		}
 		echo "<form method='POST' action='../../modelo/ejecutarAbmMecanico.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
-		 <input type='text' name='id' class='hidden' value='".$mecanico['id']."'><br>
+		<input type='text' name='id' class='hidden' value='".$mecanico['id']."'>
+		<input type='text' name='idUsuario' class='hidden' value='".$mecanico['id_usuario']."'>
+		<label>Nombre de usuario:</label>
+		<input type='text' name='user' class='form-control' value='".$usuarioMecanico['user']."'><br>
 		<label>DNI:</label>
 		<input type='text' name='dni_mecanico' class='form-control' value='".$mecanico['dni_mecanico']."'><br>
 		<label>Nombre:</label>
 		<input type='text' name='nombre' class='form-control' value='".$mecanico['nombre']."'><br>
 		<label>Apellido:</label>
 		<input type='text' name='apellido' class='form-control' value='".$mecanico['apellido']."'><br>
-		 </div>
-		 <div class='form-group col-sm-offset-3 col-sm-6''>
-		 <button type='submit' name='alterar' value='a' class='btn btn-primary'>Modificar</button>
-		 <a href='abmMecanico.php'><button type='button' class='btn btn-danger'>Regresar</button></a>
-		 </div>
-  		 </form>";
+		</div>
+		<div class='form-group col-sm-offset-3 col-sm-6''>
+		<button type='submit' name='alterar' value='a' class='btn btn-primary'>Modificar</button>
+		<a href='abmMecanico.php'><button type='button' class='btn btn-danger'>Regresar</button></a>
+		</div>
+  		</form>";
 	}
    	?>
 </div>

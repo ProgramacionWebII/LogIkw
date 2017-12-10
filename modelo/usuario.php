@@ -34,11 +34,9 @@
 			return $query;
 		}
 
-	public static function actualizar($id, $user, $pass, $rol){
+	public static function actualizar($id, $user){
 			$query = "UPDATE usuario
-			SET user = '$user',
-			pass = '$pass',
-			rol = '$rol'
+			SET user = '$user'
 		
 			WHERE id_usuario = $id";
 			return $query;

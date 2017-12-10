@@ -38,12 +38,12 @@
 		  <span class="caret"></span></button>
 		  <ul class="dropdown-menu">
 				<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-				<li><a href=" <?php echo 'abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
 				<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
 				<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
 				<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
 				<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 				<li><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li><a href=" <?php echo '../reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
@@ -53,16 +53,25 @@
 	    </ul>
 	</div>
 </nav>
+
   
 
 <div class="col-sm-10 col-sm-offset-1">
-  <h2>Actualizar empresa</h2>
+  <h2 class="col-sm-6 col-sm-offset-3">Actualizar datos de las empresas</h2>
    	<?php
+   	$num = true;
 	while($empresa = mysqli_fetch_assoc($resultado1)){
+		if($num){
+			$usuarioEmpresa = mysqli_fetch_assoc(Conexion::getQuery(Usuario::getAllForId($empresa['id_usuario'])));
+			$num = false;
+		}
 		echo "<form method='POST' action='../../modelo/ejecutarAbmEmpresa.php' class='col-sm-12'>
 		<div class='form-group col-sm-offset-3 col-sm-6'>
 		<input type='text' name='id' class='hidden' value='".$empresa['id']."'><br>
-		<label>Nombre:</label>
+		<input type='text' name='idUsuario' class='hidden' value='".$empresa['id_usuario']."'><br>
+		<label>Nombre de usuario:</label>
+		<input type='text' name='user' class='form-control' value='".$usuarioEmpresa['user']."'><br>
+		<label>Nombre de la empresa:</label>
 		<input type='text' name='nombre' class='form-control' value='".$empresa['nombre']."'><br>
 		<label>Teléfono:</label>
 		<input type='text' name='telefono' class='form-control' value='".$empresa['telefono']."'><br>

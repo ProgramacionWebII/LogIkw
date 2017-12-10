@@ -49,9 +49,12 @@
 			$domicilio = $_POST['domicilio'];
 			$email = $_POST['email'];
 			$id = $_POST['id'];
+			$idUsuario = $_POST['idUsuario'];
+			$user = $_POST['user'];
 
-			$sql = Cliente::actualizar($id, $razonSocial, $nombre, $telefono, $domicilio, $email);
-			Conexion::setQuery($sql);
+			Conexion::setQuery(Usuario::actualizar($idUsuario, $user));
+
+			Conexion::setQuery(Cliente::actualizar($id, $razonSocial, $nombre, $telefono, $domicilio, $email));
 			Conexion::cerrar();
 			header("Location: ../vistas/admin/abmCliente.php");
 		}
