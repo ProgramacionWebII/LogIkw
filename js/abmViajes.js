@@ -55,19 +55,3 @@ function descargar(){
 	url = '../modelo/generarPDF.php',
 	window.location.href = url;
 }
-
-function eliminarViaje(){
-	var id = $("#viajeNro").val();
-	var eliminar = $("#eliminar").val();
-	var parametro = {'id' : id, 'eliminar' : 'eliminar'};
-	$.ajax({
-		data : parametro,
-		url : '../../modelo/ejecutarAbmViajes.php',
-		type: 'POST',
-		beforeSend: function(){
-			$('#viajeNro'+id).html(
-				"<p> Su petición está siendo procesada </p>"
-				)
-		}
-	});
-}

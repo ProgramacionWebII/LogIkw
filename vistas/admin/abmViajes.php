@@ -101,7 +101,7 @@
 
 		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary '>Modificar</button></td>
 
-		 <td><button type='button' id='eliminar' onclick= '(eliminarViaje())' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
+		 <td><button type='submit' id='eliminar' onclick= 'eliminar()' name='alterar' value='eliminar' class='btn btn-danger'>Eliminar</button></td>
 
 		 </tr>
   		 </form>";
@@ -143,26 +143,8 @@
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-	      	<label class="col-sm-6">Designe coche:</label>
-			<select  class="col-sm-6 form-control">
-	      	<?php
-	      		$result = Conexion::getQuery(Vehiculo::getAll());
-	      		while($vehiculo = mysqli_fetch_assoc($result)){
-	      			echo "<option>".$vehiculo['marca']." ".$vehiculo['modelo']."</option>";
-	      		}
-		    	$adminAlta = mysqli_fetch_assoc(Conexion::getQuery(Administrador::getAllForId($_SESSION['administrador'])));
-	      	?>
-	      	</select><br><br><br>
-	      	<label class="col-sm-6">Designe chofer:</label>
-	      	<select class="col-sm-6 form-control">
-      		<?php
-	      		$result = Conexion::getQuery(Chofer::getAll());
-	      		while($chofer = mysqli_fetch_assoc($result)){
-	      			echo "<option id=".$chofer['id']." >".$chofer['nombre']." ".$chofer['apellido']."</option>";
-	      		}
-      		?>
-	      	</select>
-   	        <input type="text" name="id_administrador" class="col-sm-6 form-control hidden" <?php echo "value=".$adminAlta['id']."" ?> required><br>
+		    <input type="text" name="id_vehiculo" class="col-sm-6 form-control" placeholder="Id vehiculo" required><br>
+   	        <input type="text" name="id_administrador" class="col-sm-6 form-control" placeholder="Id administrador" required><br>
 	        <input type="text" name="origen" class="col-sm-6 form-control" placeholder="Origen" required>
 	        <input type="text" name="destino" class="col-sm-6 form-control" placeholder="Destino" required><br>
 	        <input type="text" name="tipo_de_carga" class="col-sm-6 form-control" placeholder="Tipo de carga" required><br>
@@ -175,15 +157,15 @@
 			<input type="text" name="tiempo_estimado" class="col-sm-6 form-control" placeholder="Tiempo estimado" required><br>
 			
 			
-<!--	        <input type="text" name="fecha_de_salida_real" class="col-sm-6 form-control" onfocus="(this.type='date')"  id="date" placeholder="Fecha de salida real" required>
+	        <input type="text" name="fecha_de_salida_real" class="col-sm-6 form-control" onfocus="(this.type='date')"  id="date" placeholder="Fecha de salida real" required>
 	        <input type="text" name="fecha_de_llegada_real" class="col-sm-6 form-control" onfocus="(this.type='date')"  id="date" placeholder="Fecha de llegada real" required><br>
 			
 			
-	        <input type="text" name="tiempo_real" class="col-sm-6 form-control" placeholder="Tiempo real" required><br>-->
+	        <input type="text" name="tiempo_real" class="col-sm-6 form-control" placeholder="Tiempo real" required><br>
 	        <input type="text" name="km_recorridos_previstos" class="col-sm-6 form-control" placeholder="Km recorridos previstos" required><br>
-<!--			<input type="text" name="km_recorridos_reales" class="col-sm-6 form-control" placeholder="Km recorridos reales" required><br>-->
+			<input type="text" name="km_recorridos_reales" class="col-sm-6 form-control" placeholder="Km recorridos reales" required><br>
 	        <input type="text" name="combustible_consumido_estimado" class="col-sm-6 form-control" placeholder="Combustible consumido estimado" required>
-<!--	        <input type="text" name="combustible_consumido_real" class="col-sm-6 form-control" placeholder="Combustible consumido real" required><br>-->
+	        <input type="text" name="combustible_consumido_real" class="col-sm-6 form-control" placeholder="Combustible consumido real" required><br>
 
 	        <input type="text" name="alterar" value="agregar" class="hidden">
 	      </div>
