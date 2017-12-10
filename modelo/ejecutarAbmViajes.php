@@ -1,5 +1,15 @@
 <?php
 	include "include.php";
+	$eliminar = $_REQUEST['eliminar'];
+	if($eliminar == 'eliminar'){
+		/*Esta variable siguiente corresponde a eliminar o modificar*/
+		$id = $_REQUEST['id'];
+		Conexion::setQuery(Viaje::eliminar($id));
+		
+		/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
+		Conexion::cerrar();
+		echo "alert('El viaje de ID: ".$id." a sido eliminado exitosamente')";
+	}
 	/* valido que haya una session "administador" viva, para que esta sección solo pueda ejecutar un administrador */
 	if(!isset($_SESSION['administrador'])){
 		Conexion::cerrar();
@@ -14,15 +24,6 @@
 			session_start();
 			$_SESSION['modificar'] = $id;
 			header("Location: ../vistas/admin/modificarViaje.php");			
-		}
-		else if($alterar == "eliminar"){
-			/*Esta variable siguiente corresponde a eliminar o modificar*/
-			$id = $_POST['id'];
-			$sql = Viaje::eliminar($id);
-			Conexion::setQuery($sql);
-			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
-			Conexion::cerrar();	
-			header("Location: ../vistas/admin/abmViajes.php");
 		}
 		else if($alterar == "agregar"){
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
