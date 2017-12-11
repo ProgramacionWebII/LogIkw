@@ -40,6 +40,7 @@ dni_chofer int unique,
 rol varchar(20),
 nombre varchar(20),
 apellido varchar(20),
+estadoC int(1),
 fecha_de_nacimiento date,
 tipo_licencia_de_conducir varchar(20),
 id_usuario int
@@ -58,7 +59,6 @@ id_usuario int
 
 create table viaje(
 id int AUTO_INCREMENT  primary key,
-id_vehiculo int,
 id_administrador int,
 origen varchar(20),
 destino varchar(20),
@@ -80,6 +80,7 @@ id int AUTO_INCREMENT  primary key,
 patente varchar(20) unique,
 nro_chasis int unique,
 nro_motor int unique,
+estadoV int(1),
 marca varchar(20),
 modelo varchar(20),
 anio_fabricacion int,
@@ -96,8 +97,8 @@ primary key(id_viaje,id_chofer)
 
 
 create table viaje_vehiculo(
-id_vehiculo int,
 id_viaje int ,
+id_vehiculo int,
 primary key(id_viaje,id_vehiculo)
 );
 

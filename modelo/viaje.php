@@ -19,6 +19,11 @@
 			return $query;
 		}
 
+		public static function getLast(){
+			$query = "SELECT MAX(id) as id_viaje FROM viaje";
+			return $query;
+		}
+
 		public static function getAllTableOnViaje($id){
 				$query = "SELECT v.*, c.nombre nombreChofer, c.apellido apellidoChofer, a.nombre nombreAdmin, a.apellido apellidoAdmin, rcp.latitud, rcp.longitud, rcp.fecha
 					 FROM viaje v
@@ -31,7 +36,6 @@
 		}
 
 		public static function insertar(
-		$id_vehiculo,
 		$id_administrador,
 		$origen,
 		$destino,
@@ -39,16 +43,10 @@
 		$fecha_de_salida_prevista,
 		$fecha_de_llegada_prevista,
 		$tiempo_estimado,
-		$fecha_de_salida_real,
-		$fecha_de_llegada_real,
-		$tiempo_real,
 		$km_recorridos_previstos,
-		$km_recorridos_reales,
-		$combustible_consumido_estimado,
-		$combustible_consumido_real){
+		$combustible_consumido_estimado){
 			
 			$query = "INSERT INTO viaje(
-		id_vehiculo,
 		id_administrador,
 		origen,
 		destino,
@@ -56,16 +54,10 @@
 		fecha_de_salida_prevista,
 		fecha_de_llegada_prevista,
 		tiempo_estimado,
-		fecha_de_salida_real,
-		fecha_de_llegada_real,
-		tiempo_real,
 		km_recorridos_previstos,
-		km_recorridos_reales,
-		combustible_consumido_estimado,
-		combustible_consumido_real)
+		combustible_consumido_estimado)
 			
 			VALUES (
-		$id_vehiculo,	
 		$id_administrador,
 		'$origen',
 		'$destino',
@@ -73,16 +65,8 @@
 		'$fecha_de_salida_prevista',
 		'$fecha_de_llegada_prevista',
 		$tiempo_estimado,
-		'$fecha_de_salida_real',
-		'$fecha_de_llegada_real',
-		$tiempo_real,
 		$km_recorridos_previstos,
-		$km_recorridos_reales,
-		$combustible_consumido_estimado,
-		$combustible_consumido_real)";
-		
-		
-		
+		$combustible_consumido_estimado)";		
 		
 			return $query;
 		}
@@ -91,11 +75,25 @@
 			$query = "DELETE FROM viaje WHERE id = $id";
 			return $query;
 		}
+		public static function actualizaSalidaReal($id_viaje, $fecha_de_salida_real){
+			$query = "UPDATE viaje SET fecha_de_salida_real = '$fecha_de_salida_real'
+			WHERE id = $id_viaje";
+			return $query;
+		}
 
-		public static function actualizar(
+		public static function actualizaViajeFinalizado($id_viaje, $fecha_de_llegada_real, $tiempo_real, $km_recorridos_reales, $combustible_consumido_real){
+			$query = "UPDATE viaje SET 
+			fecha_de_llegada_real = '$fecha_de_llegada_real',
+			tiempo_real = $tiempo_real,
+			km_recorridos_reales = $km_recorridos_reales,
+			combustible_consumido_real = $combustible_consumido_real
+			WHERE id = $id_viaje";
+			return $query;
+		}
+		public static function actualizarTodo(
 		$id, 
 		$id_vehiculo,
-		$id_administrador,
+ 		$id_administrador,
 		$origen,
 		$destino,
 		$tipo_de_carga,
@@ -128,6 +126,18 @@
 		combustible_consumido_real = $combustible_consumido_real
 			
 			WHERE id = $id";
+			return $query;
+		}
+
+		public static function agregarViajeChofer($idViaje, $idChofer){
+			$query = "INSERT INTO viaje_chofer(id_viaje, id_chofer)
+			VALUES ($idViaje, $idChofer)";
+			return $query;
+		}
+
+		public static function agregarViajeVehiculo($idViaje, $idVehiculo){
+			$query = "INSERT INTO viaje_vehiculo(id_viaje,id_vehiculo)
+			VALUES ($idViaje, $idVehiculo)";
 			return $query;
 		}
 	}

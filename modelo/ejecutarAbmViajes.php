@@ -30,23 +30,17 @@
 			
 			$id_vehiculo = $_POST['id_vehiculo'];	
 			$id_administrador = $_POST['id_administrador'];
+			$id_chofer = $_POST['id_chofer'];
 			$origen = $_POST['origen'];
 			$destino = $_POST['destino'];
 			$tipo_de_carga = $_POST['tipo_de_carga'];
 			$fecha_de_salida_prevista = $_POST['fecha_de_salida_prevista'];
 			$fecha_de_llegada_prevista = $_POST['fecha_de_llegada_prevista'];
 			$tiempo_estimado = $_POST['tiempo_estimado'];
-			$fecha_de_salida_real = $_POST['fecha_de_salida_real'];
-			$fecha_de_llegada_real = $_POST['fecha_de_llegada_real'];
-			$tiempo_real = $_POST['tiempo_real'];
 			$km_recorridos_previstos = $_POST['km_recorridos_previstos'];
-			$km_recorridos_reales = $_POST['km_recorridos_reales'];
 			$combustible_consumido_estimado = $_POST['combustible_consumido_estimado'];
-			$combustible_consumido_real = $_POST['combustible_consumido_real'];
-				
 
-			$sql = Viaje::insertar(
-				$id_vehiculo ,
+			Conexion::setQuery(Viaje::insertar(
 				$id_administrador,
 				$origen,
 				$destino,
@@ -54,17 +48,16 @@
 				$fecha_de_salida_prevista,
 				$fecha_de_llegada_prevista,
 				$tiempo_estimado,
-				$fecha_de_salida_real,
-				$fecha_de_llegada_real,
-				$tiempo_real,
 				$km_recorridos_previstos,
-				$km_recorridos_reales,
-				$combustible_consumido_estimado,
-				$combustible_consumido_real			
-			);
-				Conexion::setQuery($sql);
-				Conexion::cerrar();
-				header("Location: ../vistas/admin/abmViajes.php");
+				$combustible_consumido_estimado
+			));
+			$ultimoViaje = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getLast()));
+			Conexion::setQuery(Viaje::agregarViajeChofer($ultimoViaje['id_viaje'], $id_chofer));
+			Conexion::setQuery(Viaje::agregarViajeVehiculo($ultimoViaje['id_viaje'], $id_vehiculo));
+			Conexion::setQuery(Chofer::actualizarEstado($id_chofer, 1));
+			Conexion::setQuery(Vehiculo::actualizarEstado($id_vehiculo, 1));
+			Conexion::cerrar();
+			header("Location: ../vistas/admin/abmViajes.php");
 		}
 		else{
 			$id_vehiculo = $_POST['id_vehiculo'];
