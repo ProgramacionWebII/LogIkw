@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['administrador'])){
-		include "../modelo/include.php";
+		include "../../modelo/include.php";
 		$query = Administrador::getAllForId($_SESSION['administrador']);
 
 		$resultado = Conexion::getQuery($query);
@@ -9,7 +9,7 @@
 
 	}
 	else{		
-		header("Location: ../index.php");
+		header("Location: ../../index.php");
 	}
 
 ?>
@@ -20,34 +20,34 @@
   <title>MS Logistica</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../js/jquery.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  <script src="../js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/home.css">
-  <script type="text/javascript" src="../js/abm.js"></script>
+  <script src="../../js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+  <script src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/home.css">
+  <script type="text/javascript" src="../../js/abm.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
 	<div class="col-sm-12">
 	    <div class="navbar-header col-sm-1">
-	     <img src="../image/logo.png">
+	     <img src="../../image/logo.png">
 	    </div>
 	    <ul class="nav navbar-nav col-sm-4">
-	      <li class="active"><a href="<?php echo '../vistas/adminLogeado.php'; ?>">HOME</a></li>
+	      <li class="active"><a href="<?php echo '../../vistas/adminLogeado.php'; ?>">HOME</a></li>
 	    </ul>
 		<ul class="dropdown nav navbar-nav navbar-right nombreLogeado" style="padding-top: 0.5%;">
 		  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Seccion ABM
 		  <span class="caret"></span></button>
 		  <ul class="dropdown-menu">
-				<li><a href=" <?php echo '../vistas/admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-				<li><a href=" <?php echo '../vistas/admin/abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
-				<li><a href=" <?php echo '../vistas/admin/abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
-				<li><a href=" <?php echo '../vistas/admin/abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
-				<li><a href=" <?php echo '../vistas/admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
-				<li><a href=" <?php echo '../vistas/admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
-				<li><a href=" <?php echo '../vistas/admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
-				<li><a href=" <?php echo '../vistas/reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmUsuario.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Usuario</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span>Vehiculos</a></li>
+				<li><a href=" <?php echo '../../vistas/admin/reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
 				
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
@@ -105,7 +105,7 @@ tiempo_real-tiempo_estimado as desviacion_t,combustible_consumido_estimado,combu
   </table>
   
 
-  <input type="submit"  class='btn btn-success' value="Grafico Desviacion Km " onclick = "location='../modelo/grafico.php'"/>
+  <input type="submit"  class='btn btn-success' value="Grafico Desviacion Km " onclick = "location='grafico.php'"/>
 </div>
 
 

@@ -118,5 +118,6 @@
 	  </div>
 	</div>
 	</form>
+			<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='ListadoPdfCalendarioService.php'"/>
 </body>
 </html>

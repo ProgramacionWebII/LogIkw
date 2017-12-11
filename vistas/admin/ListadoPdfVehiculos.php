@@ -1,7 +1,6 @@
 <?php
-require "dompdf/dompdf_config.inc.php";
-include 'include.php';
-
+require "../../dompdf/dompdf_config.inc.php";
+include '../../modelo/include.php';
 
 $html = "<html><head><link type='text/css' href='style.css' rel='stylesheet' /></head><body><center>";
 $html .=  "<H3>LISTADO DE VEHICULOS</H3>";
@@ -9,8 +8,8 @@ $html .=  "<table id='customers'>";
 $html .=  "<tr>";
 $html .=  "<th>ID</th>";
 $html .=  "<th>Patente</th>";
-$html .=  "<th>N°Chasis</th>";
-$html .=  "<th>N°Motor</th>";
+$html .=  "<th>Nro. Chasis</th>";
+$html .=  "<th>Nro. Motor</th>";
 $html .=  "<th>Marca</th>";
 $html .=  "<th>Modelo</th>";
 $html .=  "<th>Año de Fabricacion</th>";

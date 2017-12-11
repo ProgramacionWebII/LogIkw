@@ -10,7 +10,7 @@
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
-		header("Location: ....//index.php");
+		header("Location: ../../index.php");
 	}
 
 ?>
@@ -41,13 +41,9 @@
 		  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Seccion ABM
 		  <span class="caret"></span></button>
 		  <ul class="dropdown-menu">
-				<li><a href=" <?php echo 'abmCliente.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Cliente</a></li>
-				<li><a href=" <?php echo 'abmEmpresa.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Empresa</a></li>
-				<li><a href=" <?php echo 'abmChofer.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Chofer</a></li>
-				<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
-				<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
-				<li><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Vehiculos</a></li>
-				<li><a href=" <?php echo '../reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
+				<li><a href=" <?php echo 'abmMantenimiento.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mantenimiento</a></li>
+
+
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
@@ -114,6 +110,8 @@
 		  </div>
 		</div>
 	</form>
+	
+			<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='ListadoPdfMantenimientos.php'"/>
 
 	<!-- Modal de agregar-->
     <form action="../../modelo/ejecutarAbmMantenimiento.php" method="POST">
@@ -146,5 +144,8 @@
 	  </div>
 	</div>
    	</form>
+	
+
+	
 </body>
 </html>

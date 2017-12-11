@@ -47,7 +47,7 @@
 				<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
 				<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 				<li><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Vehiculos</a></li>
-				<li><a href=" <?php echo '../reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
+				<li><a href=" <?php echo 'reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
@@ -142,6 +142,6 @@
 	</div>
    	</form>
 	
-	<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='../../modelo/ListadoPdfEmpresas.php'"/>
+	<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='ListadoPdfEmpresas.php'"/>
 </body>
 </html>

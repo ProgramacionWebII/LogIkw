@@ -1,6 +1,6 @@
 <?php
-require "dompdf/dompdf_config.inc.php";
-include 'include.php';
+require "../../dompdf/dompdf_config.inc.php";
+include '../../modelo/include.php';
 
 
 $html = "<html><head><link type='text/css' href='style.css' rel='stylesheet' /></head><body><center>";

@@ -47,7 +47,7 @@
 				<li><a href=" <?php echo 'abmMecanico.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Mecanico</a></li>
 				<li><a href=" <?php echo 'abmViajes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Viajes</a></li>
 				<li><a href=" <?php echo 'abmVehiculo.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Vehiculos</a></li>
-				<li><a href=" <?php echo '../reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
+				<li><a href=" <?php echo 'reportes.php'; ?>"><span class="glyphicon glyphicon-list-alt" ></span> Reportes</a></li>
 				<li class="divider"></li>
 				<li><a href=""  data-toggle="modal" data-target="#logout"><span class="glyphicon glyphicon-new-window" ></span> Logout</a></li>
 		  </ul>
@@ -133,6 +133,8 @@
 		</div>
 	</form>
 
+		<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='ListadoPdfViajes.php'"/>
+		
 	<!-- Modal de agregar-->
     <form action="../../modelo/ejecutarAbmViajes.php" method="POST" id="form">
 	<div class="modal fade" id="agregarViaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="form">
@@ -199,10 +201,13 @@
 	  </div>
 	</div>
    	</form>
+	
+	
+
+	
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZGkBOCBsr2y1CWsZdAbgQLp48v081Elk"></script>
 <script type="text/javascript" src="../../js/abm.js"></script>
 <script type="text/javascript" src="../../js/abmViajes.js"></script>
 
-	<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='../../modelo/ListadoPdfViajes.php'"/>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['administrador'])){
-		include "include.php";
+			include "../../modelo/include.php";
 		$query = Administrador::getAllForId($_SESSION['administrador']);
 
 		$resultado = Conexion::getQuery($query);
@@ -11,7 +11,7 @@
 		$resultado1 = Conexion::getQuery($query1);
 	}
 	else{		
-		header("Location: ....//index.php");
+	header("Location: ../../index.php");
 	}
 	$i=0;
 	while($viajes = mysqli_fetch_assoc($resultado1)){
