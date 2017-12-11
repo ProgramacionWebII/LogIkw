@@ -27,7 +27,7 @@
 			return $query;
 		}
 
-	public static function actualizar($id,$patente, $nro_chasis, $nro_motor, $marca, $modelo, $anio_fabricacion, $tipo,$estado){
+		public static function actualizar($id,$patente, $nro_chasis, $nro_motor, $marca, $modelo, $anio_fabricacion, $tipo,$estado){
 			$query = "UPDATE vehiculo
 			SET
 			patente = '$patente',
@@ -40,6 +40,10 @@
 			estado = '$estado'
 		
 			WHERE id = $id";
+			return $query;
+		}
+		public static function actualizarEstado($id, $estado){
+			$query = "UPDATE vehiculo SET estadoV = $estado WHERE id = $id";
 			return $query;
 		}
 	}

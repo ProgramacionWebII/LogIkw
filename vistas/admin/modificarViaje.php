@@ -66,8 +66,6 @@
 		 
 		<input type='text' name='id_administrador' class='hidden' value='".$viaje['id_administrador']."'><br>
 			<label>Id vehiculo:</label>
-		<input type='text' name='id_vehiculo' class='form-control' value='".$viaje['id_vehiculo']."'><br>
-		<label>Origen:</label>
 		<input type='text' name='origen' class='form-control' value='".$viaje['origen']."'><br>
 		<label>Destino:</label>
 		<input type='text' name='destino' class='form-control' value='".$viaje['destino']."'><br>
@@ -79,18 +77,24 @@
 		<input type='date' name='fecha_de_llegada_prevista' class='form-control' value='".$viaje['fecha_de_llegada_prevista']."'>
 		<label>Tiempo estimado:</label>
 		<input type='text' name='tiempo_estimado' class='form-control' value='".$viaje['tiempo_estimado']."'><br>
-		<label>Fecha de salida real:</label>
-		<input type='date' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'><br>
+		<label>Fecha de salida real:</label>";
+		if($viaje['fecha_de_salida_real'] != null){ echo "
+		<input type='date' name='fecha_de_salida_real' class='form-control' value='".$viaje['fecha_de_salida_real']."'><br>";}
+		if($viaje['fecha_de_llegada_real'] != null){ echo "
 		<label>Fecha de llegada real:</label>
-		<input type='date' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'><br>
+		<input type='date' name='fecha_de_llegada_real' class='form-control' value='".$viaje['fecha_de_llegada_real']."'><br> ";}
+		if($viaje['tiempo_real'] != null){ echo "
 		<label>Tiempo real:</label>
-		<input type='text' name='tiempo_real' class='form-control' value='".$viaje['tiempo_real']."'><br>
+		<input type='text' name='tiempo_real' class='form-control' value='".$viaje['tiempo_real']."'><br>";}
+		echo "
 		<label>Km recorridos previstos:</label>
 		<input type='text' name='km_recorridos_previstos' class='form-control' value='".$viaje['km_recorridos_previstos']."'>
 		<label>Combustible consumido estimado:</label>
-		<input type='text' name='combustible_consumido_estimado' class='form-control' value='".$viaje['combustible_consumido_estimado']."'><br>
+		<input type='text' name='combustible_consumido_estimado' class='form-control' value='".$viaje['combustible_consumido_estimado']."'><br>";
+		if($viaje['combustible_consumido_real'] != null){ echo "
 		<label>Combustible consumido real:</label>
-		<input type='text' name='combustible_consumido_real' class='form-control' value='".$viaje['combustible_consumido_real']."'>
+		<input type='text' name='combustible_consumido_real' class='form-control' value='".$viaje['combustible_consumido_real']."'>";}
+		echo "
 		</div>
 		<div class='form-group col-sm-offset-3 col-sm-6''>
 		<button type='submit' name='alterar' value='a' class='btn btn-primary'>Modificar</button>

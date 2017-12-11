@@ -35,5 +35,10 @@
 			WHERE id = $id";
 			return $query;
 		}
+
+		public static function actualizarEstado($id, $estado){
+			$query = "UPDATE chofer SET estadoC = $estado WHERE id = $id";
+			return $query;
+		}
 	}
 ?>
