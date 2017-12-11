@@ -106,6 +106,26 @@
 			Conexion::setQuery(viaje::kmReal($id_viaje, $kmRecorridos));
 		header("Location: ../vistas/reportesChofer.php?id_viaje=$id_viaje");
 		}
+		if($tipo_reporte == 'finalizar'){
+			$id_chofer = $_SESSION['chofer'];
+			$id_viaje = $_POST['variable'];
+			$fecha = $_POST['fechaLlegada'];
+			$tiempo = $_POST['tiempo'];
+			$combustible = $_POST['combustible'];
+			$recorrido = $_POST['recorrido'];
+			$id_vehiculo = $_POST['idVehiculo'];
+			Conexion::setQuery(Viaje::combustibleReal($id_viaje, $combustible));			
+			Conexion::setQuery(Viaje::llegadaReal($id_viaje, $fecha, $tiempo));
+			Conexion::setQuery(Viaje::actualizarEstado($id_viaje));
+			Conexion::setQuery(Chofer::actualizarEstado($id_chofer, 0));
+			Conexion::setQuery(Vehiculo::actualizarEstado($id_vehiculo, 0));
+			Conexion::setQuery(Viaje::eliminarViajeVehiculo($id_viaje));
+			Conexion::setQuery(Viaje::eliminarViajeChofer($id_viaje));
+
+		header("Location: ../vistas/reportesChofer.php?id_viaje=$id_viaje");
+
+
+		}
 		
 			
 

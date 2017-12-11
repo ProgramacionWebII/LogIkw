@@ -284,6 +284,37 @@
 
 	<!-- Modal de reporteDiario-->
 	  <form action="../modelo/agregar_reporte.php" method="POST">
+	<div class="modal fade" id="finalizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header">
+	        <h2 class="modal-title" id="exampleModalLabel">¿Ha finalizado el viaje? </h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+	      </div>
+	      <div class="modal-body col-sm-12">
+	      	<?php
+	      	$viajeActual = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForId($viaje['id'])));
+	      	echo
+		    '<input type="date" name="fechaLlegada" class="form-control col-sm-6"><br>
+   	        <input type="text" name="tiempo" class="form-control col-sm-6" placeholder="Tiempo total" required><br>
+   	        <input type="text" name="combustible" class="form-control col-sm-6" placeholder="Combustible consumido" required><br>
+   	        <input type="text" name="recorrido" class="form-control col-sm-6" placeholder="Km recorridos desde la ultima actualización" required><br>
+		    <input type="text" name="tipo_reporte" value="finalizar" class="hidden">
+	  		<input type="text" name="variable" class="hidden" value="'.$viaje['id'].'">
+	  		<input type="text" name="idVehiculo" class="hidden"  value="'.$viaje['id_vehiculo'].'"'; ?>
+	      </div>
+	      <div class="modal-footer col-sm-12">
+	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Finalizar">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+   	</form>
+
+	<!-- Modal de reporteDiario-->
+	  <form action="../modelo/agregar_reporte.php" method="POST">
 	<div class="modal fade" id="reporteDiario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
@@ -312,34 +343,6 @@
    	</form>
 
 	
-	<!-- Modal de reporteDiario-->
-	  <form action="../modelo/agregar_reporte.php" method="POST">
-	<div class="modal fade" id="finalizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header">
-	        <h2 class="modal-title" id="exampleModalLabel">Reporte Diario </h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-	      	<label>Fecha de salida</label>
-	      	<?php
-	      	$viajeActual = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForId($viaje['id'])));
-	      	echo
-		    '<input type="date" name="fechaSalida" class="form-control col-sm-6" value="'.$viajeActual['fecha_de_salida_real'].'"><br>
-   	        <input type="text" name="kmRecorridos" class="form-control col-sm-6" placeholder="km Recorridos desde la última vez" required><br>
-		    <input type="text" name="tipo_reporte" value="diario" class="hidden">
-	  		<input type="text" name="variable" class="hidden"';  echo "value='".$viaje['id']."'"; ?>
-	      </div>
-	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Cargar">
-	      </div>
-	    </div>
-	  </div>
-	</div>
-   	</form>
 <script>
 var x = document.getElementById("demo");
 

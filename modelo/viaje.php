@@ -14,7 +14,7 @@
 		}
 
 		public static function getAllForIdChofer($id){
-			$query = "SELECT v.*, vj.id_chofer, vh.marca, vh.modelo FROM viaje v JOIN viaje_chofer vj ON v.id = vj.id_viaje JOIN viaje_vehiculo vv ON vv.id_viaje = v.id JOIN vehiculo vh ON vh.id = vv.id_vehiculo
+			$query = "SELECT v.*, vj.id_chofer, vh.marca, vh.modelo, vv.id_vehiculo FROM viaje v JOIN viaje_chofer vj ON v.id = vj.id_viaje JOIN viaje_vehiculo vv ON vv.id_viaje = v.id JOIN vehiculo vh ON vh.id = vv.id_vehiculo
 			WHERE vj.id_chofer = $id";
 			return $query;
 		}
@@ -152,6 +152,13 @@
 			return $query;
 		}
 
+		public static function actualizarEstado($id){
+			$query = "UPDATE viaje set 
+			estado = 'Finalizado'
+			 WHERE id = $idViaje";
+			return $query;			
+		}
+
 		public static function agregarViajeChofer($idViaje, $idChofer){
 			$query = "INSERT INTO viaje_chofer(id_viaje, id_chofer)
 			VALUES ($idViaje, $idChofer)";
@@ -176,7 +183,8 @@
 		public static function llegadaReal($idViaje, $llegada, $tiempo){
 			$query = "UPDATE viaje set 
 			fecha_de_llegada_real = '$llegada',
-			tiempo_real = $tiempo
+			tiempo_real = $tiempo,
+			estado = 'Finalizado'
 			 WHERE id = $idViaje";
 			return $query;
 		}
