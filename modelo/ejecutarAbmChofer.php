@@ -18,9 +18,9 @@
 		else if($alterar == "eliminar"){
 			/*Esta variable siguiente corresponde a eliminar o modificar*/
 			$id = $_POST['id'];
-			$sql = Chofer::eliminar($id);
-			Conexion::setQuery($sql);
-			mysqli_fetch_assoc(Conexion::setQuery(Chofer::eliminar($id)));
+			$idUsuario = $_POST['id_usuario'];
+			Conexion::setQuery(Usuario::eliminar($id_usuario));
+			Conexion::setQuery(Chofer::eliminar($id));
 			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
 			Conexion::cerrar();	
 			header("Location: ../vistas/admin/abmChofer.php");
