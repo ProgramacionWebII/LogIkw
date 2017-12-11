@@ -25,6 +25,7 @@
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
   <script src="../../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../../css/home.css">
+  <script type="text/javascript" src="../../js/abmViajes.js"></script>
 </head>
 <body>
 
@@ -73,7 +74,7 @@
         <th>Responsable de alta</th>
 		<th>Codigo Qr</th>
 		  <th>Mapa</th>
-		<th><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
+		<th><button type='button' onclick="(validarEstado())" class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
 
       </tr>
     </thead>
@@ -133,10 +134,10 @@
 	</form>
 
 	<!-- Modal de agregar-->
-    <form action="../../modelo/ejecutarAbmViajes.php" method="POST">
-	<div class="modal fade" id="agregarViaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
+    <form action="../../modelo/ejecutarAbmViajes.php" method="POST" id="form">
+	<div class="modal fade" id="agregarViaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="form">
+	  <div class="modal-dialog" role="document" id="form">
+	    <div class="modal-content col-sm-12" id="form">
 	      <div class="modal-header">
 	        <h2 class="modal-title" id="exampleModalLabel">Alta nuevo Viaje</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -147,6 +148,9 @@
    	        <select class="col-sm-6 form-control" id="idChofer" name="id_chofer">
         	<?php 
         		$user = Conexion::getQuery(Chofer::getAll());
+        		if($user['id'] == null){
+        			echo "<div id='noDisponibleC'>2</div>";
+        		}
         		while($choferUsuario = mysqli_fetch_assoc($user)){
         			if($choferUsuario['estadoC'] == 0){
 	        			echo 
@@ -161,7 +165,10 @@
    	        <select class="col-sm-6 form-control" id="idVehiculo" name="id_vehiculo">
         	<?php 
         		$vehi = Conexion::getQuery(Vehiculo::getAll());
-        		while($vehiculo = mysqli_fetch_assoc($vehi)){
+        		if($vehi['id'] == null){
+        			echo "<div id='noDisponibleV'>2</div>";
+        		}
+       		while($vehiculo = mysqli_fetch_assoc($vehi)){
         			if($vehiculo['estadoV'] == 0){
 	        			echo 
 	        			"

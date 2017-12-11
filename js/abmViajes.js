@@ -55,3 +55,20 @@ function descargar(){
 	url = '../modelo/generarPDF.php',
 	window.location.href = url;
 }
+
+function validarEstado(){
+	var validarC = $("#noDisponibleC").val();
+	var validarV = $("#noDisponibleV").val();
+	if(typeof validarC == 'undefined' && typeof validarV == 'undefined'){
+		$("#form").remove();
+		alert("No hay choferes ni coches disponibles");
+	}
+	else if(typeof validarC == 'undefined'){
+		$("#form").remove();
+		alert("No hay choferes disponibles");
+	}
+	else if(typeof validarV == 'undefined'){
+		$("#form").remove();
+		alert("No hay choches disponibles");
+	}
+}

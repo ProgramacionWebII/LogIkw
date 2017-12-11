@@ -13,13 +13,18 @@
 			$id = $_POST['id'];
 			session_start();
 			$_SESSION['modificar'] = $id;
-			header("Location: ../vistas/admin/modificarViaje.php");			
+				header("Location: ../vistas/admin/modificarViaje.php");			
 		}
 		else if($alterar == "eliminar"){
 			/*Esta variable siguiente corresponde a eliminar o modificar*/
 			$id = $_POST['id'];
-			$sql = Viaje::eliminar($id);
-			Conexion::setQuery($sql);
+			$idChofer = mysqli_fetch_assoc(Conexion::getQuery(Chofer::getIdForViaje($id)));
+			$idVehiculo = mysqli_fetch_assoc(Conexion::getQuery(Vehiculo::getIdForViaje($id)));
+			Conexion::setQuery(Chofer::actualizarEstado($idChofer['id_chofer'], 0));
+			Conexion::setQuery(Vehiculo::actualizarEstado($idVehiculo['id_vehiculo'], 0));
+			Conexion::setQuery(Viaje::eliminarViajeVehiculo($id));
+			Conexion::setQuery(Viaje::eliminarViajeChofer($id));
+			Conexion::setQuery(Viaje::eliminar($id));
 			/* siempre que temrino de usar la BDD cierro la conexion, para evitar problemas de conexión futuros. De todos modos cuando quiero volver a usar la BDD, las funciones de la clase Conexion la abren (como la funcion de arriba, setQuery), nosotros solo tenemos que preocuparnos por cerrarla*/
 			Conexion::cerrar();	
 			header("Location: ../vistas/admin/abmViajes.php");

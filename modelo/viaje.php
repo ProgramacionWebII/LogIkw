@@ -75,7 +75,18 @@
 			$query = "DELETE FROM viaje WHERE id = $id";
 			return $query;
 		}
-		public static function actualizaSalidaReal($id_viaje, $fecha_de_salida_real){
+
+		public static function eliminarViajeChofer($id){
+			$query = "DELETE FROM viaje_chofer WHERE id_viaje = $id";
+			return $query;
+		}
+
+		public static function eliminarViajeVehiculo($id){
+			$query = "DELETE FROM viaje_vehiculo WHERE id_viaje = $id";
+			return $query;
+		}
+
+ 		public static function actualizaSalidaReal($id_viaje, $fecha_de_salida_real){
 			$query = "UPDATE viaje SET fecha_de_salida_real = '$fecha_de_salida_real'
 			WHERE id = $id_viaje";
 			return $query;

@@ -46,5 +46,11 @@
 			$query = "UPDATE vehiculo SET estadoV = $estado WHERE id = $id";
 			return $query;
 		}
+
+		public static function getIdForViaje($idViaje){
+			$query = "SELECT v.id id_vehiculo FROM vehiculo v JOIN viaje_vehiculo vj ON
+			v.id = vj.id_vehiculo WHERE vj.id_viaje = $idViaje";
+			return $query;
+		}
 	}
 ?>

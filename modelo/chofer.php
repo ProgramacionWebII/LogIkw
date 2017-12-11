@@ -13,7 +13,6 @@
 			return $query;
 		}
 
-
 		public static function insertar($dni_chofer, $nombre, $apellido, $fecha_de_nacimiento, $tipo_licencia_de_conducir, $idUsuario){
 			$query = "INSERT INTO chofer(dni_chofer, rol, nombre,apellido,fecha_de_nacimiento,tipo_licencia_de_conducir, id_usuario)
 			VALUES ($dni_chofer, 'chofer', '$nombre', '$apellido', '$fecha_de_nacimiento', '$tipo_licencia_de_conducir', $idUsuario)";
@@ -38,6 +37,12 @@
 
 		public static function actualizarEstado($id, $estado){
 			$query = "UPDATE chofer SET estadoC = $estado WHERE id = $id";
+			return $query;
+		}
+
+		public static function getIdForViaje($idViaje){
+			$query = "SELECT c.id id_chofer FROM chofer c JOIN viaje_chofer v ON
+			c.id = v.id_chofer WHERE v.id_viaje = $idViaje";
 			return $query;
 		}
 	}
