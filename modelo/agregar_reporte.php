@@ -97,11 +97,14 @@
 
 			$id_chofer = $_SESSION['chofer'];
 			$id_viaje = $_POST['variable'];
-			$fechaSalida = $_POST['fecha'];
+			$fechaSalida = $_POST['fechaSalida'];
 			$kmRecorridos = $_POST['kmRecorridos'];
 
-			Conexion::setQuery(Viaje::salidaReal($id_viaje, $fechaSalida));
+			if($fechaSalida != null){
+				Conexion::setQuery(Viaje::salidaReal($id_viaje, $fechaSalida));
+			}
 			Conexion::setQuery(viaje::kmReal($id_viaje, $kmRecorridos));
+		header("Location: ../vistas/reportesChofer.php?id_viaje=$id_viaje");
 		}
 		
 			

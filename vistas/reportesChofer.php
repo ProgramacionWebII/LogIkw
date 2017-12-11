@@ -78,6 +78,7 @@
 		    	<tr>
 			<?php
 				$choferUsuario = mysqli_fetch_assoc(Conexion::getQuery(Chofer::getChoferForViaje($_SESSION['chofer'])));
+				if($choferUsuario['id'] != null){
 				$viaje = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForIdChofer($choferUsuario['id'])));
 				echo "<td>".$viaje['origen']." - ".$viaje['destino']."</td>";
 				echo "<td>".$viaje['tipo_de_carga']."</td>";
@@ -95,6 +96,9 @@
 	<button type='button'  class='btn btn-danger col-sm-3' data-toggle='modal' data-target='#incidente'>INCIDENTE</button>
 	<button type='button'  class='btn btn-info col-sm-3' data-toggle='modal' data-target='#reporteDiario'>REPORTE DIARIO</button>
 	<button type='button'  class='btn btn-success col-sm-3' data-toggle='modal' data-target='#cargaDeCombustible'>CARGA DE COMBUSTIBLE</button>
+	</div>
+	<div class="col-sm-6 col-sm-offset-3"><br>
+		<button type='button'  class='btn btn-warning col-sm-12' data-toggle='modal' data-target='#finalizar' >Finalizar Viaje</button>
 	</div>
 </div>
 <br>	
@@ -117,7 +121,7 @@
 <!-- Footer -->
 
 
-<footer class="footer-distributed ">
+<footer class="footer-distributed">
 	<div class="container">
     	<div class="row">
       		<div class="col-sm-5 col-sm-offset-1">
@@ -250,37 +254,15 @@
 	    </div>
 	  </div>
 	</div>
-   	</form>
 
-	<!-- Modal de reporteDiario-->
-	  <form action="../modelo/agregar_reporte.php" method="POST">
-	<div class="modal fade" id="reporteDiario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content col-sm-12">
-	      <div class="modal-header">
-	        <h2 class="modal-title" id="exampleModalLabel">Reporte Diario </h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	        </button>
-	      </div>
-	      <div class="modal-body col-sm-12">
-	      	<label>Fecha de salida</label>
-	      	<?php
-	      	$viajeActual = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForId($viaje['id'])));
-	      	echo
-		    '<input type="date" name="fechaSalida" class="form-control col-sm-6" value="'.$viajeActual['fecha_de_salida_real'].'" required><br>
-   	        <input type="text" name="kmRecorridos" class="form-control col-sm-6" placeholder="km Recorridos desde la última vez" required><br>
-		    <input type="text" name="tipo_reporte" value="diario" class="hidden">
-	  		<input type="text" name="variable" class="hidden"';  echo "value='".$viaje['id']."'"; ?>
-	      </div>
-	      <div class="modal-footer col-sm-12">
-	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
-	        <input type="submit" class="btn btn-primary" value="Cargar">
-	      </div>
-	    </div>
-	  </div>
-	</div>
-   	</form>
+	<?php 
+	}
+	else{
+		echo '<H4 class="col-sm-offset-2 col-sm-8">No tiene viajes asignados!!</H4>';
 
+	}
+	 ?>
+   	</form>
 	<!-- Modal logout-->
 	<form action="../modelo/logout.php" method="POST">
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -299,7 +281,65 @@
 	  </div>
 	</div>
 	</form>
+
+	<!-- Modal de reporteDiario-->
+	  <form action="../modelo/agregar_reporte.php" method="POST">
+	<div class="modal fade" id="reporteDiario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header">
+	        <h2 class="modal-title" id="exampleModalLabel">Reporte Diario </h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+	      </div>
+	      <div class="modal-body col-sm-12">
+	      	<label>Fecha de salida</label>
+	      	<?php
+	      	$viajeActual = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForId($viaje['id'])));
+	      	echo
+		    '<input type="date" name="fechaSalida" class="form-control col-sm-6" value="'.$viajeActual['fecha_de_salida_real'].'"><br>
+   	        <input type="text" name="kmRecorridos" class="form-control col-sm-6" placeholder="km Recorridos desde la última vez" required><br>
+		    <input type="text" name="tipo_reporte" value="diario" class="hidden">
+	  		<input type="text" name="variable" class="hidden"';  echo "value='".$viaje['id']."'"; ?>
+	      </div>
+	      <div class="modal-footer col-sm-12">
+	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Cargar">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+   	</form>
+
 	
+	<!-- Modal de reporteDiario-->
+	  <form action="../modelo/agregar_reporte.php" method="POST">
+	<div class="modal fade" id="finalizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header">
+	        <h2 class="modal-title" id="exampleModalLabel">Reporte Diario </h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+	      </div>
+	      <div class="modal-body col-sm-12">
+	      	<label>Fecha de salida</label>
+	      	<?php
+	      	$viajeActual = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForId($viaje['id'])));
+	      	echo
+		    '<input type="date" name="fechaSalida" class="form-control col-sm-6" value="'.$viajeActual['fecha_de_salida_real'].'"><br>
+   	        <input type="text" name="kmRecorridos" class="form-control col-sm-6" placeholder="km Recorridos desde la última vez" required><br>
+		    <input type="text" name="tipo_reporte" value="diario" class="hidden">
+	  		<input type="text" name="variable" class="hidden"';  echo "value='".$viaje['id']."'"; ?>
+	      </div>
+	      <div class="modal-footer col-sm-12">
+	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Cargar">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+   	</form>
 <script>
 var x = document.getElementById("demo");
 
