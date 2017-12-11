@@ -72,6 +72,7 @@
         <th>Fecha salida</th>
         <th>Fecha llegada</th>
         <th>Responsable de alta</th>
+        <th>Estado</th>
 		<th>Codigo Qr</th>
 		  <th>Mapa</th>
 		<th><button type='button' onclick="(validarEstado())" class='btn btn-success' data-toggle='modal' data-target='#agregarViaje'>Agregar</button></th>
@@ -92,6 +93,7 @@
 		 <td>".$viaje['fecha_de_salida_real']."</td>
 		 <td>".$viaje['fecha_de_llegada_real']."</td>
 		 <td>".$admin['nombre']." ".$admin['apellido']."</td>
+		 <td>".$viaje['estado']."</td>
 
 		 
 
@@ -150,10 +152,11 @@
    	        <select class="col-sm-6 form-control" id="idChofer" name="id_chofer">
         	<?php 
         		$user = Conexion::getQuery(Chofer::getAll());
-        		if($user['id'] == null){
-        			echo "<div id='noDisponibleC'>2</div>";
-        		}
         		while($choferUsuario = mysqli_fetch_assoc($user)){
+	        		if($choferUsuario['id'] == ''){
+	        			echo "<div id='noDisponibleC'>2</div>";
+	        			break;
+	        		}
         			if($choferUsuario['estadoC'] == 0){
 	        			echo 
 	        			"
@@ -167,10 +170,11 @@
    	        <select class="col-sm-6 form-control" id="idVehiculo" name="id_vehiculo">
         	<?php 
         		$vehi = Conexion::getQuery(Vehiculo::getAll());
-        		if($vehi['id'] == null){
-        			echo "<div id='noDisponibleV'>2</div>";
-        		}
        		while($vehiculo = mysqli_fetch_assoc($vehi)){
+		    		if($vehiculo['id'] == ''){
+		    			echo "<div id='noDisponibleV'>2</div>";
+		    			break;
+		    		}
         			if($vehiculo['estadoV'] == 0){
 	        			echo 
 	        			"

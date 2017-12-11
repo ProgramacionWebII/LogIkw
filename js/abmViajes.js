@@ -56,10 +56,10 @@ function descargar(){
 	window.location.href = url;
 }
 
-function validarEstado(){
+/*function validarEstado(){
 	var validarC = $("#noDisponibleC").val();
 	var validarV = $("#noDisponibleV").val();
-	if(typeof validarC == 'undefined' && typeof validarV == 'undefined'){
+	if(typeof validarC != 'undefined' && typeof validarV != 'undefined'){
 		$("#form").remove();
 		alert("No hay choferes ni coches disponibles");
 	}
@@ -71,4 +71,4 @@ function validarEstado(){
 		$("#form").remove();
 		alert("No hay choches disponibles");
 	}
-}
+}*/

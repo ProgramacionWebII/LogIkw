@@ -70,14 +70,15 @@
 		if ($tipo_reporte == "combustible"){
 			/*declaro las diferentes variables que voy a usar para el ABM cliente*/
 			$id_chofer = $_SESSION['chofer'];
-		$id_viaje = $_POST['variable'];
+			$id_viaje = $_POST['variable'];
 			$fecha = $_POST['fecha'];
 			$combustible_cargado = $_POST['combustible_cargado'];
 			$importe_combustible = $_POST['importe_combustible'];
 			$ubicacion = $_POST['ubicacion'];
 			$km_unidad = $_POST['km_unidad'];
-	
-				$sql3 = Reporte_chofer::insertar_combustible($id_chofer, $id_viaje,$fecha, $combustible_cargado, $importe_combustible, $ubicacion,$km_unidad);
+			
+			Conexion::setQuery(Viaje::combustibleReal($id_viaje, $combustible_cargado));
+			$sql3 = Reporte_chofer::insertar_combustible($id_chofer, $id_viaje,$fecha, $combustible_cargado, $importe_combustible, $ubicacion,$km_unidad);
 			Conexion::setQuery($sql3);
 			Conexion::cerrar();
 			
@@ -91,9 +92,16 @@
 		
 			
 		header("Location: ../vistas/reportesChofer.php?id_viaje=$id_viaje");
-			
-			
-			
+		}
+		if($tipo_reporte == 'diario'){
+
+			$id_chofer = $_SESSION['chofer'];
+			$id_viaje = $_POST['variable'];
+			$fechaSalida = $_POST['fecha'];
+			$kmRecorridos = $_POST['kmRecorridos'];
+
+			Conexion::setQuery(Viaje::salidaReal($id_viaje, $fechaSalida));
+			Conexion::setQuery(viaje::kmReal($id_viaje, $kmRecorridos));
 		}
 		
 			

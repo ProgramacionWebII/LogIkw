@@ -73,7 +73,8 @@ tiempo_real int,
 km_recorridos_previstos int,
 km_recorridos_reales int,
 combustible_consumido_estimado  int,
-combustible_consumido_real int
+combustible_consumido_real int,
+estado varchar(20)
 );
 
 create table vehiculo(

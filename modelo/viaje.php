@@ -14,7 +14,7 @@
 		}
 
 		public static function getAllForIdChofer($id){
-			$query = "SELECT v.*, vj.id_chofer FROM viaje v JOIN viaje_chofer vj ON v.id = vj.id_viaje
+			$query = "SELECT v.*, vj.id_chofer, vh.marca, vh.modelo FROM viaje v JOIN viaje_chofer vj ON v.id = vj.id_viaje JOIN viaje_vehiculo vv ON vv.id_viaje = v.id JOIN vehiculo vh ON vh.id = vv.id_vehiculo
 			WHERE vj.id_chofer = $id";
 			return $query;
 		}
@@ -54,8 +54,14 @@
 		fecha_de_salida_prevista,
 		fecha_de_llegada_prevista,
 		tiempo_estimado,
+		fecha_de_salida_real,
+		fecha_de_llegada_real,
+		tiempo_real,
 		km_recorridos_previstos,
-		combustible_consumido_estimado)
+		km_recorridos_reales,
+		combustible_consumido_estimado,
+		combustible_consumido_real,
+		estado)
 			
 			VALUES (
 		$id_administrador,
@@ -65,8 +71,14 @@
 		'$fecha_de_salida_prevista',
 		'$fecha_de_llegada_prevista',
 		$tiempo_estimado,
+		'1111-11-11',
+		'1111-11-11',
+		1,
 		$km_recorridos_previstos,
-		$combustible_consumido_estimado)";		
+		1,
+		$combustible_consumido_estimado,
+		1,
+		'En proceso')";		
 		
 			return $query;
 		}
@@ -149,6 +161,28 @@
 		public static function agregarViajeVehiculo($idViaje, $idVehiculo){
 			$query = "INSERT INTO viaje_vehiculo(id_viaje,id_vehiculo)
 			VALUES ($idViaje, $idVehiculo)";
+			return $query;
+		}
+
+		public static function salidaReal($idViaje, $salida){
+			$query = "UPDATE viaje set fecha_de_salida_real = '$salida' WHERE id = $idViaje";
+			return $query;
+		}
+
+		public static function kmReal($idViaje, $km){
+			$query = "UPDATE viaje set km_recorridos_reales = km_recorridos_reales + $km WHERE id = $idViaje";
+			return $query;
+		}
+		public static function llegadaReal($idViaje, $llegada, $tiempo){
+			$query = "UPDATE viaje set 
+			fecha_de_llegada_real = '$llegada',
+			tiempo_real = $tiempo
+			 WHERE id = $idViaje";
+			return $query;
+		}
+
+		public static function combustibleReal($idViaje, $combustible){
+			$query = "UPDATE viaje set combustible_consumido_real = combustible_consumido_real + $combustible WHERE id = $idViaje";
 			return $query;
 		}
 	}

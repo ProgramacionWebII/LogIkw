@@ -59,14 +59,42 @@
 </nav>
   
 
-<div class="col-sm-8 col-sm-offset-2">
-	<div class="col-sm-12">		
-		<H2 class="col-sm-offset-2 col-sm-8">Seleccione el tipo de reporte a realizar</H2>
+<div class="col-sm-10 col-sm-offset-1">
+	<div class="col-sm-12">
+		<H2 class="col-sm-offset-1 col-sm-10">Seleccione el tipo de reporte a realizar para el viaje: </H2>
+
+	  	<table class="table table-condensed col-sm-12">
+		    <thead id="headTable">
+		      <tr>
+		        <th>Origen - Destino</th>
+		        <th>Tipo de carga</th>
+		        <th>Fecha salida estimada</th>
+		        <th>Fecha llegada estimada</th>
+		        <th>Estado del viaje</th>
+				<th>Vehiculo</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		    	<tr>
+			<?php
+				$choferUsuario = mysqli_fetch_assoc(Conexion::getQuery(Chofer::getChoferForViaje($_SESSION['chofer'])));
+				$viaje = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForIdChofer($choferUsuario['id'])));
+				echo "<td>".$viaje['origen']." - ".$viaje['destino']."</td>";
+				echo "<td>".$viaje['tipo_de_carga']."</td>";
+				echo "<td>".$viaje['fecha_de_salida_prevista']."</td>";
+				echo "<td>".$viaje['fecha_de_llegada_prevista']."</td>";
+				echo "<td>".$viaje['estado']."</td>";
+				echo "<td>".$viaje['marca']." ".$viaje['modelo']."</td>";
+			?>
+				</tr>	
+		    </tbody>
+		</table>
 	</div>  
 	<div class="col-sm-12">
-	<button type='button'  class='btn btn-primary col-sm-4' data-toggle='modal' data-target='#posicion' onclick="getLocation()">POSICION</button>
-	<button type='button'  class='btn btn-danger col-sm-4' data-toggle='modal' data-target='#incidente'>INCIDENTE</button>
-	<button type='button'  class='btn btn-success col-sm-4' data-toggle='modal' data-target='#cargaDeCombustible'>CARGA DE COMBUSTIBLE</button>
+	<button type='button'  class='btn btn-primary col-sm-3' data-toggle='modal' data-target='#posicion' onclick="getLocation()">POSICION</button>
+	<button type='button'  class='btn btn-danger col-sm-3' data-toggle='modal' data-target='#incidente'>INCIDENTE</button>
+	<button type='button'  class='btn btn-info col-sm-3' data-toggle='modal' data-target='#reporteDiario'>REPORTE DIARIO</button>
+	<button type='button'  class='btn btn-success col-sm-3' data-toggle='modal' data-target='#cargaDeCombustible'>CARGA DE COMBUSTIBLE</button>
 	</div>
 </div>
 <br>	
@@ -197,21 +225,21 @@
 	
 	
 	<!-- Modal de cargaDeCombustible-->
-	  <form action="../modelo/agregar_reporte.php" method="POST">
+	<form action="../modelo/agregar_reporte.php" method="POST">
 	<div class="modal fade" id="cargaDeCombustible" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content col-sm-12">
 	      <div class="modal-header">
-	        <h2 class="modal-title" id="exampleModalLabel">Carga De Combustible</h2>
+	        <h2 class="modal-title" id="exampleModalLabel">Carga de combustible</h2>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	        </button>
 	      </div>
 	      <div class="modal-body col-sm-12">
-		       <input type="date" name="fecha" class="form-control col-sm-6" placeholder="Fecha" required><br>
-   	        <input type="text" name="ubicacion" class="form-control col-sm-6" placeholder="Lugar" required><br>
+		    <input type="date" name="fechaSalida" class="form-control col-sm-6" placeholder="Fecha salida" required><br>
+   	        <input type="text" name="ubicacion" class="form-control col-sm-6" placeholder="Nombre de estación" required><br>
 	        <input type="text" name="combustible_cargado" class="form-control col-sm-6" placeholder="Cantidad De Litros" required><br>
-	       <input type="text" name="importe_combustible" class="form-control col-sm-6" placeholder="importe" required><br>
-		   <input type="text" name="km_unidad" class="form-control col-sm-6" placeholder="Km de la unidad" required><br>
+	        <input type="text" name="importe_combustible" class="form-control col-sm-6" placeholder="importe" required><br>
+		    <input type="text" name="km_unidad" class="form-control col-sm-6" placeholder="Km de la unidad" required><br>
 		    <input type="text" name="tipo_reporte" value="combustible" class="hidden">
 	  		<input type='text' name='variable' class='hidden' <?php echo "value='".$viaje['id']."'"; ?> >
 	      </div>
@@ -223,7 +251,35 @@
 	  </div>
 	</div>
    	</form>
-	
+
+	<!-- Modal de reporteDiario-->
+	  <form action="../modelo/agregar_reporte.php" method="POST">
+	<div class="modal fade" id="reporteDiario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content col-sm-12">
+	      <div class="modal-header">
+	        <h2 class="modal-title" id="exampleModalLabel">Reporte Diario </h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        </button>
+	      </div>
+	      <div class="modal-body col-sm-12">
+	      	<label>Fecha de salida</label>
+	      	<?php
+	      	$viajeActual = mysqli_fetch_assoc(Conexion::getQuery(Viaje::getAllForId($viaje['id'])));
+	      	echo
+		    '<input type="date" name="fechaSalida" class="form-control col-sm-6" value="'.$viajeActual['fecha_de_salida_real'].'" required><br>
+   	        <input type="text" name="kmRecorridos" class="form-control col-sm-6" placeholder="km Recorridos desde la última vez" required><br>
+		    <input type="text" name="tipo_reporte" value="diario" class="hidden">
+	  		<input type="text" name="variable" class="hidden"';  echo "value='".$viaje['id']."'"; ?>
+	      </div>
+	      <div class="modal-footer col-sm-12">
+	        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
+	        <input type="submit" class="btn btn-primary" value="Cargar">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+   	</form>
 
 	<!-- Modal logout-->
 	<form action="../modelo/logout.php" method="POST">

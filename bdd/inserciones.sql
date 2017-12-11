@@ -35,7 +35,7 @@ INSERT into vehiculo(patente,nro_chasis,nro_motor, estadoV, marca,modelo,anio_fa
 ('ik 456 pl','25',55, 0,'chevrolet','h201',2002,'acoplado','en reparacion');
 
 
-INSERT into viaje(
+/*INSERT into viaje(
 id_vehiculo,
 id_administrador,
 origen,
@@ -60,7 +60,7 @@ combustible_consumido_real) values
 (3,1,'misiones','buenos aires','Granel Sólido','2017-09-05','2017-10-08',400,
 '2017-11-05','2017-11-09',450,1700,2000,600,700),
 (2,1,'san luis','buenos aires','Granel Sólido','2017-09-05','2017-10-08',100,
-'2017-11-05','2017-11-09',105,1500,1600,700,750);
+'2017-11-05','2017-11-09',105,1500,1600,700,750);*/
 
 
 
@@ -73,7 +73,7 @@ INSERT into empresa(nombre,rol,telefono,domicilio,id_usuario) values
 ('Cero Carburo','empresa',123456,'Cañada de gomez',10);
 
 
-INSERT into mantenimiento(id_vehiculo,id_empresa,id_mecanico,patente ,nro_chasis ,nro_motor ,fecha_service,km_de_la_unidad ,costo,tipo,repuestos_cambiados) values
+/*INSERT into mantenimiento(id_vehiculo,id_empresa,id_mecanico,patente ,nro_chasis ,nro_motor ,fecha_service,km_de_la_unidad ,costo,tipo,repuestos_cambiados) values
 
 (1,1,1,'ab 123 cd',10,20,'2017-05-04',150000,20000,'externo','valvula,tubo de escape'),
 (1,2,2,'ab 123 cd',20,10,'2017-04-04',300000,70000,'externo','motor'),
@@ -100,4 +100,4 @@ INSERT into calendarioService(id_vehiculo,fecha_service,km_de_la_unidad) values
 (2,'2017-08-04',11000),
 (3,'2017-04-04',52000),
 (4,'2017-05-04',1000),
- (3,'2017-04-10',120000); 
+ (3,'2017-04-10',120000); */

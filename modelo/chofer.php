@@ -45,5 +45,12 @@
 			c.id = v.id_chofer WHERE v.id_viaje = $idViaje";
 			return $query;
 		}
+
+		public static function getChoferForViaje($idChofer){
+			$query = "SELECT c.* FROM chofer c JOIN viaje_chofer v
+			ON c.id = v.id_chofer JOIN viaje vj ON v.id_viaje = vj.id
+			WHERE c.estadoC = 1 AND vj.estado = 'En proceso' and c.id = $idChofer";
+			return $query;
+		}
 	}
 ?>
