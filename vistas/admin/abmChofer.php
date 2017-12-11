@@ -140,5 +140,11 @@
 	  </div>
 	</div>
    	</form>
+
+	
+	
+
+<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='../../modelo/ListadoPdfChoferes.php'"/>
+
 </body>
 </html>

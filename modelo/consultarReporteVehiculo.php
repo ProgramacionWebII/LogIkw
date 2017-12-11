@@ -66,13 +66,13 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-	     <th>Id vehiculo</th>
+	    <th>Id vehiculo</th>
         <th>Viajes realizados</th>
         <th>Km totales recorridos</th>
-  <th>Horas de servicio</th>
-  <th>Costo mantenimiento $</th>
-   <th> Costo por Km $ </th>
-      </tr>
+		<th>Horas de servicio</th>
+		<th>Costo mantenimiento $</th>
+		<th> Costo por Km $ </th>
+		</tr>
     </thead>
     <tbody>
    	<?php
@@ -119,6 +119,6 @@
 		</div>
 	</form>
 
-	
+	<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='ListadoPdfReporteVehiculos.php'"/>
 </body>
 </html>

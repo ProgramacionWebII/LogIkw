@@ -181,6 +181,6 @@
 <script type="text/javascript" src="../../js/abm.js"></script>
 <script type="text/javascript" src="../../js/abmViajes.js"></script>
 
-
+	<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='../../modelo/ListadoPdfViajes.php'"/>
 </body>
 </html>

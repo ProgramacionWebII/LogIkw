@@ -128,6 +128,6 @@ tiempo_real-tiempo_estimado as desviacion_t,combustible_consumido_estimado,combu
 		</div>
 	</form>
 
-	
+		<input type="submit"  class='btn btn-primary' value="Listado pdf" onclick = "location='ListadoPdfReporteViajes.php'"/>
 </body>
 </html>
