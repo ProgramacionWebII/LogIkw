@@ -81,6 +81,7 @@
 		 <td>".$chofer['tipo_licencia_de_conducir']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$chofer['id']."'>
+		 <input type='text' name='idUsuario' class='hidden' value='".$chofer['id_usuario']."'>
 
 		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
 

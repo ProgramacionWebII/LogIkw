@@ -87,6 +87,7 @@
 		 <td>".$cliente['email']."</td>
 
 		 <input type='text' name='id' class='hidden' value='".$cliente['id']."'>
+		 <input type='text' name='id' class='hidden' value='".$cliente['id_usuario']."'>
 
 		 <td><button type='submit' id='modificar' onclick= 'modificar()' name='alterar' value='modificar' class='btn btn-primary'>Modificar</button></td>
 

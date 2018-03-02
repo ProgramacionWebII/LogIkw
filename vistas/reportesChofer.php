@@ -282,6 +282,8 @@
 	</div>
 	</form>
 
+
+	
 	<!-- Modal de reporteDiario-->
 	  <form action="../modelo/agregar_reporte.php" method="POST">
 	<div class="modal fade" id="finalizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -313,7 +315,7 @@
 	</div>
    	</form>
 
-	<!-- Modal de reporteDiario-->
+<!-- Modal de reporteDiario-->
 	  <form action="../modelo/agregar_reporte.php" method="POST">
 	<div class="modal fade" id="reporteDiario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
